@@ -145,6 +145,11 @@
 
     <!-- Add your own dependencies here, if in compile scope, they are added to the war -->
 
+    <dependency>
+    	<groupId>org.camunda.bpm.extension.dmn</groupId>
+    	<artifactId>dmn-xlsx-converter</artifactId>
+    	<version>0.2.1-SNAPSHOT</version>
+    </dependency>
   </dependencies>
 
   <repositories>
