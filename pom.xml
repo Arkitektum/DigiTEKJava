@@ -149,6 +149,7 @@
 			<groupId>org.camunda.bpm.extension.dmn</groupId>
 			<artifactId>dmn-xlsx-converter</artifactId>
 			<version>0.2.1-SNAPSHOT</version>
+			<!--fix problem with slf4j path -->
 			<exclusions>
 				<exclusion>
 					<groupId>org.slf4j</groupId>
@@ -168,6 +169,13 @@
 			<scope>test</scope>
 		</dependency>
 
+		<!-- Add mockito for Junit -->
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>2.23.0</version>
+			<scope>test</scope>
+		</dependency>
 		<!-- Json -->
 		<dependency>
 			<groupId>com.googlecode.json-simple</groupId>
