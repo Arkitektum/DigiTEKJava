@@ -11,8 +11,6 @@ import org.junit.Rule;
 import org.junit.Test;
 
 import static org.camunda.bpm.engine.test.assertions.ProcessEngineTests.*;
-import static org.junit.Assert.*;
-
 import java.util.HashMap;
 import java.util.Map;
 

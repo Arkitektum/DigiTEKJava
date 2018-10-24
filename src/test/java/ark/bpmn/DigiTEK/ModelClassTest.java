@@ -11,15 +11,12 @@ import org.mockito.Mockito;
 
 import ark.bpmn.BrannModels.BrannDictionaryModel;
 import ark.bpmn.BrannModels.BrannDictionaryModel.TableInfo;
-import ark.bpmn.BrannModels.BrannDictionaryModel.VariablesInfo;
 import spinjar.com.fasterxml.jackson.databind.ObjectMapper;
 import spinjar.com.fasterxml.jackson.databind.ObjectWriter;
 
 import static org.mockito.Mockito.*;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class ModelClassTest {
@@ -94,6 +91,7 @@ public class ModelClassTest {
 		ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
 		String json = ow.writeValueAsString(modelDataDictionary);
 		JsonValue jsonValue = SpinValues.jsonValue(json).create();
+		
 		
 	}
 
