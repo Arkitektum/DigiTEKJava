@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="Excel2Dmn_12-33-18" name="01_Risikoklassifisering" namespace="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd">
+  <decision id="Risikoklassifisering" name="Risikoklassifisering">
+    <decisionTable id="decisionTable" hitPolicy="FIRST">
+      <input id="bareSporadiskPersonopphold" label="Bare sporadisk personopphold">
+        <inputExpression id="exp_bareSporadiskPersonopphold" label="label_bareSporadiskPersonopphold" typeRef="boolean">
+          <text>bareSporadiskPersonopphold</text>
+        </inputExpression>
+      </input>
+      <input id="alleKjennerRomningsVeiene" label="Alle kjenner rømningsveiene">
+        <inputExpression id="exp_alleKjennerRomningsVeiene" label="label_alleKjennerRomningsVeiene" typeRef="boolean">
+          <text>alleKjennerRomningsVeiene</text>
+        </inputExpression>
+      </input>
+      <input id="beregnetForOvernatting" label="Beregnet for overnatting">
+        <inputExpression id="exp_beregnetForOvernatting" label="label_beregnetForOvernatting" typeRef="boolean">
+          <text>beregnetForOvernatting</text>
+        </inputExpression>
+      </input>
+      <input id="liteBrannfarligAktivitet" label="Lite brannfarlig aktivitet">
+        <inputExpression id="exp_liteBrannfarligAktivitet" label="label_liteBrannfarligAktivitet" typeRef="boolean">
+          <text>liteBrannfarligAktivitet</text>
+        </inputExpression>
+      </input>
+      <output id="rkl_Id" label="Risikoklasse" name="rkl" typeRef="string" />
+      <rule id="rowRule_7">
+        <inputEntry id="B7">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="C7">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="D7">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="E7">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_F7">
+          <text>"RKL1"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_8">
+        <inputEntry id="B8">
+          <text />
+        </inputEntry>
+        <inputEntry id="C8">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="D8">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="E8">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_F8">
+          <text>"RKL2"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_9">
+        <inputEntry id="B9">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="C9">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="D9">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="E9">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_F9">
+          <text>"RKL3"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_10">
+        <inputEntry id="B10">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="C10">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="D10">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="E10">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_F10">
+          <text>"RKL4"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_11">
+        <inputEntry id="B11">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="C11">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="D11">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="E11">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_F11">
+          <text>"RKL5"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_12">
+        <inputEntry id="B12">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="C12">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="D12">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="E12">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_F12">
+          <text>"RKL6"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_13">
+        <inputEntry id="B13">
+          <text />
+        </inputEntry>
+        <inputEntry id="C13">
+          <text />
+        </inputEntry>
+        <inputEntry id="D13">
+          <text />
+        </inputEntry>
+        <inputEntry id="E13">
+          <text />
+        </inputEntry>
+        <outputEntry id="LiteralExpression_F13">
+          <text>"Ukjent"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="1.9.0">
+  <bpmn:process id="RisikoklassenIntModel" name="Brannklasse integration model" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>SequenceFlow_1pwe1ro</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_1pwe1ro" sourceRef="StartEvent_1" targetRef="branninputsVariablesValidation" />
+    <bpmn:callActivity id="RisikoklassenModel_SubModel" name="BPMN" calledElement="RisikoklassenModel">
+      <bpmn:extensionElements>
+        <camunda:in variables="all" />
+        <camunda:out variables="all" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_16ntpnd</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_03rf27a</bpmn:outgoing>
+    </bpmn:callActivity>
+    <bpmn:sequenceFlow id="SequenceFlow_03rf27a" sourceRef="RisikoklassenModel_SubModel" targetRef="outputsVariablesConsolidation" />
+    <bpmn:endEvent id="EndRisikoklassenModel" name="End Brannklasse Integration Model">
+      <bpmn:incoming>SequenceFlow_0u3fw7i</bpmn:incoming>
+      <bpmn:incoming>SequenceFlow_0cz5rfj</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_16ntpnd" sourceRef="branninputsVariablesValidation" targetRef="RisikoklassenModel_SubModel" />
+    <bpmn:serviceTask id="branninputsVariablesValidation" name="Brannteknisk prosjektering Inputs Validation" camunda:class="ark.bpmn.DigiTEK.InputsValidation">
+      <bpmn:incoming>SequenceFlow_1pwe1ro</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_16ntpnd</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="SequenceFlow_00i027i" sourceRef="outputsVariablesConsolidation" targetRef="DataDictionary" />
+    <bpmn:serviceTask id="outputsVariablesConsolidation" name="Variables outputs Consolidation" camunda:class="ark.bpmn.DigiTEK.OutputConsolidation">
+      <bpmn:incoming>SequenceFlow_03rf27a</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_00i027i</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="SequenceFlow_10w9efg" sourceRef="DataDictionary" targetRef="UserRisikoklassenModelOutput" />
+    <bpmn:serviceTask id="DataDictionary" name="Get data dictionary" camunda:class="ark.bpmn.DigiTEK.ModelOutputsDataDictionary">
+      <bpmn:incoming>SequenceFlow_00i027i</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_10w9efg</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="SequenceFlow_0u3fw7i" sourceRef="UserRisikoklassenModelOutput" targetRef="EndRisikoklassenModel" />
+    <bpmn:userTask id="UserRisikoklassenModelOutput" name="Get RisikoklassenModel Output">
+      <bpmn:incoming>SequenceFlow_10w9efg</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0u3fw7i</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:boundaryEvent id="deploymentTimer" name="Deployment timer" attachedToRef="UserRisikoklassenModelOutput">
+      <bpmn:outgoing>SequenceFlow_0cz5rfj</bpmn:outgoing>
+      <bpmn:timerEventDefinition>
+        <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">PT1H</bpmn:timeDuration>
+      </bpmn:timerEventDefinition>
+    </bpmn:boundaryEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_0cz5rfj" sourceRef="deploymentTimer" targetRef="EndRisikoklassenModel" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="RisikoklassenIntModel">
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="76" y="102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="49" y="138" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1pwe1ro_di" bpmnElement="SequenceFlow_1pwe1ro">
+        <di:waypoint xsi:type="dc:Point" x="112" y="120" />
+        <di:waypoint xsi:type="dc:Point" x="141" y="120" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="81.5" y="99" width="90" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="CallActivity_1i1oeyi_di" bpmnElement="RisikoklassenModel_SubModel">
+        <dc:Bounds x="299" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_03rf27a_di" bpmnElement="SequenceFlow_03rf27a">
+        <di:waypoint xsi:type="dc:Point" x="399" y="120" />
+        <di:waypoint xsi:type="dc:Point" x="444" y="120" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="376.5" y="99" width="90" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="EndEvent_0y098c5_di" bpmnElement="EndRisikoklassenModel">
+        <dc:Bounds x="918" y="102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="895" y="142" width="84" height="24" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_16ntpnd_di" bpmnElement="SequenceFlow_16ntpnd">
+        <di:waypoint xsi:type="dc:Point" x="241" y="120" />
+        <di:waypoint xsi:type="dc:Point" x="299" y="120" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="270" y="99" width="0" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ServiceTask_0cnl3fo_di" bpmnElement="branninputsVariablesValidation">
+        <dc:Bounds x="141" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_00i027i_di" bpmnElement="SequenceFlow_00i027i">
+        <di:waypoint xsi:type="dc:Point" x="544" y="120" />
+        <di:waypoint xsi:type="dc:Point" x="598" y="120" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="526" y="99" width="90" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ServiceTask_069b1mm_di" bpmnElement="outputsVariablesConsolidation">
+        <dc:Bounds x="444" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_10w9efg_di" bpmnElement="SequenceFlow_10w9efg">
+        <di:waypoint xsi:type="dc:Point" x="698" y="120" />
+        <di:waypoint xsi:type="dc:Point" x="739" y="120" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="718.5" y="99" width="0" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ServiceTask_1p780pq_di" bpmnElement="DataDictionary">
+        <dc:Bounds x="598" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0u3fw7i_di" bpmnElement="SequenceFlow_0u3fw7i">
+        <di:waypoint xsi:type="dc:Point" x="839" y="120" />
+        <di:waypoint xsi:type="dc:Point" x="918" y="120" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="878.5" y="99" width="0" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="UserTask_1f8utas_di" bpmnElement="UserRisikoklassenModelOutput">
+        <dc:Bounds x="739" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BoundaryEvent_0asxcrt_di" bpmnElement="deploymentTimer">
+        <dc:Bounds x="784" y="142" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="760" y="182" width="86" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0cz5rfj_di" bpmnElement="SequenceFlow_0cz5rfj">
+        <di:waypoint xsi:type="dc:Point" x="802" y="178" />
+        <di:waypoint xsi:type="dc:Point" x="802" y="201" />
+        <di:waypoint xsi:type="dc:Point" x="936" y="201" />
+        <di:waypoint xsi:type="dc:Point" x="936" y="138" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="824" y="180" width="90" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

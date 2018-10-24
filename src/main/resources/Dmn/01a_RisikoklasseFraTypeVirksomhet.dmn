@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="Excel2Dmn_12-36-18" name="01_RisikoklasseFraTypeVirksomhet" namespace="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd">
+  <decision id="RisikoklasseFraTypeVirksomhet" name="Risikoklasse fra type virksomhet">
+    <decisionTable id="decisionTable" hitPolicy="FIRST">
+      <input id="typeVirksomhet" label="Type virksomhet">
+        <inputExpression id="exp_typeVirksomhet" label="label_typeVirksomhet" typeRef="string">
+          <text>typeVirksomhet</text>
+        </inputExpression>
+      </input>
+      <output id="rkl_Id" label="Risikoklasse" name="rkl" typeRef="string" />
+      <rule id="rowRule_7">
+        <inputEntry id="B7">
+          <text>"Arbeidsbrakke"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C7">
+          <text>"RKL1"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_8">
+        <inputEntry id="B8">
+          <text>"Båtnaust"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C8">
+          <text>"RKL1"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_9">
+        <inputEntry id="B9">
+          <text>"Carport"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C9">
+          <text>"RKL1"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_10">
+        <inputEntry id="B10">
+          <text>"Flyhangar"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C10">
+          <text>"RKL1"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_11">
+        <inputEntry id="B11">
+          <text>"Fryselager"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C11">
+          <text>"RKL1"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_12">
+        <inputEntry id="B12">
+          <text>"Garasje"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C12">
+          <text>"RKL1"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_13">
+        <inputEntry id="B13">
+          <text>"Parkeringshus med én etasje"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C13">
+          <text>"RKL1"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_14">
+        <inputEntry id="B14">
+          <text>"Sagbruk"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C14">
+          <text>"RKL1"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_15">
+        <inputEntry id="B15">
+          <text>"Skur"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C15">
+          <text>"RKL1"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_16">
+        <inputEntry id="B16">
+          <text>"Trelastopplag"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C16">
+          <text>"RKL1"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_17">
+        <inputEntry id="B17">
+          <text>"Brannstasjon uten døgnbemanning"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C17">
+          <text>"RKL2"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_18">
+        <inputEntry id="B18">
+          <text>"Driftsbygning med husdyrrom"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C18">
+          <text>"RKL2"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_19">
+        <inputEntry id="B19">
+          <text>"Industri"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C19">
+          <text>"RKL2"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_20">
+        <inputEntry id="B20">
+          <text>"Kantine beregnet for egne ansatte til og med 150 personer"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C20">
+          <text>"RKL2"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_21">
+        <inputEntry id="B21">
+          <text>"Kjemisk fabrikk"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C21">
+          <text>"RKL2"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_22">
+        <inputEntry id="B22">
+          <text>"kjemikalielager"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C22">
+          <text>"RKL2"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_23">
+        <inputEntry id="B23">
+          <text>"Kontor"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C23">
+          <text>"RKL2"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_24">
+        <inputEntry id="B24">
+          <text>"Laboratorium"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C24">
+          <text>"RKL2"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_25">
+        <inputEntry id="B25">
+          <text>"Lager"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C25">
+          <text>"RKL2"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_26">
+        <inputEntry id="B26">
+          <text>"Parkeringshus med to eller flere etasjer eller plan"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C26">
+          <text>"RKL2"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_27">
+        <inputEntry id="B27">
+          <text>"Garasje med to eller flere etasjer eller plan"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C27">
+          <text>"RKL2"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_28">
+        <inputEntry id="B28">
+          <text>"Parkeringskjeller under terreng"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C28">
+          <text>"RKL2"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_29">
+        <inputEntry id="B29">
+          <text>"Garasje under terreng"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C29">
+          <text>"RKL2"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_30">
+        <inputEntry id="B30">
+          <text>"Sprengstoffindustri"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C30">
+          <text>"RKL2"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_31">
+        <inputEntry id="B31">
+          <text>"Trafo eller fordelingsstasjon"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C31">
+          <text>"RKL2"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_32">
+        <inputEntry id="B32">
+          <text>"Barnehage"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C32">
+          <text>"RKL3"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_33">
+        <inputEntry id="B33">
+          <text>"Skole"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C33">
+          <text>"RKL3"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_34">
+        <inputEntry id="B34">
+          <text>"Barnehjem"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C34">
+          <text>"RKL4"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_35">
+        <inputEntry id="B35">
+          <text>"Bolig"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C35">
+          <text>"RKL4"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_36">
+        <inputEntry id="B36">
+          <text>"Boligbrakke"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C36">
+          <text>"RKL4"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_37">
+        <inputEntry id="B37">
+          <text>"Brannstasjon med døgnbemanning"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C37">
+          <text>"RKL4"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_38">
+        <inputEntry id="B38">
+          <text>"Fritidsbolig"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C38">
+          <text>"RKL4"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_39">
+        <inputEntry id="B39">
+          <text>"Selvbetjente hytter"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C39">
+          <text>"RKL4"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_40">
+        <inputEntry id="B40">
+          <text>"Campinghytter"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C40">
+          <text>"RKL4"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_41">
+        <inputEntry id="B41">
+          <text>"Campingenheter"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C41">
+          <text>"RKL4"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_42">
+        <inputEntry id="B42">
+          <text>"Internat"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C42">
+          <text>"RKL4"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_43">
+        <inputEntry id="B43">
+          <text>"Studentbolig"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C43">
+          <text>"RKL4"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_44">
+        <inputEntry id="B44">
+          <text>"Forsamlingslokale"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C44">
+          <text>"RKL5"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_45">
+        <inputEntry id="B45">
+          <text>"Idrettshall"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C45">
+          <text>"RKL5"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_46">
+        <inputEntry id="B46">
+          <text>"Kantine beregnet for utleie eller for mer enn 150 personer"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C46">
+          <text>"RKL5"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_47">
+        <inputEntry id="B47">
+          <text>"Kinolokale"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C47">
+          <text>"RKL5"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_48">
+        <inputEntry id="B48">
+          <text>"Kirke"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C48">
+          <text>"RKL5"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_49">
+        <inputEntry id="B49">
+          <text>"Kongressenter"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C49">
+          <text>"RKL5"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_50">
+        <inputEntry id="B50">
+          <text>"Messelokale"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C50">
+          <text>"RKL5"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_51">
+        <inputEntry id="B51">
+          <text>"Museum"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C51">
+          <text>"RKL5"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_52">
+        <inputEntry id="B52">
+          <text>"Salgslokale"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C52">
+          <text>"RKL5"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_53">
+        <inputEntry id="B53">
+          <text>"Teaterlokale"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C53">
+          <text>"RKL5"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_54">
+        <inputEntry id="B54">
+          <text>"Trafikkterminal"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C54">
+          <text>"RKL5"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_55">
+        <inputEntry id="B55">
+          <text>"Tribuneanlegg for mer enn 150 personer"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C55">
+          <text>"RKL5"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_56">
+        <inputEntry id="B56">
+          <text>"Arrestlokaler"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C56">
+          <text>"RKL6"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_57">
+        <inputEntry id="B57">
+          <text>"Fengsel"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C57">
+          <text>"RKL6"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_58">
+        <inputEntry id="B58">
+          <text>"Asylmottak"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C58">
+          <text>"RKL6"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_59">
+        <inputEntry id="B59">
+          <text>"Transittmottak"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C59">
+          <text>"RKL6"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_60">
+        <inputEntry id="B60">
+          <text>"Bolig beregnet for personer med behov for heldøgns pleie og omsorg"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C60">
+          <text>"RKL6"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_61">
+        <inputEntry id="B61">
+          <text>"Bolig spesielt tilrettelagt og beregnet for personer med funksjonsnedsettelse, inkl. alders- og seniorboliger"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C61">
+          <text>"RKL6"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_62">
+        <inputEntry id="B62">
+          <text>"Feriekoloni"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C62">
+          <text>"RKL6"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_63">
+        <inputEntry id="B63">
+          <text>"Leirskole"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C63">
+          <text>"RKL6"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_64">
+        <inputEntry id="B64">
+          <text>"Overnattingssted"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C64">
+          <text>"RKL6"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_65">
+        <inputEntry id="B65">
+          <text>"Hotell"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C65">
+          <text>"RKL6"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_66">
+        <inputEntry id="B66">
+          <text>"Pleieinstitusjon"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C66">
+          <text>"RKL6"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_67">
+        <inputEntry id="B67">
+          <text>"Sykehus"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C67">
+          <text>"RKL6"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_68">
+        <inputEntry id="B68">
+          <text>"Sykehjem"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C68">
+          <text>"RKL6"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_69">
+        <inputEntry id="B69">
+          <text>"Turisthytte"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C69">
+          <text>"RKL6"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_70">
+        <inputEntry id="B70">
+          <text>"Vandrerhjem"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C70">
+          <text>"RKL6"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_71">
+        <inputEntry id="B71">
+          <text />
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C71">
+          <text>"Ukjent"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>
