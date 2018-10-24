@@ -1,4 +1,4 @@
-﻿[
+[
   {
     "DmnId": "kravBrannAlarmKategori",
     "DmnNavn": "Brannalarmkategori avhengig av risikoklasse",
@@ -21,9 +21,9 @@
   "DmnId": "brannklasse",
   "DmnNavn": "Brannklasse for byggverk",
   "TekKapitel": "11-3",
-  "TekLedd": " ",
-  "TekTabell": " ",
-  "TekForskriften": " ",
+  "TekLedd":"",
+  "TekTabell":"",
+  "TekForskriften":"",
   "TekWebLink": "https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/11/i/11-2/"
  },
  {
