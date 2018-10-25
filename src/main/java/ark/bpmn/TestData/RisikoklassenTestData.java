@@ -8,8 +8,8 @@ import org.camunda.bpm.engine.variable.Variables;
 public class RisikoklassenTestData {
 
 	public static final String ModelKey = "RisikoklassenModel";
-	public static final String IntegrationModelUserTaskId = "UserRisikoklassenModelOutput";
-	public static final String IntegrationModelEndTaskId = "EndRisikoklassenModel";
+	public static final String UserTaskId = "UserRisikoklassenModelOutput";
+	public static final String EndTaskId = "EndRisikoklassenModel";
 	public static final String IntegrationModelKey = "RisikoklassenIntModel";
 
 	public static Map<String, Object> RisikoklasseOpt01() {
@@ -18,8 +18,11 @@ public class RisikoklassenTestData {
 	}
 
 	public static Map<String, Object> RisikoklasseOpt02() {
-		VariableMap variableMap = Variables.createVariables().putValue("bareSporadiskPersonopphold", true)
-				.putValue("alleKjennerRomningsVeiene", true).putValue("beregnetForOvernatting", true)
+		VariableMap variableMap = Variables.createVariables()
+				.putValue("typeVirksomhet", null)
+				.putValue("bareSporadiskPersonopphold", false)
+				.putValue("alleKjennerRomningsVeiene", false)
+				.putValue("beregnetForOvernatting", true)
 				.putValue("liteBrannfarligAktivitet", true);
 		return variableMap;
 	}
