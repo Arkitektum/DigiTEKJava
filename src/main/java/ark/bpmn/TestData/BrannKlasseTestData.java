@@ -6,9 +6,9 @@ import org.camunda.bpm.engine.variable.VariableMap;
 import org.camunda.bpm.engine.variable.Variables;
 
 public class BrannKlasseTestData {
-	public static final String IntegrationModelKey = "BrannklasseIntModell";
-	public static final String IntegrationModelUserTaskId = "UserBrannklasseModelOutput";
-	public static final String IntegrationModelEndTaskId = "EndBrannklasseIntModell";
+	public static final String IntegrationModelKey = "BrannklasseIntModel";
+	public static final String UserTaskId = "UserBrannklasseModelOutput";
+	public static final String EndTaskId = "EndBrannklasseIntModel";
 	public static final String ModelKey = "BrannklasseModel";
 
 	public static Map<String, Object> BrannklasseOpt01() {
@@ -28,9 +28,13 @@ public class BrannKlasseTestData {
 		return variableMap;
 	}
 	public static Map<String, Object> Dmn_Brannklasse() {
-		VariableMap variableMap = Variables.createVariables().putValue("konsekvensAvBrann", null)
-				.putValue("typeVirksomhet", "Bolig").putValue("antallEtasjer", 3).putValue("rkl", "RKL4")
-				.putValue("brtArealPrEtasje", 400).putValue("utgangTerrengAlleBoenheter", true);
+		VariableMap variableMap = Variables.createVariables()
+				.putValue("konsekvensAvBrann", null)
+				.putValue("typeVirksomhet", "Hotell")
+				.putValue("antallEtasjer", 2)
+				.putValue("rkl", "RKL6")
+				.putValue("brtArealPrEtasje", 299)
+				.putValue("utgangTerrengAlleBoenheter", true);
 		return variableMap;
 	}
 	public static Map<String, Object> Dmn_BrannklasseKonsekvensBeskrivelse() {
