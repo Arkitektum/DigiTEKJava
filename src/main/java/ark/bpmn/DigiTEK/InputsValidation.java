@@ -16,8 +16,8 @@ public class InputsValidation implements JavaDelegate {
 		BranntekniskProsjekteringModel model = new BranntekniskProsjekteringModel();
 		
 		model.typeVirksomhet= CheckString(execution.getVariable("typeVirksomhet"));
-		model.antallEtasjer= CheckLong(execution.getVariable("antallEtasjer"));
-		model.brtArealPrEtasje= CheckLong(execution.getVariable("brtArealPrEtasje"));
+		model.antallEtasjer= CheckInteger(execution.getVariable("antallEtasjer"));
+		model.brtArealPrEtasje= CheckInteger(execution.getVariable("brtArealPrEtasje"));
 		model.utgangTerrengAlleBoenheter= CheckBoolean(execution.getVariable("utgangTerrengAlleBoenheter"));
 		
 		model.bareSporadiskPersonopphold= CheckString(execution.getVariable("bareSporadiskPersonopphold"));
@@ -26,14 +26,14 @@ public class InputsValidation implements JavaDelegate {
 		model.liteBrannfarligAktivitet= CheckBoolean(execution.getVariable("liteBrannfarligAktivitet"));
 		
 		model.konsekvensAvBrann= CheckString(execution.getVariable("konsekvensAvBrann"));
-		model.arealBrannseksjonPrEtasje= CheckLong(execution.getVariable("arealBrannseksjonPrEtasje"));
-		model.brannenergi= CheckLong(execution.getVariable("brannenergi"));
+		model.arealBrannseksjonPrEtasje= CheckInteger(execution.getVariable("arealBrannseksjonPrEtasje"));
+		model.brannenergi= CheckInteger(execution.getVariable("brannenergi"));
 		model.bygningOffentligUnderTerreng= CheckBoolean(execution.getVariable("bygningOffentligUnderTerreng"));
 
-		model.avstandMellomMotstVinduerIMeter=CheckLong(execution.getVariable("antallEtasjer"));
+		model.avstandMellomMotstVinduerIMeter=CheckInteger(execution.getVariable("antallEtasjer"));
 		model.rkl= CheckString(execution.getVariable("rkl"));
 		model.bkl= CheckString(execution.getVariable("bkl"));
-		model.brannalarmKategori=CheckLong(execution.getVariable("brannalarmKategori"));
+		model.brannalarmKategori=CheckInteger(execution.getVariable("brannalarmKategori"));
 		model.brannTiltakStrSeksjonBelastning= CheckString(execution.getVariable("brannTiltakStrSeksjonBelastning"));
 		model.kravBrannmotstSeksjVegg= CheckString(execution.getVariable("kravBrannmotstSeksjVegg"));
 		model.kravLedesystemEvakuering= CheckBoolean(execution.getVariable("kravLedesystemEvakuering"));
@@ -61,9 +61,9 @@ public class InputsValidation implements JavaDelegate {
 			return null;
 		}
 	}
-	private Long CheckLong(Object value) {
+	private Integer CheckInteger(Object value) {
 		try {
-			return (Long) value;
+			return (Integer) value;
 		}
 		catch (Exception e)
 		{

@@ -5,22 +5,22 @@ import java.util.Map;
 
 public class BranntekniskProsjekteringModel {
 	public String typeVirksomhet;
-	public Long antallEtasjer;
-	public Long brtArealPrEtasje;
+	public Integer antallEtasjer;
+	public Integer brtArealPrEtasje;
 	public Object utgangTerrengAlleBoenheter;
 	public String bareSporadiskPersonopphold;
 	public Object alleKjennerRomningsVeiene;
 	public Object beregnetForOvernatting;
 	public Object liteBrannfarligAktivitet;
 	public String konsekvensAvBrann;
-	public Long arealBrannseksjonPrEtasje;
-	public Long brannenergi;
+	public Integer arealBrannseksjonPrEtasje;
+	public Integer brannenergi;
 	public Object bygningOffentligUnderTerreng;
 
-	public Long avstandMellomMotstVinduerIMeter;
+	public Integer avstandMellomMotstVinduerIMeter;
 	public String rkl;
 	public String bkl;
-	public Long brannalarmKategori;
+	public Integer brannalarmKategori;
 	public String brannTiltakStrSeksjonBelastning;
 	public String kravBrannmotstSeksjVegg;
 	public Object kravLedesystemEvakuering;

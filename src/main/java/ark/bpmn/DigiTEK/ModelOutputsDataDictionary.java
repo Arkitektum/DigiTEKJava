@@ -108,6 +108,11 @@ public class ModelOutputsDataDictionary implements JavaDelegate {
 		} catch (Exception e) {
 			return null;
 		}
+		if(SelectjsonObj == null) {
+			JSONObject jsonObj = new JSONObject();
+			jsonObj.put("DmnId", 0);
+		}
+		
 		return SelectjsonObj;
 	}
 
@@ -130,14 +135,19 @@ public class ModelOutputsDataDictionary implements JavaDelegate {
 	}
 
 	public TableInfo SetTableInfo(JSONObject dmnInfo) {
+		
 		TableInfo tableInfo = new BrannDictionaryModel().new TableInfo();
-		tableInfo.DmnId = dmnInfo.get("DmnId").toString();
-		tableInfo.DmnNavn = dmnInfo.get("DmnNavn").toString();
-		tableInfo.TekKapitel = dmnInfo.get("TekKapitel").toString();
-		tableInfo.TekLedd = dmnInfo.get("TekLedd").toString();
-		tableInfo.TekTabell = dmnInfo.get("TekTabell").toString();
-		tableInfo.TekForskriften = dmnInfo.get("TekForskriften").toString();
-		tableInfo.TekWebLink = dmnInfo.get("TekWebLink").toString();
+		try {
+			tableInfo.DmnId = dmnInfo.get("DmnId").toString();
+			tableInfo.DmnNavn = dmnInfo.get("DmnNavn").toString();
+			tableInfo.TekKapitel = dmnInfo.get("TekKapitel").toString();
+			tableInfo.TekLedd = dmnInfo.get("TekLedd").toString();
+			tableInfo.TekTabell = dmnInfo.get("TekTabell").toString();
+			tableInfo.TekForskriften = dmnInfo.get("TekForskriften").toString();
+			tableInfo.TekWebLink = dmnInfo.get("TekWebLink").toString();
+		}catch (Exception e) {
+			
+		}
 		
 
 		return tableInfo;
