@@ -28,6 +28,7 @@ public class ModelOutputsDataDictionary implements JavaDelegate {
 
 		// get outputModel variables from execution
 		Map<String, Object> modelOutputsMap = (Map<String, Object>) execution.getVariable("modelOutputs");
+		Map<String, Object> modelInputsMap = (Map<String, Object>) execution.getVariable("modelInputsVariables");
 
 		// Get Json from file
 		JSONArray dmnInfoJsonArray = new ModelOutputsDataDictionary().GetJsonFromFile("JsonDmn2TEK.json");
@@ -68,7 +69,10 @@ public class ModelOutputsDataDictionary implements JavaDelegate {
 		ObjectValue modelDataDictionary = Variables.objectValue(dictionaryModel.BranntekniskProsjekteringDictionary)
 				.serializationDataFormat("application/json").create();
 		
+		execution.removeVariables();
 		execution.setVariable("modelDataDictionary", modelDataDictionary);
+		execution.setVariable("modelOutputs", modelOutputsMap);
+		execution.setVariable("modelInputsVariables", modelInputsMap);
 
 	}
 
