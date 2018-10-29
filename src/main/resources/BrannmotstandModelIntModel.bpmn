@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="1.9.0">
-  <bpmn:process id="BrannseksjonOgBrannmotstandIntModel" name="Brannseksjon Og Brannmotstand Integration Model" isExecutable="true">
+  <bpmn:process id="BrannmotstandIntModel" name="Brannmotstand Integration Model" isExecutable="true">
     <bpmn:startEvent id="StartEvent_1">
       <bpmn:outgoing>SequenceFlow_1pwe1ro</bpmn:outgoing>
     </bpmn:startEvent>
@@ -14,7 +14,7 @@
       <bpmn:outgoing>SequenceFlow_03rf27a</bpmn:outgoing>
     </bpmn:callActivity>
     <bpmn:sequenceFlow id="SequenceFlow_03rf27a" sourceRef="RisikoklassenModel_SubModel" targetRef="ExclusiveGateway_1ucbjzb" />
-    <bpmn:endEvent id="EndBrannseksjonOgBrannmotstand" name="End Brannklasse Integration Model">
+    <bpmn:endEvent id="EndBrannmotstandModel" name="End brannmotstand model">
       <bpmn:incoming>SequenceFlow_0u3fw7i</bpmn:incoming>
       <bpmn:incoming>SequenceFlow_0cz5rfj</bpmn:incoming>
     </bpmn:endEvent>
@@ -28,23 +28,23 @@
       <bpmn:incoming>SequenceFlow_1v8btr6</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_00i027i</bpmn:outgoing>
     </bpmn:serviceTask>
-    <bpmn:sequenceFlow id="SequenceFlow_10w9efg" sourceRef="DataDictionary" targetRef="UserBrannseksjonOgBrannmotstandIntModelOutput" />
+    <bpmn:sequenceFlow id="SequenceFlow_10w9efg" sourceRef="DataDictionary" targetRef="UserBrannmotstandModelOutput" />
     <bpmn:serviceTask id="DataDictionary" name="Get data dictionary" camunda:class="ark.bpmn.DigiTEK.ModelOutputsDataDictionary">
       <bpmn:incoming>SequenceFlow_00i027i</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_10w9efg</bpmn:outgoing>
     </bpmn:serviceTask>
-    <bpmn:sequenceFlow id="SequenceFlow_0u3fw7i" sourceRef="UserBrannseksjonOgBrannmotstandIntModelOutput" targetRef="EndBrannseksjonOgBrannmotstand" />
-    <bpmn:userTask id="UserBrannseksjonOgBrannmotstandIntModelOutput" name="Get BrannseksjonOgBrannmotstandIntModel model Output">
+    <bpmn:sequenceFlow id="SequenceFlow_0u3fw7i" sourceRef="UserBrannmotstandModelOutput" targetRef="EndBrannmotstandModel" />
+    <bpmn:userTask id="UserBrannmotstandModelOutput" name="Get BrannseksjonOgBrannmotstandIntModel model Output">
       <bpmn:incoming>SequenceFlow_10w9efg</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0u3fw7i</bpmn:outgoing>
     </bpmn:userTask>
-    <bpmn:boundaryEvent id="deploymentTimer" name="Deployment timer" attachedToRef="UserBrannseksjonOgBrannmotstandIntModelOutput">
+    <bpmn:boundaryEvent id="deploymentTimer" name="Deployment timer" attachedToRef="UserBrannmotstandModelOutput">
       <bpmn:outgoing>SequenceFlow_0cz5rfj</bpmn:outgoing>
       <bpmn:timerEventDefinition>
         <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">PT1H</bpmn:timeDuration>
       </bpmn:timerEventDefinition>
     </bpmn:boundaryEvent>
-    <bpmn:sequenceFlow id="SequenceFlow_0cz5rfj" sourceRef="deploymentTimer" targetRef="EndBrannseksjonOgBrannmotstand" />
+    <bpmn:sequenceFlow id="SequenceFlow_0cz5rfj" sourceRef="deploymentTimer" targetRef="EndBrannmotstandModel" />
     <bpmn:boundaryEvent id="BoundaryEvent_08jrhmp" attachedToRef="RisikoklassenModel_SubModel">
       <bpmn:outgoing>SequenceFlow_0in5ab6</bpmn:outgoing>
       <bpmn:errorEventDefinition errorRef="Error_1nkrqh8" camunda:errorMessageVariable="Error_subprocess_Brannmotstand" />
@@ -59,7 +59,7 @@
   </bpmn:process>
   <bpmn:error id="Error_1nkrqh8" name="Error_22mo5op" errorCode="java.lang.Exception" />
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
-    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="BrannseksjonOgBrannmotstandIntModel">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="BrannmotstandIntModel">
       <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
         <dc:Bounds x="76" y="102" width="36" height="36" />
         <bpmndi:BPMNLabel>
@@ -83,10 +83,10 @@
           <dc:Bounds x="367.5" y="99" width="90" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNShape id="EndEvent_0y098c5_di" bpmnElement="EndBrannseksjonOgBrannmotstand">
+      <bpmndi:BPMNShape id="EndEvent_0y098c5_di" bpmnElement="EndBrannmotstandModel">
         <dc:Bounds x="1001" y="102" width="36" height="36" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="978" y="142" width="84" height="24" />
+          <dc:Bounds x="985" y="142" width="73" height="36" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="SequenceFlow_16ntpnd_di" bpmnElement="SequenceFlow_16ntpnd">
@@ -126,7 +126,7 @@
           <dc:Bounds x="917" y="99" width="90" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNShape id="UserTask_1f8utas_di" bpmnElement="UserBrannseksjonOgBrannmotstandIntModelOutput">
+      <bpmndi:BPMNShape id="UserTask_1f8utas_di" bpmnElement="UserBrannmotstandModelOutput">
         <dc:Bounds x="822" y="80" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BoundaryEvent_0asxcrt_di" bpmnElement="deploymentTimer">

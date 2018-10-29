@@ -7,10 +7,10 @@ import org.camunda.bpm.engine.variable.Variables;
 
 public class RisikoklassenTestData {
 
-	public static final String ModelKey = "RisikoklassenModel";
-	public static final String UserTaskId = "UserRisikoklassenModelOutput";
-	public static final String EndTaskId = "EndRisikoklassenModel";
-	public static final String IntegrationModelKey = "RisikoklassenIntModel";
+	public static final String ModelKey = "RisikoklasseModel";
+	public static final String UserTaskId = "UserRisikoklasseModelOutput";
+	public static final String EndTaskId = "EndRisikoklasseModel";
+	public static final String IntegrationModelKey = "RisikoklasseIntModel";
 
 	public static Map<String, Object> RisikoklasseOpt01() {
 		VariableMap variableMap = Variables.createVariables().putValue("typeVirksomhet", "Sykehus");

@@ -48,7 +48,7 @@ public class InputsValidation implements JavaDelegate {
 		for (Map.Entry<String, Object> entry : map.entrySet()) {
 			Object value= entry.getValue();
 			execution.setVariable(entry.getKey(), entry.getValue());
-			if(value.toString()!= null) {
+			if(value!= null) {
 				modelInputsVariables.put(entry.getKey(), entry.getValue());
 			}
 		}
