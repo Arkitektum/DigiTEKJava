@@ -4,6 +4,8 @@ import static org.camunda.bpm.engine.test.assertions.ProcessEngineAssertions.ini
 import static org.camunda.bpm.engine.test.assertions.ProcessEngineAssertions.processEngine;
 import static org.camunda.bpm.engine.test.assertions.ProcessEngineAssertions.assertThat;
 import static ark.bpmn.TestData.BrannKlasseTestData.*;
+import ark.bpmn.TestData.BrannKlasseTestData.models;
+
 import org.camunda.bpm.engine.runtime.ProcessInstance;
 import org.camunda.bpm.engine.task.Task;
 import org.camunda.bpm.engine.test.Deployment;
@@ -14,9 +16,8 @@ import org.junit.ClassRule;
 import org.junit.Rule;
 import org.junit.Test;
 
-@Deployment(resources = { "BrannKlasseIntModel.bpmn", "./Bpmn/Brannklasse Model.bpmn",
-		"./Dmn/02_KonsekvensBrannklassifisering.dmn", "./Dmn/02a_Brannklasse.dmn",
-		"./Dmn/02b_BrannklasseKonsekvensBeskrivelse.dmn" })
+@Deployment(resources = { models.BpmnInt_BrannKlasse,models.Bpmn_BrannKlasseModel, models.Dmn_02_KonsekvensBrannklassifisering
+		,models.Dmn_02a_Brannklasse,models.Dmn_02b_BrannklasseKonsekvensBeskrivelse })
 public class BrannKlasseBpmnTests {
 	@ClassRule
 	@Rule
@@ -36,7 +37,7 @@ public class BrannKlasseBpmnTests {
 	}
 
 	@Test
-	public void BrannklasseModel_bpmnOpt01() {
+	public void BrannklasseModel_bpmnOpt02() {
 
 		ProcessInstance processInstance = processEngine().getRuntimeService().startProcessInstanceByKey(ModelKey,
 				BrannklasseOpt02());

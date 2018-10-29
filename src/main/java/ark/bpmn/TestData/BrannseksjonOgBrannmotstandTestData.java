@@ -12,8 +12,8 @@ public class BrannseksjonOgBrannmotstandTestData {
 	public static final String ModelKey = "BrannseksjonOgBrannmotstand";
 
 	public class models {
+		public static final String BpmnInt_BrannseksjonOgBrannmotstand = "BrannseksjonOgBrannmotstandIntModel.bpmn";
 		public static final String Bpmn_BrannseksjonOgBrannmotstand = "./Bpmn/Brannseksjon og Brannmotstand Model.bpmn";
-	    public static final String BpmnInt_BrannseksjonOgBrannmotstand = "BrannseksjonOgBrannmotstandIntModel.bpmn";
 	    public static final String Dmn_03_TiltakStorrelseBrannseksjonBelastning = "./Dmn/03_TiltakStorrelseBrannseksjonBelastning.dmn";
 	    public static final String Dmn_04_BrannmotstandSeksjoneringsvegg = "./Dmn/04_ BrannmotstandSeksjoneringsvegg.dmn";
 	    public static final String Dmn_17_BrannmotstandDorISeksjvegg = "./Dmn/17_BrannmotstandDorISeksjvegg.dmn";

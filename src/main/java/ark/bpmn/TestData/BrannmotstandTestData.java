@@ -13,8 +13,8 @@ public class BrannmotstandTestData {
 	public static final String IntegrationModelKey = "BrannmotstandIntModel";
 
 	public class models {
-		public static final String Bpmn_BrannmotstandModel = "./Bpmn/Brannmotstand Model.bpmn";
 		public static final String BpmnInt_BrannmotstandModelInt = "BrannmotstandModelIntModel.bpmn";
+		public static final String Bpmn_BrannmotstandModel = "./Bpmn/Brannmotstand Model.bpmn";
 		public static final String Dmn_06_BrannmotstandBaerendeBygningsdeler = "./Dmn/06_BrannmotstandBaerendeBygningsdeler.dmn";
 		public static final String Dmn_08a_KlassifiseringTrapperom = "./Dmn/08a_KlassifiseringTrapperom.dmn";
 		public static final String Dmn_08b_BrannmotstandTrapperom = "./Dmn/08b_BrannmotstandTrapperom.dmn";

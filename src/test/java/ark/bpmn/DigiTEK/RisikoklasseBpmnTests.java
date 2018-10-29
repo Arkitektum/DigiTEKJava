@@ -1,6 +1,7 @@
 package ark.bpmn.DigiTEK;
 
 import static ark.bpmn.TestData.RisikoklassenTestData.*;
+import ark.bpmn.TestData.RisikoklassenTestData.models;
 
 import static org.camunda.bpm.engine.test.assertions.ProcessEngineAssertions.init;
 import static org.camunda.bpm.engine.test.assertions.ProcessEngineAssertions.processEngine;
@@ -18,9 +19,8 @@ import org.junit.ClassRule;
 import org.junit.Rule;
 import org.junit.Test;
 
-@Deployment(resources = { "RisikoklassenModelIntModel.bpmn", "./Bpmn/Risikoklasse Model.bpmn",
-		"./Dmn/01_Risikoklassifisering.dmn", "./Dmn/01a_RisikoklasseFraTypeVirksomhet.dmn",
-		"./Dmn/01b_VedleggTilRisikoklasse.dmn" })
+@Deployment(resources = { models.BpmnInt_Risikoklasse,models.Bpmn_RisikoklasseModel,models.Dmn_01_Risikoklassifisering,
+		models.Dmn_01a_RisikoklasseFraTypeVirksomhet, models.Dmn_01b_VedleggTilRisikoklasse })
 public class RisikoklasseBpmnTests {
 	@ClassRule
 	@Rule

@@ -1,21 +1,16 @@
 package ark.bpmn.DigiTEK;
 
 import static org.camunda.bpm.engine.test.assertions.ProcessEngineAssertions.init;
-import static org.camunda.bpm.engine.test.assertions.ProcessEngineAssertions.processEngine;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.entry;
-import static org.camunda.bpm.engine.test.assertions.ProcessEngineAssertions.assertThat;
 import static org.junit.Assert.assertEquals;
 
-import java.util.HashMap;
-
 import static ark.bpmn.TestData.BrannKlasseTestData.*;
+import ark.bpmn.TestData.BrannKlasseTestData.models;
 
 import org.camunda.bpm.dmn.engine.DmnDecisionRuleResult;
 import org.camunda.bpm.dmn.engine.DmnDecisionTableResult;
 import org.camunda.bpm.engine.DecisionService;
-import org.camunda.bpm.engine.runtime.ProcessInstance;
-import org.camunda.bpm.engine.task.Task;
 import org.camunda.bpm.engine.test.Deployment;
 import org.camunda.bpm.engine.test.ProcessEngineRule;
 import org.camunda.bpm.engine.variable.VariableMap;
@@ -37,7 +32,7 @@ public class BrannKlasseDmnTests {
 	}
 
 	@Test
-	@Deployment(resources = "./Dmn/02_KonsekvensBrannklassifisering.dmn")
+	@Deployment(resources = models.Dmn_02_KonsekvensBrannklassifisering)
 	public void KonsekvensBrannklassifisering_DmnTest() {
 
 		DecisionService decisionService = rule.getProcessEngine().getDecisionService();
@@ -51,7 +46,7 @@ public class BrannKlasseDmnTests {
 	}
 
 	@Test
-	@Deployment(resources = "./Dmn/02_KonsekvensBrannklassifisering.dmn")
+	@Deployment(resources =  models.Dmn_02_KonsekvensBrannklassifisering)
 	public void KonsekvensBrannklassifisering_DmnOutputTest() {
 
 		DecisionService decisionService = rule.getProcessEngine().getDecisionService();
@@ -64,7 +59,7 @@ public class BrannKlasseDmnTests {
 	}
 
 	@Test
-	@Deployment(resources = "./Dmn/02a_Brannklasse.dmn")
+	@Deployment(resources = models.Dmn_02a_Brannklasse)
 	public void Brannklasse_DmnTest() {
 
 		DecisionService decisionService = rule.getProcessEngine().getDecisionService();
@@ -76,7 +71,7 @@ public class BrannKlasseDmnTests {
 	}
 
 	@Test
-	@Deployment(resources = "./Dmn/02a_Brannklasse.dmn")
+	@Deployment(resources = models.Dmn_02a_Brannklasse)
 	public void Brannklasse_DmnOutputTest() {
 
 		DecisionService decisionService = rule.getProcessEngine().getDecisionService();
@@ -91,7 +86,7 @@ public class BrannKlasseDmnTests {
 	}
 
 	@Test
-	@Deployment(resources = "./Dmn/02b_BrannklasseKonsekvensBeskrivelse.dmn")
+	@Deployment(resources = models.Dmn_02b_BrannklasseKonsekvensBeskrivelse)
 	public void BrannklasseKonsekvensBeskrivelse_DmnTest() {
 
 		DecisionService decisionService = rule.getProcessEngine().getDecisionService();
@@ -105,7 +100,7 @@ public class BrannKlasseDmnTests {
 	}
 
 	@Test
-	@Deployment(resources = "./Dmn/02b_BrannklasseKonsekvensBeskrivelse.dmn")
+	@Deployment(resources = models.Dmn_02b_BrannklasseKonsekvensBeskrivelse)
 	public void BrannklasseKonsekvensBeskrivelse_DmnOutputTest() {
 
 		DecisionService decisionService = rule.getProcessEngine().getDecisionService();

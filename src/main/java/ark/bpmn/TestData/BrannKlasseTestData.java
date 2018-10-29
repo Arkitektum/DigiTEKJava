@@ -10,7 +10,15 @@ public class BrannKlasseTestData {
 	public static final String UserTaskId = "UserBrannklasseModelOutput";
 	public static final String EndTaskId = "EndBrannklasseIntModel";
 	public static final String ModelKey = "BrannklasseModel";
-
+	
+	public class models {
+		public static final String BpmnInt_BrannKlasse = "BrannKlasseIntModel.bpmn";
+		public static final String Bpmn_BrannKlasseModel = "./Bpmn/Brannklasse Model.bpmn";
+		public static final String Dmn_02_KonsekvensBrannklassifisering ="./Dmn/02_KonsekvensBrannklassifisering.dmn";
+		public static final String Dmn_02a_Brannklasse = "./Dmn/02a_Brannklasse.dmn";
+		public static final String Dmn_02b_BrannklasseKonsekvensBeskrivelse = "./Dmn/02b_BrannklasseKonsekvensBeskrivelse.dmn";
+	}
+	
 	public static Map<String, Object> BrannklasseOpt01() {
 		VariableMap variableMap = Variables.createVariables().putValue("konsekvensAvBrann", "Middels konsekvens");
 		return variableMap;

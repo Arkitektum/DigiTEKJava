@@ -20,12 +20,8 @@ import org.junit.Test;
 
 import ark.bpmn.TestData.BrannmotstandTestData.models;
 
-//@Deployment(resources = { "BrannmotstandModelIntModel.bpmn", "./Bpmn/Brannmotstand Model.bpmn",
-//		"./Dmn/06_BrannmotstandBaerendeBygningsdeler.dmn", "./Dmn/08a_KlassifiseringTrapperom.dmn",
-//		"./Dmn/08b_BrannmotstandTrapperom.dmn",
-//		"./Dmn/13_OverflateKledning.dmn",
-//		"./Dmn/15_BrannmotstandIsolasjon.dmn" })
-@Deployment(resources = {models.Bpmn_BrannmotstandModel,models.BpmnInt_BrannmotstandModelInt,models.Dmn_06_BrannmotstandBaerendeBygningsdeler,models.Dmn_08a_KlassifiseringTrapperom,models.Dmn_08b_BrannmotstandTrapperom
+
+@Deployment(resources = {models.BpmnInt_BrannmotstandModelInt,models.Bpmn_BrannmotstandModel,models.Dmn_06_BrannmotstandBaerendeBygningsdeler,models.Dmn_08a_KlassifiseringTrapperom,models.Dmn_08b_BrannmotstandTrapperom
 		,models.Dmn_13_OverflateKledning,models.Dmn_15_BrannmotstandIsolasjon})
 public class BrannmotstandBpmnTests {
 	@ClassRule

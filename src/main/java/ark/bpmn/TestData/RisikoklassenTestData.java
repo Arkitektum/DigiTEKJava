@@ -11,6 +11,15 @@ public class RisikoklassenTestData {
 	public static final String UserTaskId = "UserRisikoklasseModelOutput";
 	public static final String EndTaskId = "EndRisikoklasseModel";
 	public static final String IntegrationModelKey = "RisikoklasseIntModel";
+	
+	public class models {
+		public static final String BpmnInt_Risikoklasse = "RisikoklasseModelIntModel.bpmn";
+		public static final String Bpmn_RisikoklasseModel = "./Bpmn/Risikoklasse Model.bpmn";
+		public static final String Dmn_01_Risikoklassifisering ="./Dmn/01_Risikoklassifisering.dmn";
+		public static final String Dmn_01a_RisikoklasseFraTypeVirksomhet = "./Dmn/01a_RisikoklasseFraTypeVirksomhet.dmn";
+		public static final String Dmn_01b_VedleggTilRisikoklasse = "./Dmn/01b_VedleggTilRisikoklasse.dmn";
+	}
+	
 
 	public static Map<String, Object> RisikoklasseOpt01() {
 		VariableMap variableMap = Variables.createVariables().putValue("typeVirksomhet", "Sykehus");

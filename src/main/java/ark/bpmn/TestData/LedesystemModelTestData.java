@@ -12,8 +12,8 @@ public class LedesystemModelTestData {
 	public static final String ModelKey = "LedesystemModel";
 
 	public class models {
-		public static final String Bpmn_LedesystemModel = "./Bpmn/Ledesystem Model.bpmn";
 		public static final String BpmnInt_LedesystemModel = "LedesystemModelIntModel.bpmn";
+		public static final String Bpmn_LedesystemModel = "./Bpmn/Ledesystem Model.bpmn";
 		public static final String Dmn_12a_LedesystemEvakuering = "./Dmn/12a_LedesystemEvakuering.dmn";
 		public static final String Dmn_12b_LedesystemEvakueringVarighet = "./Dmn/12b_LedesystemEvakueringVarighet.dmn";
 	}
