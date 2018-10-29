@@ -1,5 +1,6 @@
 package ark.bpmn.DigiTEK;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import org.camunda.bpm.engine.delegate.DelegateExecution;
@@ -39,12 +40,15 @@ public class InputsValidation implements JavaDelegate {
 		model.kravLedesystemEvakuering= CheckBoolean(execution.getVariable("kravLedesystemEvakuering"));
 		model.trappeRomKlasse= CheckString(execution.getVariable("trappeRomKlasse"));
 		
-		Map<String, Object> modelInputsVariables = model.getObjectMap();
+		model.brtArealBygg= CheckInteger(execution.getVariable("brtArealBygg"));
+		model.kravOmHeis= CheckBoolean(execution.getVariable("kravOmHeis"));
+		
+		Map<String, Object> modelInputsVariables = new HashMap<String,Object>();
 		Map<String, Object> map = model.getObjectMap();
 		for (Map.Entry<String, Object> entry : map.entrySet()) {
 			Object value= entry.getValue();
 			execution.setVariable(entry.getKey(), entry.getValue());
-			if(value!= null) {
+			if(value.toString()!= null) {
 				modelInputsVariables.put(entry.getKey(), entry.getValue());
 			}
 		}

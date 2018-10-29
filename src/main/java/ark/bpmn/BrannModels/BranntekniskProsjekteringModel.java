@@ -25,7 +25,11 @@ public class BranntekniskProsjekteringModel {
 	public String kravBrannmotstSeksjVegg;
 	public Object kravLedesystemEvakuering;
 	public String trappeRomKlasse;
-
+	
+	public Integer brtArealBygg;
+	public Object kravOmHeis;
+	
+	
 	public Map<String, Object> getObjectMap() {
 		 Map<String, Object> map = new HashMap<String, Object>();
 		 map.put("typeVirksomhet",typeVirksomhet);
@@ -48,6 +52,8 @@ public class BranntekniskProsjekteringModel {
 		 map.put("kravBrannmotstSeksjVegg",kravBrannmotstSeksjVegg);
 		 map.put("kravLedesystemEvakuering",kravLedesystemEvakuering);
 		 map.put("trappeRomKlasse",trappeRomKlasse);
+		 map.put("brtArealBygg",brtArealBygg);
+		 map.put("kravOmHeis",kravOmHeis);
 		 return map;
 		 }
 
