@@ -32,7 +32,7 @@
     <authorityRequirement>
       <requiredAuthority href="#KnowledgeSource_1ml81a2" />
     </authorityRequirement>
-    <decisionTable>
+    <decisionTable hitPolicy="FIRST">
       <input id="InputClause_1ozwsbp" label="Risikoklasse" camunda:inputVariable="">
         <inputExpression id="LiteralExpression_1tifg7p" typeRef="string">        <text>rkl</text>
 </inputExpression>
@@ -69,6 +69,14 @@
         <inputEntry id="UnaryTests_1oe9qk3">        <text><![CDATA[>8]]></text>
 </inputEntry>
         <outputEntry id="LiteralExpression_00syhe0">        <text><![CDATA["TR3"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-944416230-3">
+        <inputEntry id="UnaryTests_06crwbo">        <text></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_1qqgep4">        <text></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_08uzpqc">        <text><![CDATA["Ukjent"]]></text>
 </outputEntry>
       </rule>
     </decisionTable>

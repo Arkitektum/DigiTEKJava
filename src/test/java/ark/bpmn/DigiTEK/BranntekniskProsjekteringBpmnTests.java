@@ -93,11 +93,12 @@ public class BranntekniskProsjekteringBpmnTests {
 		assertThat(processInstance).task(UserTaskId);
 		Task task = rule.getTaskService().createTaskQuery().singleResult();
 		System.out.println(rule.getRuntimeService().getActivityInstance(processInstance.getId()));
-		Map<String,Object> modelOutputs =(Map<String, Object>) rule.getRuntimeService().getVariable(processInstance.getId(), "modelOutputs");
+		Map<String, Object> variable = (Map<String, Object>) rule.getRuntimeService().getVariable(processInstance.getId(), "modelOutputs");
+		Map<String,Object> modelOutputs =variable;
 		System.out.println(modelOutputs);
 		Integer number = modelOutputs.size();
 		System.out.println(number);
-		assertEquals(number.toString(),"27");
+		assertEquals(number.toString(),"28");
 		rule.getTaskService().complete(task.getId());
 
 		// assertThat(processInstance).isStarted().isEnded().hasPassed(IntegrationModelEndTaskId);

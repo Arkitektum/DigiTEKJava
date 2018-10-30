@@ -56,9 +56,9 @@
 </outputEntry>
       </rule>
       <rule id="row-30955691-1">
-        <inputEntry id="UnaryTests_1p4uwwk">        <text><![CDATA["Ikke krav"]]></text>
+        <inputEntry id="UnaryTests_1p4uwwk">        <text><![CDATA["Ikke angitt"]]></text>
 </inputEntry>
-        <outputEntry id="LiteralExpression_0finajp">        <text><![CDATA["Ikke krav"]]></text>
+        <outputEntry id="LiteralExpression_0finajp">        <text><![CDATA["Ikke angitt"]]></text>
 </outputEntry>
       </rule>
       <rule id="DecisionRule_0izhi0b">

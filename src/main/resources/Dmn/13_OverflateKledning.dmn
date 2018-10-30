@@ -281,6 +281,32 @@
         <outputEntry id="LiteralExpression_03nawdx">        <text><![CDATA["K210 A2-s1,d0 [K1-A]"]]></text>
 </outputEntry>
       </rule>
+      <rule id="row-944416230-2">
+        <inputEntry id="UnaryTests_1c86hu5">        <text></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_0tynlhh">        <text></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_1syohk2">        <text></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_15r9hxw">        <text><![CDATA["Ikke angitt"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1ijd9jn">        <text><![CDATA["Ikke angitt"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_04jk7nz">        <text><![CDATA["Ikke angitt"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0u8trlj">        <text><![CDATA["Ikke angitt"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0ycrdf2">        <text><![CDATA["Ikke angitt"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1ojm0cz">        <text><![CDATA["Ikke angitt"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1gxxj7t">        <text><![CDATA["Ikke angitt"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1ict4qw">        <text><![CDATA["Ikke angitt"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1btwphu">        <text><![CDATA["Ikke angitt"]]></text>
+</outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <inputData id="InputData_19wwpc1" name="Brannseksjon per etasje">

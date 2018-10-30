@@ -22,7 +22,7 @@ import ark.bpmn.TestData.BrannseksjonOgBrannmotstandTestData.models;
 
 
 @Deployment(resources = {models.BpmnInt_BrannseksjonOgBrannmotstand, models.Bpmn_BrannseksjonOgBrannmotstand,models.Dmn_03_TiltakStorrelseBrannseksjonBelastning,models.Dmn_04_BrannmotstandSeksjoneringsvegg,
-		models.Dmn_07_BrannmotstandSkillendeKonstruksjon,models.Dmn_16_BrannmotstandDorRomningsvei,models.Dmn_17_BrannmotstandDorISeksjvegg,models.Dmn_18_BrannmotstandVinduMotstParallellYttervegg,models.Dmn_20_BranncelleRomningUtgang})
+		models.Dmn_07_BrannmotstandSkillendeKonstruksjon,models.Dmn_16_BrannmotstandDorRomningsvei,models.Dmn_17_BrannmotstandDorISeksjvegg,models.Dmn_18_BrannmotstandVinduMotstParallellYttervegg,models.Dmn_19_BrannmotstandVinduInnvHjørne})
 public class BrannseksjonOgBrannmotstandBpmnTests {
 	@ClassRule
 	@Rule

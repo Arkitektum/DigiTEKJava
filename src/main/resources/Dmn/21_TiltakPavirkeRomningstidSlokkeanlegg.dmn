@@ -27,12 +27,12 @@
         <outputEntry id="LiteralExpression_D8">        <text><![CDATA["Brannslokkeanlegg"]]></text>
 </outputEntry>
       </rule>
-      <rule id="rowRule_9">
-        <inputEntry id="B9">        <text><![CDATA["RKL1","RKL2,RKL3,RKL5"]]></text>
+      <rule id="row-944416230-9">
+        <inputEntry id="UnaryTests_0g6b7um">        <text></text>
 </inputEntry>
-        <inputEntry id="C9">        <text></text>
+        <inputEntry id="UnaryTests_1jimsjd">        <text></text>
 </inputEntry>
-        <outputEntry id="LiteralExpression_D9">        <text><![CDATA["Ikke angitt"]]></text>
+        <outputEntry id="LiteralExpression_0api74r">        <text><![CDATA["Ikke angitt"]]></text>
 </outputEntry>
       </rule>
     </decisionTable>

@@ -106,7 +106,7 @@ public class KravTilBranntiltaktModelTestData {
 		VariableMap variableMap = Variables.createVariables()
 				.putValue("rkl", "RKL2")
 				.putValue("typeVirksomhet", "Kontor")
-				.putValue("brtArealPrEtasje", 1201);
+				.putValue("brtArealBygg", 1201);
 		return variableMap;
 	}
 }

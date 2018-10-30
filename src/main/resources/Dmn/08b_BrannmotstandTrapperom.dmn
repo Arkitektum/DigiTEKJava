@@ -1,72 +1,55 @@
-<?xml version="1.0" encoding="utf-8"?>
-<definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="Excel2Dmn_25-07-18" name="08b_BrannmotstandTrapperom" namespace="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="Excel2Dmn_25-07-18" name="08b_BrannmotstandTrapperom" namespace="http://www.omg.org/spec/DMN/20151101/dmn.xsd">
   <decision id="BrannmotstandTrapperom" name="Brannmotstand trapperom">
     <decisionTable id="decisionTable" hitPolicy="FIRST">
       <input id="bkl" label="Brannklasse">
-        <inputExpression id="exp_bkl" label="label_bkl" typeRef="string">
-          <text>bkl</text>
-        </inputExpression>
+        <inputExpression id="exp_bkl" label="label_bkl" typeRef="string">        <text>bkl</text>
+</inputExpression>
       </input>
       <input id="trappeRomKlasse" label="Trapperom">
-        <inputExpression id="exp_trappeRomKlasse" label="label_trappeRomKlasse" typeRef="string">
-          <text>trappeRomKlasse</text>
-        </inputExpression>
+        <inputExpression id="exp_trappeRomKlasse" label="label_trappeRomKlasse" typeRef="string">        <text>trappeRomKlasse</text>
+</inputExpression>
       </input>
       <output id="kravBrannmotstandRundtTrapperom_Id" label="Konstruksjoner som omgir trapperom" name="kravBrannmotstandRundtTrapperom" typeRef="string" />
       <rule id="rowRule_7">
-        <inputEntry id="B7">
-          <text>"BKL1"</text>
-        </inputEntry>
-        <inputEntry id="C7">
-          <text>"TR1","TR2"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_D7">
-          <text>"EI 30 [B 30]"</text>
-        </outputEntry>
+        <inputEntry id="B7">        <text><![CDATA["BKL1"]]></text>
+</inputEntry>
+        <inputEntry id="C7">        <text><![CDATA["TR1","TR2"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_D7">        <text><![CDATA["EI 30 [B 30]"]]></text>
+</outputEntry>
       </rule>
       <rule id="rowRule_8">
-        <inputEntry id="B8">
-          <text>"BKL1"</text>
-        </inputEntry>
-        <inputEntry id="C8">
-          <text>"TR3"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_D8">
-          <text>"Ikke angitt"</text>
-        </outputEntry>
+        <inputEntry id="B8">        <text><![CDATA["BKL1"]]></text>
+</inputEntry>
+        <inputEntry id="C8">        <text><![CDATA["TR3"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_D8">        <text><![CDATA["Ikke angitt"]]></text>
+</outputEntry>
       </rule>
       <rule id="rowRule_9">
-        <inputEntry id="B9">
-          <text>"BKL2"</text>
-        </inputEntry>
-        <inputEntry id="C9">
-          <text>"TR1","TR2","TR3"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_D9">
-          <text>"EI 60 [B 60]"</text>
-        </outputEntry>
+        <inputEntry id="B9">        <text><![CDATA["BKL2"]]></text>
+</inputEntry>
+        <inputEntry id="C9">        <text><![CDATA["TR1","TR2","TR3"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_D9">        <text><![CDATA["EI 60 [B 60]"]]></text>
+</outputEntry>
       </rule>
       <rule id="rowRule_10">
-        <inputEntry id="B10">
-          <text>"BKL3"</text>
-        </inputEntry>
-        <inputEntry id="C10">
-          <text>"TR1","TR2","TR3"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_D10">
-          <text>"EI 60 A2-s1,d0 [A 60]"</text>
-        </outputEntry>
+        <inputEntry id="B10">        <text><![CDATA["BKL3"]]></text>
+</inputEntry>
+        <inputEntry id="C10">        <text><![CDATA["TR1","TR2","TR3"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_D10">        <text><![CDATA["EI 60 A2-s1,d0 [A 60]"]]></text>
+</outputEntry>
       </rule>
       <rule id="rowRule_11">
-        <inputEntry id="B11">
-          <text>"Ikke angitt"</text>
-        </inputEntry>
-        <inputEntry id="C11">
-          <text />
-        </inputEntry>
-        <outputEntry id="LiteralExpression_D11">
-          <text>"Ikke angitt"</text>
-        </outputEntry>
+        <inputEntry id="B11">        <text></text>
+</inputEntry>
+        <inputEntry id="C11">        <text></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_D11">        <text><![CDATA["Ikke angitt"]]></text>
+</outputEntry>
       </rule>
     </decisionTable>
   </decision>

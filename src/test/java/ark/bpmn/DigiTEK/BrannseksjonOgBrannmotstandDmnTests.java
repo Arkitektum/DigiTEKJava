@@ -169,22 +169,22 @@ public class BrannseksjonOgBrannmotstandDmnTests {
 	}
 	@Test
 	@Deployment(resources ="./Dmn/18_BrannmotstandVinduMotstParallellYttervegg.dmn")
-	public void BrannmotstandMotstaendeVinduerYttervegger_DmnTest() {
+	public void BrannmotstandVinduMotstParallellYttervegg_DmnTest() {
 
 		DecisionService decisionService = rule.getProcessEngine().getDecisionService();
 		// Evaluate DMN
-		DmnDecisionTableResult decisionResult = decisionService.evaluateDecisionTableByKey("BrannmotstandMotstaendeVinduerYttervegger",
-				Dmn_BrannmotstandMotstaendeVinduerYttervegger());
+		DmnDecisionTableResult decisionResult = decisionService.evaluateDecisionTableByKey("BrannmotstandVinduMotstParallellYttervegg",
+				Dmn_BrannmotstandVinduMotstParallellYttervegg());
 		assertEquals(1, decisionResult.getResultList().size());
 	}
 	@Test
 	@Deployment(resources ="./Dmn/18_BrannmotstandVinduMotstParallellYttervegg.dmn")
-	public void BrannmotstandMotstaendeVinduerYttervegger_DmnOutputTest() {
+	public void BrannmotstandVinduMotstParallellYttervegg_DmnOutputTest() {
 
 		DecisionService decisionService = rule.getProcessEngine().getDecisionService();
 		// Evaluate DMN
-		DmnDecisionTableResult decisionResult = decisionService.evaluateDecisionTableByKey("BrannmotstandMotstaendeVinduerYttervegger",
-				Dmn_BrannmotstandMotstaendeVinduerYttervegger());
+		DmnDecisionTableResult decisionResult = decisionService.evaluateDecisionTableByKey("BrannmotstandVinduMotstParallellYttervegg",
+				Dmn_BrannmotstandVinduMotstParallellYttervegg());
 		DmnDecisionRuleResult result = decisionResult.getSingleResult();
 		System.out.println(result);
 	    assertThat(result)
@@ -194,32 +194,28 @@ public class BrannseksjonOgBrannmotstandDmnTests {
 	      );
 	}	
 	@Test
-	@Deployment(resources ="./Dmn/20_BranncelleRomningUtgang.dmn")
-	public void BranncelleRomningUtgang_DmnTest() {
+	@Deployment(resources =models.Dmn_19_BrannmotstandVinduInnvHjørne)
+	public void BrannmotstandVinduInnvendigHjorne_DmnTest() {
 
 		DecisionService decisionService = rule.getProcessEngine().getDecisionService();
 		// Evaluate DMN
-		DmnDecisionTableResult decisionResult = decisionService.evaluateDecisionTableByKey("BranncelleRomningUtgang",
-				Dmn_BranncelleRomningUtgang());
+		DmnDecisionTableResult decisionResult = decisionService.evaluateDecisionTableByKey("BrannmotstandVinduInnvendigHjorne",
+				Dmn_BrannmotstandVinduInnvendigHjorne());
 		assertEquals(1, decisionResult.getResultList().size());
 	}
 	@Test
-	@Deployment(resources ="./Dmn/20_BranncelleRomningUtgang.dmn")
-	public void BranncelleRomningUtgang_DmnOutputTest() {
+	@Deployment(resources =models.Dmn_19_BrannmotstandVinduInnvHjørne)
+	public void BrannmotstandVinduInnvendigHjorne_DmnOutputTest() {
 
 		DecisionService decisionService = rule.getProcessEngine().getDecisionService();
 		// Evaluate DMN
-		DmnDecisionTableResult decisionResult = decisionService.evaluateDecisionTableByKey("BranncelleRomningUtgang",
-				Dmn_BranncelleRomningUtgang());
+		DmnDecisionTableResult decisionResult = decisionService.evaluateDecisionTableByKey("BrannmotstandVinduInnvendigHjorne",
+				Dmn_BrannmotstandVinduInnvendigHjorne());
 		DmnDecisionRuleResult result = decisionResult.getSingleResult();
 		System.out.println(result);
 	    assertThat(result)
 	      .containsOnly(
-	        entry("kravFriBreddeRomnVei","1cm pr.pers / min. 0,9m" ),
-	        entry("kravMinFriDorBredde", 0.9),
-	        entry("kravMaxLengdeFluktvei",30 ),
-	        entry("avstandDorIBranncelle1Dor", 15),
-	        entry("kravAvstandDorIBranncelleflereDorer", 30)	        
-	      );
+	        entry("kravAvstandInnvHjorne1Vindu","E 30 [F 30]" ),
+	        entry("kravAvstandInnvHjorneBegge","EI 15"));
 	}	
 }

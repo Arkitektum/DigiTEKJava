@@ -48,10 +48,10 @@
         <outputEntry id="LiteralExpression_0ft2hnr">        <text><![CDATA["EI-240C"]]></text>
 </outputEntry>
       </rule>
-      <rule id="row-948887753-26">
-        <inputEntry id="UnaryTests_1b8wweg">        <text><![CDATA["Ikke krav"]]></text>
+      <rule id="row-944416230-5">
+        <inputEntry id="UnaryTests_1wef9lu">        <text><![CDATA["Analyse"]]></text>
 </inputEntry>
-        <outputEntry id="LiteralExpression_0o7o2sc">        <text><![CDATA["Ikke krav"]]></text>
+        <outputEntry id="LiteralExpression_0c5162r">        <text><![CDATA["Analyse"]]></text>
 </outputEntry>
       </rule>
       <rule id="row-811958445-1">

@@ -25,7 +25,7 @@
     <authorityRequirement>
       <requiredAuthority href="#KnowledgeSource_0ldfjr0" />
     </authorityRequirement>
-    <decisionTable>
+    <decisionTable hitPolicy="FIRST">
       <input id="InputClause_151z0jf" label="Brannklasse" camunda:inputVariable="">
         <inputExpression id="LiteralExpression_02suqda" typeRef="string">        <text>bkl</text>
 </inputExpression>
@@ -94,21 +94,21 @@
 </outputEntry>
       </rule>
       <rule id="row-542513221-13">
-        <inputEntry id="UnaryTests_176xmxe">        <text><![CDATA["Ikke krav"]]></text>
+        <inputEntry id="UnaryTests_176xmxe">        <text></text>
 </inputEntry>
-        <outputEntry id="LiteralExpression_1od57oa">        <text><![CDATA["Ikke krav"]]></text>
+        <outputEntry id="LiteralExpression_1od57oa">        <text><![CDATA["Ikke angitt"]]></text>
 </outputEntry>
-        <outputEntry id="LiteralExpression_1yjo0fj">        <text><![CDATA["Ikke krav"]]></text>
+        <outputEntry id="LiteralExpression_1yjo0fj">        <text><![CDATA["Ikke angitt"]]></text>
 </outputEntry>
-        <outputEntry id="LiteralExpression_0msfcgm">        <text><![CDATA["Ikke krav"]]></text>
+        <outputEntry id="LiteralExpression_0msfcgm">        <text><![CDATA["Ikke angitt"]]></text>
 </outputEntry>
-        <outputEntry id="LiteralExpression_0yz79nq">        <text><![CDATA["Ikke krav"]]></text>
+        <outputEntry id="LiteralExpression_0yz79nq">        <text><![CDATA["Ikke angitt"]]></text>
 </outputEntry>
-        <outputEntry id="LiteralExpression_0qp02ie">        <text><![CDATA["Ikke krav"]]></text>
+        <outputEntry id="LiteralExpression_0qp02ie">        <text><![CDATA["Ikke angitt"]]></text>
 </outputEntry>
-        <outputEntry id="LiteralExpression_1sol65k">        <text><![CDATA["Ikke krav"]]></text>
+        <outputEntry id="LiteralExpression_1sol65k">        <text><![CDATA["Ikke angitt"]]></text>
 </outputEntry>
-        <outputEntry id="LiteralExpression_07gl7la">        <text><![CDATA["Ikke krav"]]></text>
+        <outputEntry id="LiteralExpression_07gl7la">        <text><![CDATA["Ikke angitt"]]></text>
 </outputEntry>
       </rule>
     </decisionTable>

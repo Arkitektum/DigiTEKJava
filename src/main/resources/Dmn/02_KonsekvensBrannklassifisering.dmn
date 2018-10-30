@@ -11,7 +11,7 @@
     <informationRequirement>
       <requiredInput href="#InputData_0fr0u56" />
     </informationRequirement>
-    <decisionTable id="decisionTable">
+    <decisionTable id="decisionTable" hitPolicy="FIRST">
       <input id="input1" label="Konsekvens av brann" camunda:inputVariable="">
         <inputExpression id="inputExpression1" typeRef="string">        <text>konsekvensAvBrann</text>
 </inputExpression>
@@ -39,6 +39,12 @@
         <inputEntry id="UnaryTests_1hddcgs">        <text><![CDATA["Saerlig stor konsekvens"]]></text>
 </inputEntry>
         <outputEntry id="LiteralExpression_1o9hlhw">        <text><![CDATA["BKL4"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-944416230-1">
+        <inputEntry id="UnaryTests_1xrjq1u">        <text></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0gos462">        <text><![CDATA["Udefinert"]]></text>
 </outputEntry>
       </rule>
     </decisionTable>

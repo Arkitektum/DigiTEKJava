@@ -20,7 +20,7 @@ public class BrannseksjonOgBrannmotstandTestData {
 	    public static final String Dmn_07_BrannmotstandSkillendeKonstruksjon = "./Dmn/07_BrannmotstandSkillendeKonstruksjon.dmn";
 	    public static final String Dmn_16_BrannmotstandDorRomningsvei = "./Dmn/16_BrannmotstandDorRomningsvei.dmn";
 	    public static final String Dmn_18_BrannmotstandVinduMotstParallellYttervegg = "./Dmn/18_BrannmotstandVinduMotstParallellYttervegg.dmn";
-	    public static final String Dmn_20_BranncelleRomningUtgang = "./Dmn/20_BranncelleRomningUtgang.dmn";
+	    public static final String Dmn_19_BrannmotstandVinduInnvHjørne = "./Dmn/19_BrannmotstandVinduInnvHjørne.dmn";
 
 	}
 
@@ -35,8 +35,10 @@ public class BrannseksjonOgBrannmotstandTestData {
 				.putValue("typeVirksomhet", "Bolig")
 				.putValue("brannenergi", 801)
 				.putValue("arealBrannseksjonPrEtasje", 1900)
+				.putValue("avstandMellomMotstVinduerIMeter",3)
 				.putValue("rkl", "RKL1")
 				.putValue("bkl", "BKL1");
+		
 		return variableMap;
 	}
 
@@ -67,14 +69,16 @@ public class BrannseksjonOgBrannmotstandTestData {
 		return variableMap;
 	}
 
-	public static Map<String, Object> Dmn_BrannmotstandMotstaendeVinduerYttervegger() {
+	public static Map<String, Object> Dmn_BrannmotstandVinduMotstParallellYttervegg() {
 		VariableMap variableMap = Variables.createVariables().putValue("bkl", "BKL2")
 				.putValue("avstandMellomMotstVinduerIMeter", 2);
 		return variableMap;
 	}
 
-	public static Map<String, Object> Dmn_BranncelleRomningUtgang() {
-		VariableMap variableMap = Variables.createVariables().putValue("rkl", "RKL4");
+	public static Map<String, Object> Dmn_BrannmotstandVinduInnvendigHjorne() {
+		VariableMap variableMap = Variables.createVariables()
+				.putValue("bkl", "BKL1")
+				.putValue("avstandMellomMotstVinduerIMeter", 3);
 		return variableMap;
 	}
 

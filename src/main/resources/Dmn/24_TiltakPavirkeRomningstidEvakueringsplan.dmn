@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="Excel2Dmn_29-48-18" name="24_TiltakPavirkeRomningstidEvakueringsplan" namespace="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd">
+<definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="Excel2Dmn_30-03-18" name="24_TiltakPavirkeRomningstidEvakueringsplan" namespace="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd">
   <decision id="TiltakRomningstidEvakueringsplan" name="Tiltak øke rømningstid med evakueringsplan">
     <decisionTable id="decisionTable" hitPolicy="FIRST">
       <input id="rkl" label="Risikoklasse">
@@ -12,9 +12,9 @@
           <text>typeVirksomhet</text>
         </inputExpression>
       </input>
-      <input id="brtArealPrEtasje" label="Brutto areal">
-        <inputExpression id="exp_brtArealPrEtasje" label="label_brtArealPrEtasje" typeRef="integer">
-          <text>brtArealPrEtasje</text>
+      <input id="brtArealBygg" label="Brt.areal hele bygget">
+        <inputExpression id="exp_brtArealBygg" label="label_brtArealBygg" typeRef="integer">
+          <text>brtArealBygg</text>
         </inputExpression>
       </input>
       <output id="tiltakPavirkeRomningstid_Id" label="Tiltak for å påvirke rømningstider" name="tiltakPavirkeRomningstid" typeRef="string" />

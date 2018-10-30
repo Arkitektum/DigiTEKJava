@@ -1,11 +1,13 @@
 package ark.bpmn.DigiTEK;
 
 import static ark.bpmn.TestData.BrannmotstandTestData.*;
-
+import static ark.bpmn.TestData.KravTilBranntiltaktModelTestData.Dmn_TiltakRomningstidEvakueringsplan;
 import static org.camunda.bpm.engine.test.assertions.ProcessEngineAssertions.init;
 import static org.camunda.bpm.engine.test.assertions.ProcessEngineAssertions.assertThat;
 import static org.assertj.core.api.Assertions.entry;
 import static org.junit.Assert.assertEquals;
+
+import java.util.Map;
 
 import org.camunda.bpm.dmn.engine.DmnDecisionRuleResult;
 import org.camunda.bpm.dmn.engine.DmnDecisionTableResult;
@@ -75,10 +77,13 @@ public class BrannmotstandDmnTests {
 	public void KlassifiseringTrapperom_DmnOutputTest() {
 
 		DecisionService decisionService = rule.getProcessEngine().getDecisionService();
+		Map<String, Object> variables = Dmn_KlassifiseringTrapperom();
 		// Evaluate DMN
 		DmnDecisionTableResult decisionResult = decisionService.evaluateDecisionTableByKey("KlassifiseringTrapperom",
-				Dmn_KlassifiseringTrapperom());
+				variables);
 		DmnDecisionRuleResult result = decisionResult.getSingleResult();
+		System.out.println("DmnInput: " + variables);
+		System.out.println("DmnOutput: " + result);
 		assertThat(result).containsOnly(entry("trappeRomKlasse", "TR2"));
 	}
 
