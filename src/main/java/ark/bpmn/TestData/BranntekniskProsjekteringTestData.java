@@ -25,7 +25,7 @@ public class BranntekniskProsjekteringTestData {
 		public static final String Dmn_08a_KlassifiseringTrapperom = "./Dmn/08a_KlassifiseringTrapperom.dmn";
 		public static final String Dmn_08b_BrannmotstandTrapperom = "./Dmn/08b_BrannmotstandTrapperom.dmn";
 		public static final String Dmn_13_OverflateKledning = "./Dmn/13_OverflateKledning.dmn";
-		public static final String Dmn_15_BrannmotstandIsolasjon = "./Dmn/15_BrannmotstandIsolasjon.dmn";
+//		public static final String Dmn_15_BrannmotstandIsolasjon = "./Dmn/15_BrannmotstandIsolasjon.dmn";
 		//BrannsekjonOgBrannmostand
 		public static final String Bpmn_BrannseksjonOgBrannmotstand = "./Bpmn/Brannseksjon og Brannmotstand Model.bpmn";
 	    public static final String Dmn_03_TiltakStorrelseBrannseksjonBelastning = "./Dmn/03_TiltakStorrelseBrannseksjonBelastning.dmn";
@@ -39,7 +39,7 @@ public class BranntekniskProsjekteringTestData {
 	    public static final String Bpmn_KravTilBranntiltaktModel = "./Bpmn/Krav til branntiltak Model.bpmn";
 	    public static final String Dmn_10a_BrannalarmKategori = "./Dmn/10a_BrannalarmKategori.dmn";
 	    public static final String Dmn_10b_DetektorBrannalarmKategori = "./Dmn/10b_DetektorBrannalarmKategori.dmn";
-	    public static final String Dmn_10b_KravBranndetektorRom = "./Dmn/10b_KravBranndetektorRom.dmn";
+//	    public static final String Dmn_10b_KravBranndetektorRom = "./Dmn/10b_KravBranndetektorRom.dmn";
 	    public static final String Dmn_11_TiltakManuellBrannslokking = "./Dmn/11_TiltakManuellBrannslokking.dmn";
 	    public static final String Dmn_19_BrannmotstandVinduInnvHjørne = "./Dmn/19_BrannmotstandVinduInnvHjørne.dmn";
 	    public static final String Dmn_21_TiltakPavirkeRomningstidSlokkeanlegg = "./Dmn/21_TiltakPavirkeRomningstidSlokkeanlegg.dmn";

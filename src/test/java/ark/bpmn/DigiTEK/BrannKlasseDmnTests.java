@@ -5,6 +5,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.entry;
 import static org.junit.Assert.assertEquals;
 
+import java.util.Map;
+
 import static ark.bpmn.TestData.BrannKlasseTestData.*;
 import ark.bpmn.TestData.BrannKlasseTestData.models;
 
@@ -37,24 +39,25 @@ public class BrannKlasseDmnTests {
 
 		DecisionService decisionService = rule.getProcessEngine().getDecisionService();
 		// Set input variables
-		VariableMap variablesDmn = Variables.createVariables().putValue("konsekvensAvBrann", "Middels konsekvens");
-
 		DmnDecisionTableResult decisionResult = decisionService
-				.evaluateDecisionTableByKey("KonsekvensBrannklassifisering", BrannklasseOpt01());
+				.evaluateDecisionTableByKey("KonsekvensBrannklassifisering", Dmn_KonsekvensBrannklassifisering());
 
 		assertEquals(1, decisionResult.getResultList().size());
 	}
 
 	@Test
-	@Deployment(resources =  models.Dmn_02_KonsekvensBrannklassifisering)
+	@Deployment(resources = models.Dmn_02_KonsekvensBrannklassifisering)
 	public void KonsekvensBrannklassifisering_DmnOutputTest() {
 
+		Map<String, Object> variables = Dmn_KonsekvensBrannklassifisering();
 		DecisionService decisionService = rule.getProcessEngine().getDecisionService();
+
 		// Evaluate DMN
 		DmnDecisionTableResult decisionResult = decisionService
-				.evaluateDecisionTableByKey("KonsekvensBrannklassifisering", Dmn_KonsekvensBrannklassifisering());
+				.evaluateDecisionTableByKey("KonsekvensBrannklassifisering", variables);
 		DmnDecisionRuleResult result = decisionResult.getSingleResult();
-		System.out.println(result);
+		System.out.println("DmnInput: " + variables);
+		System.out.println("DmnOutput: " + result);
 		assertThat(result).containsOnly(entry("bkl", "BKL2"));
 	}
 
@@ -65,7 +68,7 @@ public class BrannKlasseDmnTests {
 		DecisionService decisionService = rule.getProcessEngine().getDecisionService();
 		// Set input variables
 		DmnDecisionTableResult decisionResult = decisionService.evaluateDecisionTableByKey("Brannklasse",
-				BrannklasseOpt02());
+				Dmn_Brannklasse());
 		System.out.println(decisionResult.getResultList());
 		assertEquals(1, decisionResult.getResultList().size());
 	}
@@ -74,14 +77,16 @@ public class BrannKlasseDmnTests {
 	@Deployment(resources = models.Dmn_02a_Brannklasse)
 	public void Brannklasse_DmnOutputTest() {
 
+		Map<String, Object> variables = Dmn_Brannklasse();
 		DecisionService decisionService = rule.getProcessEngine().getDecisionService();
 		// Evaluate DMN
-		DmnDecisionTableResult decisionResult = decisionService.evaluateDecisionTableByKey("Brannklasse",
-				Dmn_Brannklasse());
+		DmnDecisionTableResult decisionResult = decisionService.evaluateDecisionTableByKey("Brannklasse", variables);
 		DmnDecisionRuleResult result = decisionResult.getSingleResult();
-		System.out.println(result);
-		assertThat(result).containsOnly(
-				entry("bkl", "BKL1"),
+		// Print results
+		System.out.println("DmnInput: " + variables);
+		System.out.println("DmnOutput: " + result);
+		// test
+		assertThat(result).containsOnly(entry("bkl", "BKL1"),
 				entry("merknadBkl", "Bruttoareal per etasje kan ikke økes ved seksjonering."));
 	}
 
@@ -103,14 +108,16 @@ public class BrannKlasseDmnTests {
 	@Deployment(resources = models.Dmn_02b_BrannklasseKonsekvensBeskrivelse)
 	public void BrannklasseKonsekvensBeskrivelse_DmnOutputTest() {
 
+		Map<String, Object> variables = Dmn_BrannklasseKonsekvensBeskrivelse();
 		DecisionService decisionService = rule.getProcessEngine().getDecisionService();
 		// Evaluate DMN
-		DmnDecisionTableResult decisionResult = decisionService
-				.evaluateDecisionTableByKey("BrannklasseKonsekvensBeskrivelse", Dmn_BrannklasseKonsekvensBeskrivelse());
+		DmnDecisionTableResult decisionResult = decisionService.evaluateDecisionTableByKey("BrannklasseKonsekvensBeskrivelse", variables);
 		DmnDecisionRuleResult result = decisionResult.getSingleResult();
-		System.out.println(result);
-		assertThat(result).containsOnly(
-				entry("konsekvensAvBrann", "Middels konsekvens"));
+		// Print results
+		System.out.println("DmnInput: " + variables);
+		System.out.println("DmnOutput: " + result);
+		// test
+		assertThat(result).containsOnly(entry("konsekvensAvBrann", "Middels konsekvens"));
 	}
 
 }

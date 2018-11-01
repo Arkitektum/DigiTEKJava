@@ -8,7 +8,8 @@ public class BranntekniskProsjekteringModel {
 	public Integer antallEtasjer;
 	public Integer brtArealPrEtasje;
 	public Object utgangTerrengAlleBoenheter;
-	public String bareSporadiskPersonopphold;
+	
+	public Object bareSporadiskPersonopphold;
 	public Object alleKjennerRomningsVeiene;
 	public Object beregnetForOvernatting;
 	public Object liteBrannfarligAktivitet;
@@ -23,7 +24,7 @@ public class BranntekniskProsjekteringModel {
 	public Integer brannalarmKategori;
 	public String brannTiltakStrSeksjonBelastning;
 	public String kravBrannmotstSeksjVegg;
-	public Object kravLedesystemEvakuering;
+	public Boolean kravLedesystemEvakuering;
 	public String trappeRomKlasse;
 	
 	public Integer brtArealBygg;

@@ -44,7 +44,7 @@
       </bpmn:scriptTask>
       <bpmn:sequenceFlow id="SequenceFlow_1s06r0z" sourceRef="StartEvent_071xy4b" targetRef="ExclusiveGateway_1xl2ipr" />
       <bpmn:sequenceFlow id="SequenceFlow_10qve58" name="Yes" sourceRef="ExclusiveGateway_1xl2ipr" targetRef="BusinessRuleTask_0d91nss">
-        <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${not empty typeVirksomhet}</bpmn:conditionExpression>
+        <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${typeVirksomhet != null}</bpmn:conditionExpression>
       </bpmn:sequenceFlow>
       <bpmn:sequenceFlow id="SequenceFlow_173agqo" sourceRef="BusinessRuleTask_0d91nss" targetRef="ScriptTask_0f4o6sz" />
       <bpmn:sequenceFlow id="SequenceFlow_0y9d8o5" sourceRef="ScriptTask_0f4o6sz" targetRef="BusinessRuleTask_1qh00ad" />

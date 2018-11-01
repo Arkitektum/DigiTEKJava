@@ -6,8 +6,6 @@ import static org.camunda.bpm.engine.test.assertions.ProcessEngineAssertions.ini
 import static org.camunda.bpm.engine.test.assertions.ProcessEngineAssertions.processEngine;
 
 import org.camunda.bpm.engine.runtime.ProcessInstance;
-import org.camunda.bpm.engine.task.Task;
-
 import static org.camunda.bpm.engine.test.assertions.ProcessEngineAssertions.assertThat;
 
 import org.camunda.bpm.engine.test.Deployment;
@@ -21,8 +19,9 @@ import org.junit.Test;
 import ark.bpmn.TestData.KravTilBranntiltaktModelTestData.models;
 
 
-@Deployment(resources = {models.BpmnInt_KravTilBranntiltakt, models.Bpmn_KravTilBranntiltaktModel,models.Dmn_10a_BrannalarmKategori,models.Dmn_10b_DetektorBrannalarmKategori,models.Dmn_10b_KravBranndetektorRom
-		,models.Dmn_11_TiltakManuellBrannslokking,models.Dmn_19_BrannmotstandVinduInnvHjørne,models.Dmn_21_TiltakPavirkeRomningstidSlokkeanlegg,models.Dmn_22_TiltakPavirkeRomningstidAlarmanlegg,models.Dmn_23_TiltakPavirkeRomningstidLedesystem
+@Deployment(resources = {models.Bpmn_KravTilBranntiltaktModel,models.Dmn_10a_BrannalarmKategori,models.Dmn_10b_DetektorBrannalarmKategori
+		,models.Dmn_11_TiltakManuellBrannslokking,models.Dmn_20_BranncelleRomningUtgang,models.Dmn_21_TiltakPavirkeRomningstidSlokkeanlegg,models.Dmn_22_TiltakPavirkeRomningstidAlarmanlegg,
+		models.Dmn_23_TiltakPavirkeRomningstidLedesystem
 		,models.Dmn_24_TiltakPavirkeRomningstidEvakueringsplan})
 public class KravTilBranntiltakBpmnTests {
 	@ClassRule
@@ -35,34 +34,16 @@ public class KravTilBranntiltakBpmnTests {
 	}
 
 	@Test
-	public void KravTilBranntiltakt_bpmnOpt01() {
-
-		ProcessInstance processInstance = processEngine().getRuntimeService().startProcessInstanceByKey(ModelKey,
-				KravTilBranntiltaktOpt01());
-
-		assertThat(processInstance).isStarted().isEnded();
-	}
-
-	@Test
-	public void KravTilBranntiltakt_bpmnOpt02() {
-
-		ProcessInstance processInstance = processEngine().getRuntimeService().startProcessInstanceByKey(ModelKey,
-				KravTilBranntiltaktOpt02());
-
-		assertThat(processInstance).isStarted().isEnded();
-	}
-
-	@Test
-	public void KravTilBranntiltakt_IntegrationTest() {
+	public void KravTilBranntiltaktModel_AntallEtasjer_Test() {
 		ProcessInstance processInstance = processEngine().getRuntimeService()
-				.startProcessInstanceByKey(IntegrationModelKey, KravTilBranntiltaktOpt01());
-
-		assertThat(processInstance).task(UserTaskId);
-		Task task = rule.getTaskService().createTaskQuery().singleResult();
-		System.out.println(rule.getRuntimeService().getActivityInstance(processInstance.getId()));
-		rule.getTaskService().complete(task.getId());
-
-		// assertThat(processInstance).isStarted().isEnded().hasPassed(IntegrationModelEndTaskId);
-		assertThat(processInstance).isStarted().isEnded().hasPassed(EndTaskId);
+				.startProcessInstanceByKey(ModelKey, KravTilBranntiltakt_AntallEtasjer_Test());
+		assertThat(processInstance).isStarted().isEnded();
 	}
+	@Test
+	public void KravTilBranntiltaktModel_IkkeAntallEtasjer_Test() {
+		ProcessInstance processInstance = processEngine().getRuntimeService()
+				.startProcessInstanceByKey(ModelKey, KravTilBranntiltakt_IkkeAntallEtasjer_Test());
+		assertThat(processInstance).isStarted().isEnded();
+	}
+
 }

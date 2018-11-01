@@ -12,6 +12,8 @@ import java.util.Map;
 import org.camunda.bpm.engine.runtime.ProcessInstance;
 import org.camunda.bpm.engine.task.Task;
 
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.entry;
 import static org.camunda.bpm.engine.test.assertions.ProcessEngineAssertions.assertThat;
 
 import org.camunda.bpm.engine.test.Deployment;
@@ -30,18 +32,17 @@ import org.junit.Test;
 		models.Dmn_02b_BrannklasseKonsekvensBeskrivelse
 		// brannMostand
 		, models.Bpmn_BrannmotstandModel, models.Dmn_06_BrannmotstandBaerendeBygningsdeler,
-		models.Dmn_08a_KlassifiseringTrapperom, models.Dmn_08b_BrannmotstandTrapperom, models.Dmn_13_OverflateKledning,
+		models.Dmn_08a_KlassifiseringTrapperom, models.Dmn_08b_BrannmotstandTrapperom, models.Dmn_13_OverflateKledning
 		// BrannsekjonOgBrannmostand
-		models.Bpmn_BrannseksjonOgBrannmotstand, models.Dmn_03_TiltakStorrelseBrannseksjonBelastning,
+		, models.Bpmn_BrannseksjonOgBrannmotstand, models.Dmn_03_TiltakStorrelseBrannseksjonBelastning,
 		models.Dmn_04_BrannmotstandSeksjoneringsvegg, models.Dmn_07_BrannmotstandSkillendeKonstruksjon,
 		models.Dmn_16_BrannmotstandDorRomningsvei, models.Dmn_17_BrannmotstandDorISeksjvegg,
 		models.Dmn_18_BrannmotstandVinduMotstParallellYttervegg, models.Dmn_20_BranncelleRomningUtgang
 		// krav brantiltak
-		, models.Bpmn_KravTilBranntiltaktModel, models.Dmn_10a_BrannalarmKategori,
-		models.Dmn_10b_DetektorBrannalarmKategori,models.Dmn_11_TiltakManuellBrannslokking, 
-		models.Dmn_19_BrannmotstandVinduInnvHjørne,	models.Dmn_21_TiltakPavirkeRomningstidSlokkeanlegg,
-		models.Dmn_22_TiltakPavirkeRomningstidAlarmanlegg,models.Dmn_23_TiltakPavirkeRomningstidLedesystem, 
-		models.Dmn_24_TiltakPavirkeRomningstidEvakueringsplan
+		, models.Bpmn_KravTilBranntiltaktModel, models.Dmn_10a_BrannalarmKategori,models.Dmn_10b_DetektorBrannalarmKategori,
+		models.Dmn_11_TiltakManuellBrannslokking, models.Dmn_19_BrannmotstandVinduInnvHjørne,
+		models.Dmn_21_TiltakPavirkeRomningstidSlokkeanlegg, models.Dmn_22_TiltakPavirkeRomningstidAlarmanlegg,
+		models.Dmn_23_TiltakPavirkeRomningstidLedesystem, models.Dmn_24_TiltakPavirkeRomningstidEvakueringsplan
 		// Ledesystem
 		, models.Bpmn_LedesystemModel, models.Dmn_12a_LedesystemEvakuering, models.Dmn_12b_LedesystemEvakueringVarighet
 		// Risikoklasse
@@ -49,7 +50,7 @@ import org.junit.Test;
 		models.Dmn_01a_RisikoklasseFraTypeVirksomhet, models.Dmn_01b_VedleggTilRisikoklasse
 
 })
-public class BranntekniskProsjekteringBpmnTests {
+public class BranntekniskProsjekteringBpmnOutputsTests {
 	@ClassRule
 	@Rule
 	public static ProcessEngineRule rule = TestCoverageProcessEngineRuleBuilder.create().build();
@@ -59,48 +60,34 @@ public class BranntekniskProsjekteringBpmnTests {
 		init(rule.getProcessEngine());
 	}
 
-
-	// @Test
-	// public void LedesystemModel_bpmnOpt02() {
-	//
-	// ProcessInstance processInstance =
-	// processEngine().getRuntimeService().startProcessInstanceByKey(ModelKey,
-	// BranntekniskProsjekteringModelOpt02());
-	//
-	// assertThat(processInstance).isStarted().isEnded();
-	// }
-
+	@SuppressWarnings("unchecked")
 	@Test
-	public void BranntekniskProsjekteringMode_IntegrationTest() {
+	public void BranntekniskProsjektering_IntegrationTestOp1() {
+		Map<String, Object> inputsVariables = BranntekniskProsjekteringModelOpt01();
 		ProcessInstance processInstance = processEngine().getRuntimeService()
-				.startProcessInstanceByKey(IntegrationModelKey, BranntekniskProsjekteringModelOpt01());
+				.startProcessInstanceByKey(IntegrationModelKey, inputsVariables);
 
 		assertThat(processInstance).task(UserTaskId);
+		System.out.println(rule.getRuntimeService().getVariables(processInstance.getId()));
 		Task task = rule.getTaskService().createTaskQuery().singleResult();
 		System.out.println(rule.getRuntimeService().getActivityInstance(processInstance.getId()));
+
+		Map<String, Object> modelOutputsvariables = (Map<String, Object>) rule.getRuntimeService()
+				.getVariable(processInstance.getId(), "modelOutputs");
+
+		Integer number = modelOutputsvariables.size();
+
+		System.out.println("Model inputs :" + inputsVariables);
+		System.out.println("number of tables: " + number);
+		assertEquals(number.toString(), "26");
+//		Map<String, Object> tiltakStorrelseBrannseksjonBelastning = (Map<String, Object>) modelOutputsvariables
+//				.get("tiltakStorrelseBrannseksjonBelastning");
+//
+//		System.out.println("tiltakStorrelseBrannseksjonBelastning result :" + tiltakStorrelseBrannseksjonBelastning);
+//		assertThat(tiltakStorrelseBrannseksjonBelastning).containsOnly(entry("brannTiltakStrSeksjonBelastning", "Minst to brannseksjoner"));
+
 		rule.getTaskService().complete(task.getId());
 
-		// assertThat(processInstance).isStarted().isEnded().hasPassed(IntegrationModelEndTaskId);
-		assertThat(processInstance).isStarted().isEnded().hasPassed(EndTaskId);
-	}
-	
-	@Test
-	public void BranntekniskProsjekteringMode_IntegrationTestOp1() {
-		ProcessInstance processInstance = processEngine().getRuntimeService()
-				.startProcessInstanceByKey(IntegrationModelKey, BranntekniskProsjekteringModelOpt01());
-
-		assertThat(processInstance).task(UserTaskId);
-		Task task = rule.getTaskService().createTaskQuery().singleResult();
-		System.out.println(rule.getRuntimeService().getActivityInstance(processInstance.getId()));
-		Map<String, Object> variable = (Map<String, Object>) rule.getRuntimeService().getVariable(processInstance.getId(), "modelOutputs");
-		Map<String,Object> modelOutputs =variable;
-		System.out.println(modelOutputs);
-		Integer number = modelOutputs.size();
-		System.out.println(number);
-		assertEquals(number.toString(),"26");
-		rule.getTaskService().complete(task.getId());
-
-		// assertThat(processInstance).isStarted().isEnded().hasPassed(IntegrationModelEndTaskId);
 		assertThat(processInstance).isStarted().isEnded().hasPassed(EndTaskId);
 	}
 }

@@ -23,7 +23,7 @@ public class InMemoryH2Test {
   @Rule
   public static ProcessEngineRule rule = TestCoverageProcessEngineRuleBuilder.create().build();
 
-  private static final String PROCESS_DEFINITION_KEY = "DigiTEKNew";
+  private static final String PROCESS_DEFINITION_KEY = "TestModel";
 
   static {
     LogFactory.useSlf4jLogging(); // MyBatis

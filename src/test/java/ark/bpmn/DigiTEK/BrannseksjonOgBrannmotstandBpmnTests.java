@@ -21,7 +21,7 @@ import org.junit.Test;
 import ark.bpmn.TestData.BrannseksjonOgBrannmotstandTestData.models;
 
 
-@Deployment(resources = {models.BpmnInt_BrannseksjonOgBrannmotstand, models.Bpmn_BrannseksjonOgBrannmotstand,models.Dmn_03_TiltakStorrelseBrannseksjonBelastning,models.Dmn_04_BrannmotstandSeksjoneringsvegg,
+@Deployment(resources = {models.Bpmn_BrannseksjonOgBrannmotstand,models.Dmn_03_TiltakStorrelseBrannseksjonBelastning,models.Dmn_04_BrannmotstandSeksjoneringsvegg,
 		models.Dmn_07_BrannmotstandSkillendeKonstruksjon,models.Dmn_16_BrannmotstandDorRomningsvei,models.Dmn_17_BrannmotstandDorISeksjvegg,models.Dmn_18_BrannmotstandVinduMotstParallellYttervegg,models.Dmn_19_BrannmotstandVinduInnvHjørne})
 public class BrannseksjonOgBrannmotstandBpmnTests {
 	@ClassRule
@@ -37,31 +37,8 @@ public class BrannseksjonOgBrannmotstandBpmnTests {
 	public void BrannseksjonOgBrannmotstand_bpmnOpt01() {
 
 		ProcessInstance processInstance = processEngine().getRuntimeService().startProcessInstanceByKey(ModelKey,
-				BrannseksjonOgBrannmotstandOpt02());
+				BrannseksjonOgBrannmotstand_test());
 
 		assertThat(processInstance).isStarted().isEnded();
-	}
-
-	@Test
-	public void BrannseksjonOgBrannmotstand_bpmnOpt02() {
-
-		ProcessInstance processInstance = processEngine().getRuntimeService().startProcessInstanceByKey(ModelKey,
-				BrannseksjonOgBrannmotstandOpt02());
-
-		assertThat(processInstance).isStarted().isEnded();
-	}
-
-	@Test
-	public void RisikoklasseModel_IntegrationTest() {
-		ProcessInstance processInstance = processEngine().getRuntimeService()
-				.startProcessInstanceByKey(IntegrationModelKey, BrannseksjonOgBrannmotstandOpt02());
-
-		assertThat(processInstance).task(UserTaskId);
-		Task task = rule.getTaskService().createTaskQuery().singleResult();
-		System.out.println(rule.getRuntimeService().getActivityInstance(processInstance.getId()));
-		rule.getTaskService().complete(task.getId());
-
-		// assertThat(processInstance).isStarted().isEnded().hasPassed(IntegrationModelEndTaskId);
-		assertThat(processInstance).isStarted().isEnded().hasPassed(EndTaskId);
 	}
 }

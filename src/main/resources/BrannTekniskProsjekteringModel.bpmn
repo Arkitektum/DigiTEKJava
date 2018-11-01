@@ -3,7 +3,7 @@
   <bpmn:collaboration id="Collaboration_1p3wx70">
     <bpmn:participant id="BranntekniskProsjektering" name="Brannteknisk Prosjektering" processRef="BranntekniskProsjekteringModel" />
   </bpmn:collaboration>
-  <bpmn:process id="BranntekniskProsjekteringModel" name="Brannteknisk Prosjektering .NET" isExecutable="true" camunda:historyTimeToLive="P30D">
+  <bpmn:process id="BranntekniskProsjekteringModel" name="Brannteknisk Prosjektering" isExecutable="true" camunda:historyTimeToLive="P30D">
     <bpmn:callActivity id="Task_1s9cfnq" name="Risikoklasse" calledElement="RisikoklasseModel">
       <bpmn:extensionElements>
         <camunda:in variables="all" />

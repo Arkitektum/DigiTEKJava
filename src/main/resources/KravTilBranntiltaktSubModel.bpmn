@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="1.9.0">
-  <bpmn:process id="LedesystemIntModel" name="LedesystemModel Integration Model" isExecutable="true">
+  <bpmn:process id="KravTilBranntiltakSubModel" name="Krav til branntiltakt sub Model" isExecutable="true">
     <bpmn:startEvent id="StartEvent_1">
       <bpmn:outgoing>SequenceFlow_1pwe1ro</bpmn:outgoing>
     </bpmn:startEvent>
     <bpmn:sequenceFlow id="SequenceFlow_1pwe1ro" sourceRef="StartEvent_1" targetRef="branninputsVariablesValidation" />
-    <bpmn:callActivity id="RisikoklassenModel_SubModel" name="BPMN" calledElement="LedesystemModel">
+    <bpmn:callActivity id="RisikoklassenModel_SubModel" name="BPMN" calledElement="KravTilBranntiltaktModel">
       <bpmn:extensionElements>
         <camunda:in variables="all" />
         <camunda:out variables="all" />
@@ -14,7 +14,7 @@
       <bpmn:outgoing>SequenceFlow_03rf27a</bpmn:outgoing>
     </bpmn:callActivity>
     <bpmn:sequenceFlow id="SequenceFlow_03rf27a" sourceRef="RisikoklassenModel_SubModel" targetRef="ExclusiveGateway_1ucbjzb" />
-    <bpmn:endEvent id="EndLedesystemModel" name="End Ledesystem Integration Model">
+    <bpmn:endEvent id="EndKravTilBranntiltakSubModel" name="End Krav Til Branntiltak Model">
       <bpmn:incoming>SequenceFlow_0u3fw7i</bpmn:incoming>
       <bpmn:incoming>SequenceFlow_0cz5rfj</bpmn:incoming>
     </bpmn:endEvent>
@@ -28,23 +28,23 @@
       <bpmn:incoming>SequenceFlow_1v8btr6</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_00i027i</bpmn:outgoing>
     </bpmn:serviceTask>
-    <bpmn:sequenceFlow id="SequenceFlow_10w9efg" sourceRef="DataDictionary" targetRef="UserLedesystemModelOutput" />
+    <bpmn:sequenceFlow id="SequenceFlow_10w9efg" sourceRef="DataDictionary" targetRef="UserKravTilBranntiltakSubModel" />
     <bpmn:serviceTask id="DataDictionary" name="Get data dictionary" camunda:class="ark.bpmn.DigiTEK.ModelOutputsDataDictionary">
       <bpmn:incoming>SequenceFlow_00i027i</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_10w9efg</bpmn:outgoing>
     </bpmn:serviceTask>
-    <bpmn:sequenceFlow id="SequenceFlow_0u3fw7i" sourceRef="UserLedesystemModelOutput" targetRef="EndLedesystemModel" />
-    <bpmn:userTask id="UserLedesystemModelOutput" name="Get KravTilBranntiltakt model Output">
+    <bpmn:sequenceFlow id="SequenceFlow_0u3fw7i" sourceRef="UserKravTilBranntiltakSubModel" targetRef="EndKravTilBranntiltakSubModel" />
+    <bpmn:userTask id="UserKravTilBranntiltakSubModel" name="Get KravTilBranntiltakt model Output">
       <bpmn:incoming>SequenceFlow_10w9efg</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0u3fw7i</bpmn:outgoing>
     </bpmn:userTask>
-    <bpmn:boundaryEvent id="deploymentTimer" name="Deployment timer" attachedToRef="UserLedesystemModelOutput">
+    <bpmn:boundaryEvent id="deploymentTimer" name="Deployment timer" attachedToRef="UserKravTilBranntiltakSubModel">
       <bpmn:outgoing>SequenceFlow_0cz5rfj</bpmn:outgoing>
       <bpmn:timerEventDefinition>
         <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">PT1H</bpmn:timeDuration>
       </bpmn:timerEventDefinition>
     </bpmn:boundaryEvent>
-    <bpmn:sequenceFlow id="SequenceFlow_0cz5rfj" sourceRef="deploymentTimer" targetRef="EndLedesystemModel" />
+    <bpmn:sequenceFlow id="SequenceFlow_0cz5rfj" sourceRef="deploymentTimer" targetRef="EndKravTilBranntiltakSubModel" />
     <bpmn:boundaryEvent id="BoundaryEvent_08jrhmp" attachedToRef="RisikoklassenModel_SubModel">
       <bpmn:outgoing>SequenceFlow_0in5ab6</bpmn:outgoing>
       <bpmn:errorEventDefinition errorRef="Error_1nkrqh8" camunda:errorMessageVariable="Error_subprocess_Brannmotstand" />
@@ -59,18 +59,18 @@
   </bpmn:process>
   <bpmn:error id="Error_1nkrqh8" name="Error_22mo5op" errorCode="java.lang.Exception" />
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
-    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="LedesystemIntModel">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="KravTilBranntiltakSubModel">
       <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
-        <dc:Bounds x="76" y="102" width="36" height="36" />
+        <dc:Bounds x="106" y="102" width="36" height="36" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="49" y="138" width="90" height="20" />
+          <dc:Bounds x="79" y="138" width="90" height="20" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="SequenceFlow_1pwe1ro_di" bpmnElement="SequenceFlow_1pwe1ro">
-        <di:waypoint xsi:type="dc:Point" x="112" y="120" />
-        <di:waypoint xsi:type="dc:Point" x="141" y="120" />
+        <di:waypoint xsi:type="dc:Point" x="142" y="120" />
+        <di:waypoint xsi:type="dc:Point" x="171" y="120" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="81.5" y="99" width="90" height="12" />
+          <dc:Bounds x="112" y="99" width="90" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="CallActivity_1i1oeyi_di" bpmnElement="RisikoklassenModel_SubModel">
@@ -80,74 +80,74 @@
         <di:waypoint xsi:type="dc:Point" x="399" y="120" />
         <di:waypoint xsi:type="dc:Point" x="426" y="120" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="367.5" y="99" width="90" height="12" />
+          <dc:Bounds x="368" y="99" width="90" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNShape id="EndEvent_0y098c5_di" bpmnElement="EndLedesystemModel">
-        <dc:Bounds x="1001" y="102" width="36" height="36" />
+      <bpmndi:BPMNShape id="EndEvent_0y098c5_di" bpmnElement="EndKravTilBranntiltakSubModel">
+        <dc:Bounds x="893" y="102" width="36" height="36" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="979" y="142" width="84" height="24" />
+          <dc:Bounds x="948" y="108" width="84" height="24" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="SequenceFlow_16ntpnd_di" bpmnElement="SequenceFlow_16ntpnd">
-        <di:waypoint xsi:type="dc:Point" x="241" y="120" />
+        <di:waypoint xsi:type="dc:Point" x="271" y="120" />
         <di:waypoint xsi:type="dc:Point" x="299" y="120" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="270" y="99" width="0" height="12" />
+          <dc:Bounds x="240" y="99" width="90" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="ServiceTask_0cnl3fo_di" bpmnElement="branninputsVariablesValidation">
-        <dc:Bounds x="141" y="80" width="100" height="80" />
+        <dc:Bounds x="171" y="80" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="SequenceFlow_00i027i_di" bpmnElement="SequenceFlow_00i027i">
-        <di:waypoint xsi:type="dc:Point" x="627" y="120" />
-        <di:waypoint xsi:type="dc:Point" x="681" y="120" />
+        <di:waypoint xsi:type="dc:Point" x="600" y="120" />
+        <di:waypoint xsi:type="dc:Point" x="618" y="120" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="609" y="99" width="90" height="12" />
+          <dc:Bounds x="564" y="99" width="90" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="ServiceTask_069b1mm_di" bpmnElement="outputsVariablesConsolidation">
-        <dc:Bounds x="527" y="80" width="100" height="80" />
+        <dc:Bounds x="500" y="80" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="SequenceFlow_10w9efg_di" bpmnElement="SequenceFlow_10w9efg">
-        <di:waypoint xsi:type="dc:Point" x="781" y="120" />
-        <di:waypoint xsi:type="dc:Point" x="822" y="120" />
+        <di:waypoint xsi:type="dc:Point" x="718" y="120" />
+        <di:waypoint xsi:type="dc:Point" x="741" y="120" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="757" y="99" width="90" height="12" />
+          <dc:Bounds x="684.5" y="99" width="90" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="ServiceTask_1p780pq_di" bpmnElement="DataDictionary">
-        <dc:Bounds x="681" y="80" width="100" height="80" />
+        <dc:Bounds x="618" y="80" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="SequenceFlow_0u3fw7i_di" bpmnElement="SequenceFlow_0u3fw7i">
-        <di:waypoint xsi:type="dc:Point" x="922" y="120" />
-        <di:waypoint xsi:type="dc:Point" x="1001" y="120" />
+        <di:waypoint xsi:type="dc:Point" x="841" y="120" />
+        <di:waypoint xsi:type="dc:Point" x="893" y="120" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="917" y="99" width="90" height="12" />
+          <dc:Bounds x="822" y="99" width="90" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNShape id="UserTask_1f8utas_di" bpmnElement="UserLedesystemModelOutput">
-        <dc:Bounds x="822" y="80" width="100" height="80" />
+      <bpmndi:BPMNShape id="UserTask_1f8utas_di" bpmnElement="UserKravTilBranntiltakSubModel">
+        <dc:Bounds x="741" y="80" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BoundaryEvent_0asxcrt_di" bpmnElement="deploymentTimer">
-        <dc:Bounds x="867" y="142" width="36" height="36" />
+        <dc:Bounds x="786" y="142" width="36" height="36" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="843" y="182" width="86" height="12" />
+          <dc:Bounds x="822" y="205" width="86" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="SequenceFlow_0cz5rfj_di" bpmnElement="SequenceFlow_0cz5rfj">
-        <di:waypoint xsi:type="dc:Point" x="885" y="178" />
-        <di:waypoint xsi:type="dc:Point" x="885" y="201" />
-        <di:waypoint xsi:type="dc:Point" x="1019" y="201" />
-        <di:waypoint xsi:type="dc:Point" x="1019" y="138" />
+        <di:waypoint xsi:type="dc:Point" x="804" y="178" />
+        <di:waypoint xsi:type="dc:Point" x="804" y="201" />
+        <di:waypoint xsi:type="dc:Point" x="911" y="201" />
+        <di:waypoint xsi:type="dc:Point" x="911" y="138" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="907" y="180" width="90" height="12" />
+          <dc:Bounds x="812.5" y="180" width="90" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="BoundaryEvent_0ylnft2_di" bpmnElement="BoundaryEvent_08jrhmp">
         <dc:Bounds x="349" y="142" width="36" height="36" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="367" y="182" width="0" height="12" />
+          <dc:Bounds x="322" y="182" width="90" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="ExclusiveGateway_1ucbjzb_di" bpmnElement="ExclusiveGateway_1ucbjzb" isMarkerVisible="true">
@@ -158,9 +158,9 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="SequenceFlow_1v8btr6_di" bpmnElement="SequenceFlow_1v8btr6">
         <di:waypoint xsi:type="dc:Point" x="476" y="120" />
-        <di:waypoint xsi:type="dc:Point" x="527" y="120" />
+        <di:waypoint xsi:type="dc:Point" x="500" y="120" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="501.5" y="99" width="0" height="12" />
+          <dc:Bounds x="443" y="99" width="90" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_0in5ab6_di" bpmnElement="SequenceFlow_0in5ab6">
@@ -169,7 +169,7 @@
         <di:waypoint xsi:type="dc:Point" x="451" y="195" />
         <di:waypoint xsi:type="dc:Point" x="451" y="145" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="409" y="174" width="0" height="12" />
+          <dc:Bounds x="364" y="174" width="90" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>

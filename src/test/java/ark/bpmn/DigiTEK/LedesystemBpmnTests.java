@@ -22,7 +22,7 @@ import org.junit.Test;
 
 
 
-@Deployment(resources = {models.BpmnInt_LedesystemModel,models.Bpmn_LedesystemModel,models.Dmn_12a_LedesystemEvakuering,models.Dmn_12b_LedesystemEvakueringVarighet})
+@Deployment(resources = {models.BpmnSub_LedesystemModel,models.Bpmn_LedesystemModel,models.Dmn_12a_LedesystemEvakuering,models.Dmn_12b_LedesystemEvakueringVarighet})
 public class LedesystemBpmnTests {
 	@ClassRule
 	@Rule

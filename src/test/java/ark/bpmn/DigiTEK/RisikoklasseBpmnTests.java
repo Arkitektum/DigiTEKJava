@@ -7,8 +7,6 @@ import static org.camunda.bpm.engine.test.assertions.ProcessEngineAssertions.ini
 import static org.camunda.bpm.engine.test.assertions.ProcessEngineAssertions.processEngine;
 
 import org.camunda.bpm.engine.runtime.ProcessInstance;
-import org.camunda.bpm.engine.task.Task;
-
 import static org.camunda.bpm.engine.test.assertions.ProcessEngineAssertions.assertThat;
 
 import org.camunda.bpm.engine.test.Deployment;
@@ -19,7 +17,7 @@ import org.junit.ClassRule;
 import org.junit.Rule;
 import org.junit.Test;
 
-@Deployment(resources = { models.BpmnInt_Risikoklasse,models.Bpmn_RisikoklasseModel,models.Dmn_01_Risikoklassifisering,
+@Deployment(resources = { models.Bpmn_RisikoklasseModel,models.Dmn_01_Risikoklassifisering,
 		models.Dmn_01a_RisikoklasseFraTypeVirksomhet, models.Dmn_01b_VedleggTilRisikoklasse })
 public class RisikoklasseBpmnTests {
 	@ClassRule
@@ -32,34 +30,20 @@ public class RisikoklasseBpmnTests {
 	}
 
 	@Test
-	public void RisikoklassenMode_bpmnOpt01() {
+	public void RisikoklasseModel_TypeVirksomhet_BpmnTest() {
 
 		ProcessInstance processInstance = processEngine().getRuntimeService().startProcessInstanceByKey(ModelKey,
-				RisikoklasseOpt01());
+				Risikoklasse_typeVirksomhet_Test());
 
 		assertThat(processInstance).isStarted().isEnded();
 	}
 
 	@Test
-	public void RisikoklassenMode_bpmnOpt02() {
+	public void RisikoklasseModel_IkkeTypeVirksomhet_BpmnTest() {
 
 		ProcessInstance processInstance = processEngine().getRuntimeService().startProcessInstanceByKey(ModelKey,
-				RisikoklasseOpt02());
+				Risikoklasse_IkketypeVirksomhet_BpmnTest());
 
 		assertThat(processInstance).isStarted().isEnded();
-	}
-
-	@Test
-	public void RisikoklasseModel_IntegrationTest() {
-		ProcessInstance processInstance = processEngine().getRuntimeService()
-				.startProcessInstanceByKey(IntegrationModelKey, RisikoklasseOpt02());
-
-		assertThat(processInstance).task(UserTaskId);
-		Task task = rule.getTaskService().createTaskQuery().singleResult();
-		System.out.println(rule.getRuntimeService().getActivityInstance(processInstance.getId()));
-		rule.getTaskService().complete(task.getId());
-
-		// assertThat(processInstance).isStarted().isEnded().hasPassed(IntegrationModelEndTaskId);
-		assertThat(processInstance).isStarted().isEnded().hasPassed(EndTaskId);
 	}
 }

@@ -7,13 +7,14 @@ import org.camunda.bpm.engine.variable.Variables;
 
 public class RisikoklassenTestData {
 
+	public static final String IntegrationModelKey = "RisikoklasseSubModel";
 	public static final String ModelKey = "RisikoklasseModel";
-	public static final String UserTaskId = "UserRisikoklasseModelOutput";
-	public static final String EndTaskId = "EndRisikoklasseModel";
-	public static final String IntegrationModelKey = "RisikoklasseIntModel";
+	public static final String UserTaskId = "UserRisikoklasseSubModel";
+	public static final String EndTaskId = "EndRisikoklasseSubModel";
+	
 	
 	public class models {
-		public static final String BpmnInt_Risikoklasse = "RisikoklasseModelIntModel.bpmn";
+		public static final String BpmnSub_Risikoklasse = "RisikoklasseSubModel.bpmn";
 		public static final String Bpmn_RisikoklasseModel = "./Bpmn/Risikoklasse Model.bpmn";
 		public static final String Dmn_01_Risikoklassifisering ="./Dmn/01_Risikoklassifisering.dmn";
 		public static final String Dmn_01a_RisikoklasseFraTypeVirksomhet = "./Dmn/01a_RisikoklasseFraTypeVirksomhet.dmn";
@@ -21,16 +22,25 @@ public class RisikoklassenTestData {
 	}
 	
 
-	public static Map<String, Object> RisikoklasseOpt01() {
+	public static Map<String, Object> Risikoklasse_typeVirksomhet_Test() {
 		VariableMap variableMap = Variables.createVariables().putValue("typeVirksomhet", "Sykehus");
 		return variableMap;
 	}
 
-	public static Map<String, Object> RisikoklasseOpt02() {
+	public static Map<String, Object> Risikoklasse_IkketypeVirksomhet_Test() {
+		VariableMap variableMap = Variables.createVariables()
+				.putValue("bareSporadiskPersonopphold", false)
+				.putValue("alleKjennerRomningsVeiene", true)
+				.putValue("beregnetForOvernatting", true)
+				.putValue("liteBrannfarligAktivitet", true);
+		return variableMap;
+	}
+	
+	public static Map<String, Object> Risikoklasse_IkketypeVirksomhet_BpmnTest() {
 		VariableMap variableMap = Variables.createVariables()
 				.putValue("typeVirksomhet", null)
 				.putValue("bareSporadiskPersonopphold", false)
-				.putValue("alleKjennerRomningsVeiene", false)
+				.putValue("alleKjennerRomningsVeiene", true)
 				.putValue("beregnetForOvernatting", true)
 				.putValue("liteBrannfarligAktivitet", true);
 		return variableMap;

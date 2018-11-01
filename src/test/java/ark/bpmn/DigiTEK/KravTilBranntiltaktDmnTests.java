@@ -7,6 +7,7 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.Map;
 
+import static ark.bpmn.TestData.BrannKlasseTestData.Dmn_Brannklasse;
 import static ark.bpmn.TestData.KravTilBranntiltaktModelTestData.*;
 
 import org.camunda.bpm.dmn.engine.DmnDecisionRuleResult;
@@ -46,16 +47,17 @@ public class KravTilBranntiltaktDmnTests {
 	@Test
 	@Deployment(resources = models.Dmn_10a_BrannalarmKategori)
 	public void BrannalarmKategori_DmnOutputTest() {
-
-		Map<String, Object> variables = Dmn_BrannalarmKategori();
+		Map<String, Object> variables = Dmn_Brannklasse();
 		DecisionService decisionService = rule.getProcessEngine().getDecisionService();
 		// Evaluate DMN
 		DmnDecisionTableResult decisionResult = decisionService.evaluateDecisionTableByKey("BrannalarmKategori",
 				variables);
 		DmnDecisionRuleResult result = decisionResult.getSingleResult();
+		// Print results
 		System.out.println("DmnInput: " + variables);
 		System.out.println("DmnOutput: " + result);
-		assertThat(result).containsOnly(entry("brannalarmKategori", 1));
+		// test
+		assertThat(result).containsOnly(entry("brannalarmKategori", 2));
 	}
 
 	@Test
@@ -72,50 +74,18 @@ public class KravTilBranntiltaktDmnTests {
 	@Test
 	@Deployment(resources = models.Dmn_10b_DetektorBrannalarmKategori)
 	public void DetektorBrannalarmKategori_DmnOutputTest() {
-
-		DecisionService decisionService = rule.getProcessEngine().getDecisionService();
 		Map<String, Object> variables = Dmn_DetektorBrannalarmKategori();
-
+		DecisionService decisionService = rule.getProcessEngine().getDecisionService();
 		// Evaluate DMN
 		DmnDecisionTableResult decisionResult = decisionService.evaluateDecisionTableByKey("DetektorBrannalarmKategori",
 				variables);
 		DmnDecisionRuleResult result = decisionResult.getSingleResult();
+		// Print results
 		System.out.println("DmnInput: " + variables);
 		System.out.println("DmnOutput: " + result);
+		// test
 		assertThat(result)
 				.containsOnly(entry("beskrBrannDetektor", "Optiske røykdetektorer i rømningsveier og fellesarealer"));
-	}
-
-	@Test
-	@Deployment(resources = models.Dmn_10b_KravBranndetektorRom)
-	public void KravBranndetektorRom_DmnTest() {
-
-		DecisionService decisionService = rule.getProcessEngine().getDecisionService();
-		// Evaluate DMN
-		DmnDecisionTableResult decisionResult = decisionService.evaluateDecisionTableByKey("KravBranndetektorRom",
-				Dmn_KravBranndetektorRom());
-		assertEquals(1, decisionResult.getResultList().size());
-	}
-
-	@Test
-	@Deployment(resources = models.Dmn_10b_KravBranndetektorRom)
-	public void KravBranndetektorRom_DmnOutputTest() {
-
-		DecisionService decisionService = rule.getProcessEngine().getDecisionService();
-		Map<String, Object> variables = Dmn_KravBranndetektorRom();
-
-		// Evaluate DMN
-		DmnDecisionTableResult decisionResult = decisionService.evaluateDecisionTableByKey("KravBranndetektorRom",
-				variables);
-		DmnDecisionRuleResult result = decisionResult.getSingleResult();
-		System.out.println("DmnInput: " + variables);
-		System.out.println("DmnOutput: " + result);
-		assertThat(result).containsOnly(entry("kravBranndetektorRomningsvei", "Røykdetektor"),
-				entry("kravBranndetektorFellesrom", "Røykdetektor"), entry("kravBrannsetektorSengerom", "Røykdetektor"),
-				entry("kravBranndetektorTekniskRom", "Røykdetektor"),
-				entry("kravBranndetektorLoft", "Varme- eller Røykdetektor"),
-				entry("kravBranndetektorKjeller", "Varme- eller Røykdetektor"),
-				entry("kravBranndetektorAndre", "Varme- eller Røykdetektor"));
 	}
 
 	@Test
@@ -132,46 +102,47 @@ public class KravTilBranntiltaktDmnTests {
 	@Test
 	@Deployment(resources = models.Dmn_11_TiltakManuellBrannslokking)
 	public void TiltakManuellBrannslokking_DmnOutputTest() {
-
+		Map<String, Object> variables = Dmn_Brannklasse();
 		DecisionService decisionService = rule.getProcessEngine().getDecisionService();
-		Map<String, Object> variables = Dmn_TiltakManuellBrannslokking();
-
 		// Evaluate DMN
 		DmnDecisionTableResult decisionResult = decisionService.evaluateDecisionTableByKey("TiltakManuellBrannslokking",
 				variables);
 		DmnDecisionRuleResult result = decisionResult.getSingleResult();
+		// Print results
 		System.out.println("DmnInput: " + variables);
 		System.out.println("DmnOutput: " + result);
-		assertThat(result).containsOnly(entry("kravManuellSlokking", "Håndslokkeapparat, evt. brannslange"),
+		// test
+		assertThat(result).containsOnly(entry("kravManuellSlokking", "Brannslange krav i bygning med trykkvann"),
 				entry("maxBrannslangeLengde", "maks 30m lengde"));
 	}
 
 	@Test
-	@Deployment(resources = models.Dmn_19_BrannmotstandVinduInnvHjørne)
-	public void BrannmotstandVinduInnvendigHjorne_DmnTest() {
+	@Deployment(resources = models.Dmn_20_BranncelleRomningUtgang)
+	public void BranncelleRomningUtgang_DmnTest() {
 
 		DecisionService decisionService = rule.getProcessEngine().getDecisionService();
 		// Evaluate DMN
-		DmnDecisionTableResult decisionResult = decisionService.evaluateDecisionTableByKey(
-				"BrannmotstandVinduInnvendigHjorne", Dmn_BrannmotstandVinduInnvendigHjorne());
+		DmnDecisionTableResult decisionResult = decisionService.evaluateDecisionTableByKey("BranncelleRomningUtgang",
+				Dmn_BranncelleRomningUtgang());
 		assertEquals(1, decisionResult.getResultList().size());
 	}
 
 	@Test
-	@Deployment(resources = models.Dmn_19_BrannmotstandVinduInnvHjørne)
-	public void BrannmotstandVinduInnvendigHjorne_DmnOutputTest() {
-
+	@Deployment(resources = models.Dmn_20_BranncelleRomningUtgang)
+	public void BranncelleRomningUtgang_DmnOutputTest() {
+		Map<String, Object> variables = Dmn_Brannklasse();
 		DecisionService decisionService = rule.getProcessEngine().getDecisionService();
-		Map<String, Object> variables = Dmn_BrannmotstandVinduInnvendigHjorne();
-
 		// Evaluate DMN
-		DmnDecisionTableResult decisionResult = decisionService
-				.evaluateDecisionTableByKey("BrannmotstandVinduInnvendigHjorne", variables);
+		DmnDecisionTableResult decisionResult = decisionService.evaluateDecisionTableByKey("BranncelleRomningUtgang",
+				variables);
 		DmnDecisionRuleResult result = decisionResult.getSingleResult();
+		// Print results
 		System.out.println("DmnInput: " + variables);
 		System.out.println("DmnOutput: " + result);
-		assertThat(result).containsOnly(entry("kravAvstandInnvHjorne1Vindu", "E 60 [F 60]"),
-				entry("kravAvstandInnvHjorneBegge", "E 30 [F 30]"));
+		// test
+		assertThat(result).containsOnly(entry("kravFriBreddeRomnVei", "1cm pr.pers / min. 1,2m"),
+				entry("kravMinFriDorBredde", 0.9), entry("kravMaxLengdeFluktvei", 25),
+				entry("avstandDorIBranncelle1Dor", 15), entry("kravAvstandDorIBranncelleflereDorer", 30));
 	}
 
 	@Test
@@ -188,16 +159,16 @@ public class KravTilBranntiltaktDmnTests {
 	@Test
 	@Deployment(resources = models.Dmn_21_TiltakPavirkeRomningstidSlokkeanlegg)
 	public void TiltakRomningstidSlokkeanlegg_DmnOutputTest() {
-
-		DecisionService decisionService = rule.getProcessEngine().getDecisionService();
 		Map<String, Object> variables = Dmn_TiltakRomningstidSlokkeanlegg();
-
+		DecisionService decisionService = rule.getProcessEngine().getDecisionService();
 		// Evaluate DMN
 		DmnDecisionTableResult decisionResult = decisionService
 				.evaluateDecisionTableByKey("TiltakRomningstidSlokkeanlegg", variables);
 		DmnDecisionRuleResult result = decisionResult.getSingleResult();
+		// Print results
 		System.out.println("DmnInput: " + variables);
 		System.out.println("DmnOutput: " + result);
+		// test
 		assertThat(result).containsOnly(entry("tiltakPavirkeRomningstid", "Brannslokkeanlegg"));
 	}
 
@@ -215,16 +186,16 @@ public class KravTilBranntiltaktDmnTests {
 	@Test
 	@Deployment(resources = models.Dmn_22_TiltakPavirkeRomningstidAlarmanlegg)
 	public void TiltakRomningstidAlarmanlegg_DmnOutputTest() {
-
-		DecisionService decisionService = rule.getProcessEngine().getDecisionService();
 		Map<String, Object> variables = Dmn_TiltakRomningstidAlarmanlegg();
-
+		DecisionService decisionService = rule.getProcessEngine().getDecisionService();
 		// Evaluate DMN
 		DmnDecisionTableResult decisionResult = decisionService
 				.evaluateDecisionTableByKey("TiltakRomningstidAlarmanlegg", variables);
 		DmnDecisionRuleResult result = decisionResult.getSingleResult();
+		// Print results
 		System.out.println("DmnInput: " + variables);
 		System.out.println("DmnOutput: " + result);
+		// test
 		assertThat(result).containsOnly(entry("tiltakPavirkeRomningstid", "Brannalarmanlegg"),
 				entry("kommentar", "Forutsatt enkle og oversiktelige rømningsforhold"));
 	}
@@ -243,16 +214,16 @@ public class KravTilBranntiltaktDmnTests {
 	@Test
 	@Deployment(resources = models.Dmn_23_TiltakPavirkeRomningstidLedesystem)
 	public void TiltakRomningstidLedesystem_DmnOutputTest() {
-
-		DecisionService decisionService = rule.getProcessEngine().getDecisionService();
 		Map<String, Object> variables = Dmn_TiltakRomningstidLedesystem();
-
+		DecisionService decisionService = rule.getProcessEngine().getDecisionService();
 		// Evaluate DMN
 		DmnDecisionTableResult decisionResult = decisionService
 				.evaluateDecisionTableByKey("TiltakRomningstidLedesystem", variables);
 		DmnDecisionRuleResult result = decisionResult.getSingleResult();
+		// Print results
 		System.out.println("DmnInput: " + variables);
 		System.out.println("DmnOutput: " + result);
+		// test
 		assertThat(result).containsOnly(entry("tiltakPavirkeRomningstid", "Ledesystem"));
 	}
 
@@ -270,16 +241,16 @@ public class KravTilBranntiltaktDmnTests {
 	@Test
 	@Deployment(resources = models.Dmn_24_TiltakPavirkeRomningstidEvakueringsplan)
 	public void TiltakRomningstidEvakueringsplan_DmnOutputTest() {
-
-		DecisionService decisionService = rule.getProcessEngine().getDecisionService();
 		Map<String, Object> variables = Dmn_TiltakRomningstidEvakueringsplan();
-
+		DecisionService decisionService = rule.getProcessEngine().getDecisionService();
 		// Evaluate DMN
 		DmnDecisionTableResult decisionResult = decisionService
 				.evaluateDecisionTableByKey("TiltakRomningstidEvakueringsplan", variables);
 		DmnDecisionRuleResult result = decisionResult.getSingleResult();
+		// Print results
 		System.out.println("DmnInput: " + variables);
 		System.out.println("DmnOutput: " + result);
+		// test
 		assertThat(result).containsOnly(entry("tiltakPavirkeRomningstid", "Evakueringsplan"),
 				entry("kommentar", "Evakueringsplan hvis faste arbeidsplasser"));
 	}
