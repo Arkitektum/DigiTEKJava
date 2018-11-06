@@ -7,8 +7,8 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.Map;
 
-import static ark.bpmn.TestData.BrannKlasseTestData.Dmn_Brannklasse;
 import static ark.bpmn.TestData.KravTilBranntiltaktModelTestData.*;
+import ark.bpmn.TestData.KravTilBranntiltaktModelTestData.models;
 
 import org.camunda.bpm.dmn.engine.DmnDecisionRuleResult;
 import org.camunda.bpm.dmn.engine.DmnDecisionTableResult;
@@ -21,7 +21,7 @@ import org.junit.ClassRule;
 import org.junit.Rule;
 import org.junit.Test;
 
-import ark.bpmn.TestData.KravTilBranntiltaktModelTestData.models;
+
 
 public class KravTilBranntiltaktDmnTests {
 	@ClassRule
@@ -34,30 +34,30 @@ public class KravTilBranntiltaktDmnTests {
 	}
 
 	@Test
-	@Deployment(resources = models.Dmn_10a_BrannalarmKategori)
+	@Deployment(resources = models.Dmn_10a_KravBrannalarmKategori)
 	public void BrannalarmKategori_DmnTest() {
 
 		DecisionService decisionService = rule.getProcessEngine().getDecisionService();
 		// Evaluate DMN
-		DmnDecisionTableResult decisionResult = decisionService.evaluateDecisionTableByKey("BrannalarmKategori",
+		DmnDecisionTableResult decisionResult = decisionService.evaluateDecisionTableByKey("KravBrannalarmKategori",
 				Dmn_BrannalarmKategori());
 		assertEquals(1, decisionResult.getResultList().size());
 	}
 
 	@Test
-	@Deployment(resources = models.Dmn_10a_BrannalarmKategori)
+	@Deployment(resources = models.Dmn_10a_KravBrannalarmKategori)
 	public void BrannalarmKategori_DmnOutputTest() {
-		Map<String, Object> variables = Dmn_Brannklasse();
+		Map<String, Object> variables = Dmn_BrannalarmKategori();
 		DecisionService decisionService = rule.getProcessEngine().getDecisionService();
 		// Evaluate DMN
-		DmnDecisionTableResult decisionResult = decisionService.evaluateDecisionTableByKey("BrannalarmKategori",
+		DmnDecisionTableResult decisionResult = decisionService.evaluateDecisionTableByKey("KravBrannalarmKategori",
 				variables);
 		DmnDecisionRuleResult result = decisionResult.getSingleResult();
 		// Print results
 		System.out.println("DmnInput: " + variables);
 		System.out.println("DmnOutput: " + result);
 		// test
-		assertThat(result).containsOnly(entry("brannalarmKategori", 2));
+		assertThat(result).containsOnly(entry("brannalarmKategori", 1));
 	}
 
 	@Test
@@ -102,7 +102,7 @@ public class KravTilBranntiltaktDmnTests {
 	@Test
 	@Deployment(resources = models.Dmn_11_TiltakManuellBrannslokking)
 	public void TiltakManuellBrannslokking_DmnOutputTest() {
-		Map<String, Object> variables = Dmn_Brannklasse();
+		Map<String, Object> variables = Dmn_TiltakManuellBrannslokking();
 		DecisionService decisionService = rule.getProcessEngine().getDecisionService();
 		// Evaluate DMN
 		DmnDecisionTableResult decisionResult = decisionService.evaluateDecisionTableByKey("TiltakManuellBrannslokking",
@@ -112,7 +112,8 @@ public class KravTilBranntiltaktDmnTests {
 		System.out.println("DmnInput: " + variables);
 		System.out.println("DmnOutput: " + result);
 		// test
-		assertThat(result).containsOnly(entry("kravManuellSlokking", "Brannslange krav i bygning med trykkvann"),
+		assertThat(result).containsOnly(
+				entry("kravManuellSlokking", "Håndslokkeapparat, evt. brannslange"),
 				entry("maxBrannslangeLengde", "maks 30m lengde"));
 	}
 
@@ -130,7 +131,7 @@ public class KravTilBranntiltaktDmnTests {
 	@Test
 	@Deployment(resources = models.Dmn_20_BranncelleRomningUtgang)
 	public void BranncelleRomningUtgang_DmnOutputTest() {
-		Map<String, Object> variables = Dmn_Brannklasse();
+		Map<String, Object> variables = Dmn_BranncelleRomningUtgang();
 		DecisionService decisionService = rule.getProcessEngine().getDecisionService();
 		// Evaluate DMN
 		DmnDecisionTableResult decisionResult = decisionService.evaluateDecisionTableByKey("BranncelleRomningUtgang",
@@ -140,9 +141,13 @@ public class KravTilBranntiltaktDmnTests {
 		System.out.println("DmnInput: " + variables);
 		System.out.println("DmnOutput: " + result);
 		// test
-		assertThat(result).containsOnly(entry("kravFriBreddeRomnVei", "1cm pr.pers / min. 1,2m"),
-				entry("kravMinFriDorBredde", 0.9), entry("kravMaxLengdeFluktvei", 25),
-				entry("avstandDorIBranncelle1Dor", 15), entry("kravAvstandDorIBranncelleflereDorer", 30));
+		assertThat(result).containsOnly(
+				entry("kravFriBreddeRomnVei", "1cm pr.pers / min. 0,86m"),
+				entry("kravMinFriDorBredde", 0.86),
+				entry("kravMinFriHoyde", 2.0),
+				entry("kravMaxLengdeFluktvei", "50"),
+				entry("avstandDorIBranncelle1Utgang", 15),
+				entry("kravAvstandDorIBranncelleflereUtganger", 30));
 	}
 
 	@Test

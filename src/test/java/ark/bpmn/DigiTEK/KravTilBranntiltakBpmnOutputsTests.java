@@ -27,7 +27,7 @@ import org.junit.Test;
 
 
 
-@Deployment(resources = {models.BpmnSub_KravTilBranntiltakt, models.Bpmn_KravTilBranntiltaktModel,models.Dmn_10a_BrannalarmKategori,models.Dmn_10b_DetektorBrannalarmKategori,
+@Deployment(resources = {models.BpmnSub_KravTilBranntiltakt, models.Bpmn_KravTilBranntiltaktModel,models.Dmn_10a_KravBrannalarmKategori,models.Dmn_10b_DetektorBrannalarmKategori,
 		models.Dmn_11_TiltakManuellBrannslokking,models.Dmn_20_BranncelleRomningUtgang,models.Dmn_21_TiltakPavirkeRomningstidSlokkeanlegg,models.Dmn_22_TiltakPavirkeRomningstidAlarmanlegg,models.Dmn_23_TiltakPavirkeRomningstidLedesystem
 		,models.Dmn_24_TiltakPavirkeRomningstidEvakueringsplan})
 public class KravTilBranntiltakBpmnOutputsTests {
@@ -85,8 +85,11 @@ public class KravTilBranntiltakBpmnOutputsTests {
 		// print result in console
 		System.out.println("Model inputs :" + inputsVariables);
 		System.out.println("number of tables: " + number);
-		// Assert number of run tables
-		assertEquals(number.toString(), "8");
+		System.out.println("models Keys:"+modelOutputsvariables.keySet());
+		// Assert this Dmn have been run
+		assertThat(modelOutputsvariables).containsOnlyKeys("tiltakRomningstidEvakueringsplan","tiltakRomningstidLedesystem",
+				"tiltakRomningstidAlarmanlegg","tiltakRomningstidSlokkeanlegg","kravBrannalarmKategori","detektorBrannalarmKategori",
+				"tiltakManuellBrannslokking","branncelleRomningUtgang");
 		// get one specific table result
 		Map<String, Object> detektorBrannalarmKategori = (Map<String, Object>) modelOutputsvariables
 				.get("detektorBrannalarmKategori");

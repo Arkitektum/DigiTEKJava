@@ -19,7 +19,7 @@ import org.junit.Test;
 import ark.bpmn.TestData.KravTilBranntiltaktModelTestData.models;
 
 
-@Deployment(resources = {models.Bpmn_KravTilBranntiltaktModel,models.Dmn_10a_BrannalarmKategori,models.Dmn_10b_DetektorBrannalarmKategori
+@Deployment(resources = {models.Bpmn_KravTilBranntiltaktModel,models.Dmn_10a_KravBrannalarmKategori,models.Dmn_10b_DetektorBrannalarmKategori
 		,models.Dmn_11_TiltakManuellBrannslokking,models.Dmn_20_BranncelleRomningUtgang,models.Dmn_21_TiltakPavirkeRomningstidSlokkeanlegg,models.Dmn_22_TiltakPavirkeRomningstidAlarmanlegg,
 		models.Dmn_23_TiltakPavirkeRomningstidLedesystem
 		,models.Dmn_24_TiltakPavirkeRomningstidEvakueringsplan})

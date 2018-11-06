@@ -37,7 +37,7 @@ import org.junit.Test;
 		models.Dmn_16_BrannmotstandDorRomningsvei, models.Dmn_17_BrannmotstandDorISeksjvegg,
 		models.Dmn_18_BrannmotstandVinduMotstParallellYttervegg, models.Dmn_20_BranncelleRomningUtgang
 		// krav brantiltak
-		, models.Bpmn_KravTilBranntiltaktModel, models.Dmn_10a_BrannalarmKategori,
+		, models.Bpmn_KravTilBranntiltaktModel, models.Dmn_10a_KravBrannalarmKategori,
 		models.Dmn_10b_DetektorBrannalarmKategori,models.Dmn_11_TiltakManuellBrannslokking, 
 		models.Dmn_19_BrannmotstandVinduInnvHjørne,	models.Dmn_21_TiltakPavirkeRomningstidSlokkeanlegg,
 		models.Dmn_22_TiltakPavirkeRomningstidAlarmanlegg,models.Dmn_23_TiltakPavirkeRomningstidLedesystem, 
@@ -97,7 +97,7 @@ public class BranntekniskProsjekteringBpmnTests {
 		System.out.println(modelOutputs);
 		Integer number = modelOutputs.size();
 		System.out.println(number);
-		assertEquals(number.toString(),"26");
+		assertEquals(number.toString(),"24");
 		rule.getTaskService().complete(task.getId());
 
 		// assertThat(processInstance).isStarted().isEnded().hasPassed(IntegrationModelEndTaskId);

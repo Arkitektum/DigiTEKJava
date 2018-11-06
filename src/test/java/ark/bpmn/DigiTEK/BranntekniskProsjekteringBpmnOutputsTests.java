@@ -39,7 +39,7 @@ import org.junit.Test;
 		models.Dmn_16_BrannmotstandDorRomningsvei, models.Dmn_17_BrannmotstandDorISeksjvegg,
 		models.Dmn_18_BrannmotstandVinduMotstParallellYttervegg, models.Dmn_20_BranncelleRomningUtgang
 		// krav brantiltak
-		, models.Bpmn_KravTilBranntiltaktModel, models.Dmn_10a_BrannalarmKategori,models.Dmn_10b_DetektorBrannalarmKategori,
+		, models.Bpmn_KravTilBranntiltaktModel, models.Dmn_10a_KravBrannalarmKategori,models.Dmn_10b_DetektorBrannalarmKategori,
 		models.Dmn_11_TiltakManuellBrannslokking, models.Dmn_19_BrannmotstandVinduInnvHjørne,
 		models.Dmn_21_TiltakPavirkeRomningstidSlokkeanlegg, models.Dmn_22_TiltakPavirkeRomningstidAlarmanlegg,
 		models.Dmn_23_TiltakPavirkeRomningstidLedesystem, models.Dmn_24_TiltakPavirkeRomningstidEvakueringsplan
@@ -79,7 +79,7 @@ public class BranntekniskProsjekteringBpmnOutputsTests {
 
 		System.out.println("Model inputs :" + inputsVariables);
 		System.out.println("number of tables: " + number);
-		assertEquals(number.toString(), "26");
+		assertEquals(number.toString(), "24");
 //		Map<String, Object> tiltakStorrelseBrannseksjonBelastning = (Map<String, Object>) modelOutputsvariables
 //				.get("tiltakStorrelseBrannseksjonBelastning");
 //

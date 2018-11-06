@@ -23,12 +23,13 @@ import org.json.simple.parser.ParseException;
 
 public class ModelOutputsDataDictionary implements JavaDelegate {
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public void execute(DelegateExecution execution) throws Exception {
 
 		// get outputModel variables from execution
 		Map<String, Object> modelOutputsMap = (Map<String, Object>) execution.getVariable("modelOutputs");
-		Map<String, Object> modelInputsMap = (Map<String, Object>) execution.getVariable("modelInputsVariables");
+		Map<String, Object> modelInputsMap = (Map<String, Object>) execution.getVariable("modelInputs");
 
 		// Get Json from file
 		JSONArray dmnInfoJsonArray = new ModelOutputsDataDictionary().GetJsonFromFile("JsonDmn2TEK.json");
@@ -78,7 +79,7 @@ public class ModelOutputsDataDictionary implements JavaDelegate {
 		execution.removeVariables();
 		execution.setVariable("modelDataDictionary", modelDataDictionary);
 		execution.setVariable("modelOutputs", modelOutputsMap);
-		execution.setVariable("modelInputsVariables", modelInputsMap);
+		execution.setVariable("modelInputs", modelInputsMap);
 
 	}
 

@@ -14,7 +14,7 @@ public class KravTilBranntiltaktModelTestData {
 	public class models {
 		public static final String BpmnSub_KravTilBranntiltakt = "KravTilBranntiltaktSubModel.bpmn";
 		public static final String Bpmn_KravTilBranntiltaktModel = "./Bpmn/Krav til branntiltak Model.bpmn";
-	    public static final String Dmn_10a_BrannalarmKategori = "./Dmn/10a_BrannalarmKategori.dmn";
+	    public static final String Dmn_10a_KravBrannalarmKategori = "./Dmn/10a_KravBrannalarmKategori.dmn";
 	    public static final String Dmn_10b_DetektorBrannalarmKategori = "./Dmn/10b_DetektorBrannalarmKategori.dmn";
 	    public static final String Dmn_11_TiltakManuellBrannslokking = "./Dmn/11_TiltakManuellBrannslokking.dmn";
 	    public static final String Dmn_20_BranncelleRomningUtgang = "./Dmn/20_BranncelleRomningUtgang.dmn";

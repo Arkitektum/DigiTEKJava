@@ -25,7 +25,7 @@
         <bpmn:outgoing>SequenceFlow_15ll6yj</bpmn:outgoing>
         <bpmn:outgoing>SequenceFlow_1bu4zd4</bpmn:outgoing>
       </bpmn:parallelGateway>
-      <bpmn:businessRuleTask id="BusinessRuleTask_1mst61q" name="10a_KravBrannAlarmKategori" camunda:resultVariable="kravBrannAlarmKategori" camunda:decisionRef="BrannalarmKategori" camunda:mapDecisionResult="singleResult">
+      <bpmn:businessRuleTask id="BusinessRuleTask_1mst61q" name="10a_KravBrannAlarmKategori" camunda:resultVariable="kravBrannalarmKategori" camunda:decisionRef="KravBrannalarmKategori" camunda:mapDecisionResult="singleResult">
         <bpmn:incoming>SequenceFlow_1kp2644</bpmn:incoming>
         <bpmn:outgoing>SequenceFlow_0i4k2jb</bpmn:outgoing>
       </bpmn:businessRuleTask>
@@ -61,7 +61,7 @@
       <bpmn:scriptTask id="Task_0ee06fo" name="_brannalarmKategori" scriptFormat="groovy" camunda:resultVariable="brannalarmKategori">
         <bpmn:incoming>SequenceFlow_0i4k2jb</bpmn:incoming>
         <bpmn:outgoing>SequenceFlow_1fft3na</bpmn:outgoing>
-        <bpmn:script>kravBrannAlarmKategori.brannalarmKategori</bpmn:script>
+        <bpmn:script>kravBrannalarmKategori.brannalarmKategori</bpmn:script>
       </bpmn:scriptTask>
       <bpmn:sequenceFlow id="SequenceFlow_0ugub3e" sourceRef="BusinessRuleTask_01yq0xi" targetRef="ExclusiveGateway_0z3cqlu" />
       <bpmn:exclusiveGateway id="ExclusiveGateway_0z3cqlu">

@@ -1,125 +1,133 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/1.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="definitions_1nji4lv" name="definitions" namespace="http://camunda.org/schema/1.0/dmn">
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="Excel2Dmn_06-21-18" name="20_BranncelleRomningUtgang" namespace="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd">
   <decision id="BranncelleRomningUtgang" name="Branncelle romning utgang">
-    <extensionElements>
-      <biodi:bounds x="269" y="287" width="180" height="80" />
-      <biodi:edge source="KnowledgeSource_0emkkg0">
-        <biodi:waypoints x="513" y="320" />
-        <biodi:waypoints x="449" y="321" />
-      </biodi:edge>
-      <biodi:edge source="InputData_04vc5fq">
-        <biodi:waypoints x="360" y="243" />
-        <biodi:waypoints x="359" y="287" />
-      </biodi:edge>
-      <biodi:edge source="KnowledgeSource_07eiw7k">
-        <biodi:waypoints x="520" y="388" />
-        <biodi:waypoints x="449" y="351" />
-      </biodi:edge>
-    </extensionElements>
-    <informationRequirement>
-      <requiredInput href="#InputData_04vc5fq" />
-    </informationRequirement>
-    <authorityRequirement>
-      <requiredAuthority href="#KnowledgeSource_0emkkg0" />
-    </authorityRequirement>
-    <authorityRequirement>
-      <requiredAuthority href="#KnowledgeSource_07eiw7k" />
-    </authorityRequirement>
-    <decisionTable id="decisionTable">
-      <input id="input1" label="Risikoklasse" camunda:inputVariable="">
-        <inputExpression id="inputExpression1" typeRef="string">        <text>rkl</text>
-</inputExpression>
+    <decisionTable id="decisionTable" hitPolicy="FIRST">
+      <input id="rkl" label="Risikoklasse">
+        <inputExpression id="exp_rkl" label="label_rkl" typeRef="string">
+          <text>rkl</text>
+        </inputExpression>
       </input>
-      <output id="OutputClause_13u69k2" label="Fri bredde i rømningsvei, minimum (samlet)" name="kravFriBreddeRomnVei" typeRef="string" />
-      <output id="OutputClause_11zgowb" label="Minimum fri dørbredde i meter" name="kravMinFriDorBredde" typeRef="double" />
-      <output id="OutputClause_1q85gcs" label="Lengste vei i brancelle i meter" name="kravMaxLengdeFluktvei" typeRef="integer" />
-      <output id="OutputClause_1981kjr" label="Avstand til dør til trapp/utgang i branncelle, 1 dør" name="avstandDorIBranncelle1Dor" typeRef="integer" />
-      <output id="OutputClause_09z6tqb" label="Avstand til dør til trapp/utgang i branncelle, flere dører" name="kravAvstandDorIBranncelleflereDorer" typeRef="integer" />
-      <rule id="row-948887753-30">
-        <inputEntry id="UnaryTests_112a7ma">        <text><![CDATA["RKL1","RKL2"]]></text>
-</inputEntry>
-        <outputEntry id="LiteralExpression_0tsd4k1">        <text><![CDATA["1cm pr.pers / min. 0,9m"]]></text>
-</outputEntry>
-        <outputEntry id="LiteralExpression_0dvv8du">        <text>0.9</text>
-</outputEntry>
-        <outputEntry id="LiteralExpression_1krw1e8">        <text>50</text>
-</outputEntry>
-        <outputEntry id="LiteralExpression_1twbw39">        <text>15</text>
-</outputEntry>
-        <outputEntry id="LiteralExpression_1j1zl72">        <text>30</text>
-</outputEntry>
+      <output id="kravFriBreddeRomnVei_Id" label="Fri bredde i rømningsvei, minimum (samlet)" name="kravFriBreddeRomnVei" typeRef="string" />
+      <output id="kravMinFriDorBredde_Id" label="Minimum fri dørbredde i meter" name="kravMinFriDorBredde" typeRef="double" />
+      <output id="kravMinFriHoyde_Id" label="Minimum fri høyde i meter" name="kravMinFriHoyde" typeRef="double" />
+      <output id="kravMaxLengdeFluktvei_Id" label="Lengste vei i brancelle i meter" name="kravMaxLengdeFluktvei" typeRef="string" />
+      <output id="avstandDorIBranncelle1Utgang_Id" label="Avstand til dør til trapp/utgang i branncelle, 1 utgang" name="avstandDorIBranncelle1Utgang" typeRef="integer" />
+      <output id="kravAvstandDorIBranncelleflereUtganger_Id" label="Avstand til dør til trapp/utgang i branncelle, flere utganger" name="kravAvstandDorIBranncelleflereUtganger" typeRef="integer" />
+      <rule id="rowRule_7">
+        <inputEntry id="B7">
+          <text>"RKL1","RKL2"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C7">
+          <text>"1cm pr.pers / min. 0,86m"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_D7">
+          <text>0.86</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_E7">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_F7">
+          <text>"50"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_G7">
+          <text>15</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_H7">
+          <text>30</text>
+        </outputEntry>
       </rule>
-      <rule id="row-948887753-32">
-        <inputEntry id="UnaryTests_15bm04n">        <text><![CDATA["RKL3"]]></text>
-</inputEntry>
-        <outputEntry id="LiteralExpression_17uthte">        <text><![CDATA["1cm pr.pers / min. 1,2m"]]></text>
-</outputEntry>
-        <outputEntry id="LiteralExpression_042cchf">        <text>0.9</text>
-</outputEntry>
-        <outputEntry id="LiteralExpression_16erkvw">        <text>30</text>
-</outputEntry>
-        <outputEntry id="LiteralExpression_1y8nhuw">        <text>15</text>
-</outputEntry>
-        <outputEntry id="LiteralExpression_03hh0fl">        <text>30</text>
-</outputEntry>
+      <rule id="rowRule_8">
+        <inputEntry id="B8">
+          <text>"RKL3"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C8">
+          <text>"1cm pr.pers / min. 1,16m"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_D8">
+          <text>0.86</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_E8">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_F8">
+          <text>"30"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_G8">
+          <text>15</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_H8">
+          <text>30</text>
+        </outputEntry>
       </rule>
-      <rule id="table-543032843-6">
-        <inputEntry id="UnaryTests_10nr4h6">        <text><![CDATA["RKL4"]]></text>
-</inputEntry>
-        <outputEntry id="LiteralExpression_189lkon">        <text><![CDATA["1cm pr.pers / min. 0,9m"]]></text>
-</outputEntry>
-        <outputEntry id="LiteralExpression_0ajwk9d">        <text>0.9</text>
-</outputEntry>
-        <outputEntry id="LiteralExpression_01pikfc">        <text>30</text>
-</outputEntry>
-        <outputEntry id="LiteralExpression_1qe8f6r">        <text>15</text>
-</outputEntry>
-        <outputEntry id="LiteralExpression_018n6vx">        <text>30</text>
-</outputEntry>
+      <rule id="rowRule_9">
+        <inputEntry id="B9">
+          <text>"RKL4"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C9">
+          <text>"1cm pr.pers / min. 0,86m"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_D9">
+          <text>0.86</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_E9">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_F9">
+          <text>"Ikke angitt"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_G9">
+          <text>15</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_H9">
+          <text>30</text>
+        </outputEntry>
       </rule>
-      <rule id="row-948887753-34">
-        <inputEntry id="UnaryTests_00gb2dg">        <text><![CDATA["RKL5"]]></text>
-</inputEntry>
-        <outputEntry id="LiteralExpression_15mbeus">        <text><![CDATA["1cm pr.pers / min. 1,2m"]]></text>
-</outputEntry>
-        <outputEntry id="LiteralExpression_1j6t9qw">        <text>1.2</text>
-</outputEntry>
-        <outputEntry id="LiteralExpression_0p47ntj">        <text>30</text>
-</outputEntry>
-        <outputEntry id="LiteralExpression_0vpfn2k">        <text>15</text>
-</outputEntry>
-        <outputEntry id="LiteralExpression_11g3jzx">        <text>30</text>
-</outputEntry>
+      <rule id="rowRule_10">
+        <inputEntry id="B10">
+          <text>"RKL5"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C10">
+          <text>"1cm pr.pers / min. 1,16m"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_D10">
+          <text>1.86</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_E10">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_F10">
+          <text>"30"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_G10">
+          <text>15</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_H10">
+          <text>30</text>
+        </outputEntry>
       </rule>
-      <rule id="row-948887753-35">
-        <inputEntry id="UnaryTests_145jy11">        <text><![CDATA["RKL6"]]></text>
-</inputEntry>
-        <outputEntry id="LiteralExpression_0mrj2r5">        <text><![CDATA["1cm pr.pers / min. 1,2m"]]></text>
-</outputEntry>
-        <outputEntry id="LiteralExpression_1vcwbde">        <text>0.9</text>
-</outputEntry>
-        <outputEntry id="LiteralExpression_13tq9zi">        <text>25</text>
-</outputEntry>
-        <outputEntry id="LiteralExpression_0liqwcw">        <text>15</text>
-</outputEntry>
-        <outputEntry id="LiteralExpression_05qwutk">        <text>30</text>
-</outputEntry>
+      <rule id="rowRule_11">
+        <inputEntry id="B11">
+          <text>"RKL6"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C11">
+          <text>"1cm pr.pers / min. 1,16m"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_D11">
+          <text>0.86</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_E11">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_F11">
+          <text>"25"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_G11">
+          <text>15</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_H11">
+          <text>30</text>
+        </outputEntry>
       </rule>
     </decisionTable>
   </decision>
-  <inputData id="InputData_04vc5fq" name="Risikoklase">
-    <extensionElements>
-      <biodi:bounds x="289" y="198" width="125" height="45" />
-    </extensionElements>
-  </inputData>
-  <knowledgeSource id="KnowledgeSource_0emkkg0" name="§7-27 tab 4 s.104 / §7-27s.106">
-    <extensionElements>
-      <biodi:bounds x="513" y="288" width="100" height="63" />
-    </extensionElements>
-  </knowledgeSource>
-  <knowledgeSource id="KnowledgeSource_07eiw7k" name="TEK17 § 11-13">
-    <extensionElements>
-      <biodi:bounds x="520" y="383" width="100" height="63" />
-    </extensionElements>
-  </knowledgeSource>
 </definitions>
