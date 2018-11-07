@@ -1,254 +1,236 @@
 [
   {
-    "DmnId": "kravBrannAlarmKategori",
-    "DmnNavn": "Brannalarmkategori avhengig av risikoklasse",
-    "TekKapitel": "11-12",
-    "TekLedd": " ",
-    "TekTabell": "Tabell 3",
-    "TekForskriften": " ",
-    "TekWebLink": "https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/11/iv/11-12/"
+    "DmnId": "branncelleRomningUtgang",
+    "DmnNavn": "Branncelle romning utgang",
+    "TekKapitel": "11-13",
+    "TekLedd": null,
+    "TekTabell": null,
+    "TekBokstav": null,
+    "TekWebLink": "https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/11/iv/11-13/"
   },
- {
-  "DmnId": "branncelleRomningUtgang",
-  "DmnNavn": "Utgang fra branncelle",
-  "TekKapitel": "11-13",
-  "TekLedd": " ",
-  "TekTabell": " ",
-  "TekForskriften": " ",
-  "TekWebLink": "https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/11/iv/11-13/"
- },
- {
-  "DmnId": "brannklasse",
-  "DmnNavn": "Brannklasse for byggverk",
-  "TekKapitel": "11-3",
-  "TekLedd":"",
-  "TekTabell":"",
-  "TekForskriften":"",
-  "TekWebLink": "https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/11/i/11-2/"
- },
- {
-  "DmnId": "brannklasseKonsekvensBeskrivelse",
-  "DmnNavn": "Brannklasser",
-  "TekKapitel": "11-3",
-  "TekLedd": " ",
-  "TekTabell": " ",
-  "TekForskriften": " ",
-  "TekWebLink": "https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/11/i/11-3/"
- },
- {
-  "DmnId": "brannmotstandBaerendeBygningsdeler",
-  "DmnNavn": "Bærende bygningsdelers brannmotstand avhengig av brannklasse",
-  "TekKapitel": "11-4",
-  "TekLedd": " ",
-  "TekTabell": " ",
-  "TekForskriften": " ",
-  "TekWebLink": "https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/11/ii/11-4"
- },
- {
-  "DmnId": "brannmotstandDorISeksjoneringsvegg",
-  "DmnNavn": "Brannmotstand for seksjoneringsvegg.",
-  "TekKapitel": "11-7",
-  "TekLedd": "2",
-  "TekTabell": "Tabell 2: ",
-  "TekForskriften": " ",
-  "TekWebLink": "https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/11/iii/11-7/"
- },
- {
-  "DmnId": "brannmotstandDorRomningsvei",
-  "DmnNavn": "Brannmotstand til dør til og i rømningsvei",
-  "TekKapitel": "11-8",
-  "TekLedd": " ",
-  "TekTabell": "Tabell 2:",
-  "TekForskriften": " ",
-  "TekWebLink": "https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/11/iii/11-8/"
- },
- {
-  "DmnId": "brannmotstandIsolasjon",
-  "DmnNavn": "Materialer og produkters egenskaper ved brann",
-  "TekKapitel": "11-9",
-  "TekLedd": "2",
-  "TekTabell": " ",
-  "TekForskriften": " ",
-  "TekWebLink": "https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/11/iii/11-9/"
- },
- {
-  "DmnId": "brannmotstandMotstaendeVinduerYttervegger",
-  "DmnNavn": "Brannmotstand for seksjoneringsvegg.",
-  "TekKapitel": "11-7",
-  "TekLedd": " ",
-  "TekTabell": "Tabell 2:",
-  "TekForskriften": " ",
-  "TekWebLink": "https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/11/iii/11-7/"
- },
- {
-  "DmnId": "brannmotstandSeksjoneringsvegg",
-  "DmnNavn": "Brannmotstand for seksjoneringsvegg",
-  "TekKapitel": "11-7",
-  "TekLedd": " ",
-  "TekTabell": "Tabell 2: ",
-  "TekForskriften": " ",
-  "TekWebLink": "https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/11/iii/11-7/"
- },
- {
-  "DmnId": "brannmotstandSkillendeKonstruksjon",
-  "DmnNavn": "Brannmotstand til branncellebegrensende bygningsdeler",
-  "TekKapitel": "11-8",
-  "TekLedd": " ",
-  "TekTabell": "Tabell 1: ",
-  "TekForskriften": " ",
-  "TekWebLink": "https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/11/iii/11-8/"
- },
- {
-  "DmnId": "brannmotstandTrapperom",
-  "DmnNavn": "Brannceller",
-  "TekKapitel": "11-8",
-  "TekLedd": " ",
-  "TekTabell": " ",
-  "TekForskriften": " ",
-  "TekWebLink": "https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/11/iii/11-8/"
- },
- {
-  "DmnId": "detektorBrannalarmKategori",
-  "DmnNavn": "Tiltak for å påvirke rømnings - og redningstider",
-  "TekKapitel": "11-12",
-  "TekLedd": " ",
-  "TekTabell": "Tabell 3:",
-  "TekForskriften": " ",
-  "TekWebLink": "https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/11/iv/11-12/"
- },
- {
-  "DmnId": "klassifiseringTrapperom",
-  "DmnNavn": "Trapperom klassifisering",
-  "TekKapitel": "11-8",
-  "TekLedd": " ",
-  "TekTabell": " ",
-  "TekForskriften": " ",
-  "TekWebLink": "https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/11/iii/11-8/"
- },
- {
-  "DmnId": "konsekvensBrannklassifisering",
-  "DmnNavn": "Brannklasser",
-  "TekKapitel": "11-3",
-  "TekLedd": " ",
-  "TekTabell": " ",
-  "TekForskriften": " ",
-  "TekWebLink": "https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/11/i/11-3/"
- },
- {
-  "DmnId": "kravBranndetektorRom",
-  "DmnNavn": "Tiltak for å påvirke rømnings - og redningstider",
-  "TekKapitel": "11-12",
-  "TekLedd": " ",
-  "TekTabell": " ",
-  "TekForskriften": " ",
-  "TekWebLink": "https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/11/iv/11-12/"
- },
- {
-  "DmnId": "ledesystemEvakuering",
-  "DmnNavn": "Tiltak for å påvirke rømnings - og redningstider",
-  "TekKapitel": "11-12",
-  "TekLedd": "3",
-  "TekTabell": " ",
-  "TekForskriften": " ",
-  "TekWebLink": "https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/11/i/11-3/"
- },
- {
-  "DmnId": "ledesystemEvakueringVarighet",
-  "DmnNavn": "Tiltak for å påvirke rømnings - og redningstider",
-  "TekKapitel": "11-12",
-  "TekLedd": "3",
-  "TekTabell": " ",
-  "TekForskriften": " ",
-  "TekWebLink": "https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/11/iv/11-12/"
- },
- {
-  "DmnId": "overflateKledningBrannseksjon",
-  "DmnNavn": "Ytelser til overflater og kledning",
-  "TekKapitel": "11-9",
-  "TekLedd": "2",
-  "TekTabell": "Tabell 1 og 2",
-  "TekForskriften": " ",
-  "TekWebLink": "https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/11/iv/11-12/"
- },
- {
-  "DmnId": "overflaterBranncelleRomningsvei",
-  "DmnNavn": "Ytelser til overflater og kledning",
-  "TekKapitel": "11-9",
-  "TekLedd": "2",
-  "TekTabell": "Tabell 1 og 2",
-  "TekForskriften": " ",
-  "TekWebLink": "https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/11/iii/11-9/"
- },
- {
-  "DmnId": "risikoklasseFraTypeVirksomhet",
-  "DmnNavn": "Ulike virksomheter og tilhørende risikoklasse",
-  "TekKapitel": "11-2",
-  "TekLedd": " ",
-  "TekTabell": " ",
-  "TekForskriften": " ",
-  "TekWebLink": "https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/11/i/11-2/"
- },
- {
-  "DmnId": "risikoklassifisering",
-  "DmnNavn": "Risikoklasser",
-  "TekKapitel": "11-2",
-  "TekLedd": " ",
-  "TekTabell": " ",
-  "TekForskriften": " ",
-  "TekWebLink": "https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/11/i/11-2/"
- },
- {
-  "DmnId": "tiltakBrannveggHoyeBygg",
-  "DmnNavn": "Brannveggens brannmotstand avhengig av spesifikk brannenergi",
-  "TekKapitel": "11-6",
-  "TekLedd": " ",
-  "TekTabell": "Tabell 1",
-  "TekForskriften": " ",
-  "TekWebLink": "https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/11/iii/11-6/"
- },
- {
-  "DmnId": "tiltakManuellBrannslokking",
-  "DmnNavn": "Tilrettelegging for manuell slokking",
-  "TekKapitel": "11-16",
-  "TekLedd": " ",
-  "TekTabell": " ",
-  "TekForskriften": " ",
-  "TekWebLink": "https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/11/v/11-16/"
- },
- {
-  "DmnId": "tiltakPavirkeRomningstid",
-  "DmnNavn": "Tiltak for å påvirke rømnings- og redningstider",
-  "TekKapitel": "11-12",
-  "TekLedd": " ",
-  "TekTabell": "",
-  "TekForskriften": " ",
-  "TekWebLink": "https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/11/iv/11-12/"
- },
- {
-  "DmnId": "tiltakStorrelseBrannseksjonBelastning",
-  "DmnNavn": "Størrelse på brannseksjon",
-  "TekKapitel": "11-7",
-  "TekLedd": " ",
-  "TekTabell": "Tabell 1",
-  "TekForskriften": " ",
-  "TekWebLink": "https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/11/iii/11-7/"
- },
   {
-    "DmnId": "vedleggTilRisikoklasse",
-    "DmnNavn": "Risikoklasser",
-    "TekKapitel": "11-2",
-    "TekLedd": " ",
-    "TekTabell": " ",
-    "TekForskriften": " ",
+    "DmnId": "brannklasse",
+    "DmnNavn": "Brannklasse",
+    "TekKapitel": "11-3",
+    "TekLedd": null,
+    "TekTabell": "Tabell 1",
+    "TekBokstav": null,
     "TekWebLink": "https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/11/i/11-2/"
   },
   {
-  "DmnId": "vedleggTilRisikoklasse",
-  "DmnNavn": "Risikoklasser",
-  "TekKapitel": "11-2",
-  "TekLedd": " ",
-  "TekTabell": " ",
-  "TekForskriften": " ",
-  "TekWebLink": "https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/11/i/11-2/"
- }
+    "DmnId": "brannklasseKonsekvensBeskrivelse",
+    "DmnNavn": "Brannklasse konsekvens beskrivelse",
+    "TekKapitel": "11-3",
+    "TekLedd": null,
+    "TekTabell": "Brannklasser",
+    "TekBokstav": null,
+    "TekWebLink": "https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/11/i/11-3/"
+  },
+  {
+    "DmnId": "brannmotstandBaerendeBygningsdeler",
+    "DmnNavn": "Brannmotstand bærende bygningsdeler",
+    "TekKapitel": "11-4",
+    "TekLedd": null,
+    "TekTabell": null,
+    "TekBokstav": null,
+    "TekWebLink": "https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/11/ii/11-4"
+  },
+  {
+    "DmnId": "brannmotstandDorISeksjoneringsvegg",
+    "DmnNavn": "Brannmotstand dør i seksjoneringsvegg",
+    "TekKapitel": "11-7",
+    "TekLedd": "2",
+    "TekTabell": null,
+    "TekBokstav": null,
+    "TekWebLink": "https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/11/iii/11-7/"
+  },
+  {
+    "DmnId": "brannmotstandDorRomningsvei",
+    "DmnNavn": "Brannmotstand dør rømningsvei",
+    "TekKapitel": "11-8",
+    "TekLedd": "2",
+    "TekTabell": "Tabell 2",
+    "TekBokstav": "C",
+    "TekWebLink": "https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/11/iii/11-8/"
+  },
+  {
+    "DmnId": "brannmotstandSeksjoneringsvegg",
+    "DmnNavn": "Brannmotstand seksjoneringsvegg",
+    "TekKapitel": "11-7",
+    "TekLedd": "2",
+    "TekTabell": "Tabell 2",
+    "TekBokstav": null,
+    "TekWebLink": "https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/11/iii/11-7/"
+  },
+  {
+    "DmnId": "brannmotstandSkillendeKonstruksjon",
+    "DmnNavn": "Brannmotstand skillende konstruksjoner",
+    "TekKapitel": "11-8",
+    "TekLedd": "2",
+    "TekTabell": "Tabell 1",
+    "TekBokstav": "B",
+    "TekWebLink": "https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/11/iii/11-8/"
+  },
+  {
+    "DmnId": "brannmotstandTrapperom",
+    "DmnNavn": "Brannmotstand trapperom",
+    "TekKapitel": "11-8",
+    "TekLedd": "2",
+    "TekTabell": null,
+    "TekBokstav": "F",
+    "TekWebLink": "https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/11/iii/11-8/"
+  },
+  {
+    "DmnId": "brannmotstandVinduInnvendigHjorne",
+    "DmnNavn": "Brannmotstand vinduer i yttervegg innvendig hjørne",
+    "TekKapitel": "11-8",
+    "TekLedd": "2",
+    "TekTabell": "Tabell 3",
+    "TekBokstav": "I",
+    "TekWebLink": "https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/11/iii/11-8/"
+  },
+  {
+    "DmnId": "brannmotstandVinduMotstParallellYttervegg",
+    "DmnNavn": "Brannmotstand Vindu Motst Parallel lYttervegg",
+    "TekKapitel": "11-8",
+    "TekLedd": "2",
+    "TekTabell": "Tabell 3",
+    "TekBokstav": "I",
+    "TekWebLink": "https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/11/iii/11-8/"
+  },
+  {
+    "DmnId": "detektorBrannalarmKategori",
+    "DmnNavn": "Detektor brannalarm kategori",
+    "TekKapitel": "11-12",
+    "TekLedd": "2",
+    "TekTabell": "Tabell 3",
+    "TekBokstav": "a",
+    "TekWebLink": "https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/11/iv/11-12/"
+  },
+  {
+    "DmnId": "klassifiseringTrapperom",
+    "DmnNavn": "Klassifisering trapperom",
+    "TekKapitel": "11-8",
+    "TekLedd": "2",
+    "TekTabell": null,
+    "TekBokstav": "F",
+    "TekWebLink": "https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/11/iii/11-8/"
+  },
+  {
+    "DmnId": "konsekvensBrannklassifisering",
+    "DmnNavn": "Konsekvens brannklassifisering",
+    "TekKapitel": "11-3",
+    "TekLedd": null,
+    "TekTabell": "Brannklasser",
+    "TekBokstav": null,
+    "TekWebLink": "https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/11/i/11-2/"
+  },
+  {
+    "DmnId": "kravBrannalarmKategori",
+    "DmnNavn": "Krav Brannalarm alarm kategori",
+    "TekKapitel": "11-12",
+    "TekLedd": null,
+    "TekTabell": null,
+    "TekBokstav": null,
+    "TekWebLink": "https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/11/iv/11-12/"
+  },
+  {
+    "DmnId": "overflateKledning",
+    "DmnNavn": "Overflater kledninger",
+    "TekKapitel": "11-9",
+    "TekLedd": "2",
+    "TekTabell": null,
+    "TekBokstav": "B",
+    "TekWebLink": "https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/11/iii/11-9/"
+  },
+  {
+    "DmnId": "risikoklasseFraTypeVirksomhet",
+    "DmnNavn": "Risikoklasse fra type virksomhet",
+    "TekKapitel": "11-2",
+    "TekLedd": null,
+    "TekTabell": "Tabell 1",
+    "TekBokstav": null,
+    "TekWebLink": "https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/11/i/11-2/"
+  },
+  {
+    "DmnId": "risikoklassifisering",
+    "DmnNavn": "Risikoklassifisering",
+    "TekKapitel": "11-2",
+    "TekLedd": "5",
+    "TekTabell": "Risikoklasser",
+    "TekBokstav": null,
+    "TekWebLink": "https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/11/i/11-2/"
+  },
+  {
+    "DmnId": "tiltakBrannveggHoyeBygg",
+    "DmnNavn": "Tiltak brannvegg hoye bygg",
+    "TekKapitel": "11-6",
+    "TekLedd": null,
+    "TekTabell": "Tabell 5",
+    "TekBokstav": null,
+    "TekWebLink": "https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/11/iii/11-6/"
+  },
+  {
+    "DmnId": "tiltakManuellBrannslokking",
+    "DmnNavn": "Tiltak manuell brannslokking",
+    "TekKapitel": "11-16",
+    "TekLedd": "2",
+    "TekTabell": null,
+    "TekBokstav": null,
+    "TekWebLink": "https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/11/v/11-16/"
+  },
+  {
+    "DmnId": "tiltakRomningstidAlarmanlegg",
+    "DmnNavn": "Tiltak øke rømningstid med alarmanlegg",
+    "TekKapitel": "11-12",
+    "TekLedd": "2",
+    "TekTabell": null,
+    "TekBokstav": null,
+    "TekWebLink": "https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/11/iv/11-12/"
+  },
+  {
+    "DmnId": "tiltakRomningstidEvakueringsplan",
+    "DmnNavn": "Tiltak øke rømningstid med evakueringsplan",
+    "TekKapitel": "11-12",
+    "TekLedd": "4",
+    "TekTabell": null,
+    "TekBokstav": null,
+    "TekWebLink": "https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/11/iv/11-12/"
+  },
+  {
+    "DmnId": "tiltakRomningstidLedesystem",
+    "DmnNavn": "Tiltak øke rømningstid med ledesystem",
+    "TekKapitel": "11-12",
+    "TekLedd": "3",
+    "TekTabell": null,
+    "TekBokstav": null,
+    "TekWebLink": "https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/11/iv/11-12/"
+  },
+  {
+    "DmnId": "tiltakRomningstidSlokkeanlegg",
+    "DmnNavn": "Tiltak øke rømningstid med slokkeanlegg",
+    "TekKapitel": "11-12",
+    "TekLedd": "1",
+    "TekTabell": null,
+    "TekBokstav": null,
+    "TekWebLink": "https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/11/iv/11-12/"
+  },
+  {
+    "DmnId": "tiltakStorrelseBrannseksjonBelastning",
+    "DmnNavn": "Tiltak størrelse brannseksjon belastning",
+    "TekKapitel": "11-7",
+    "TekLedd": "1",
+    "TekTabell": "Tabell 1",
+    "TekBokstav": "c",
+    "TekWebLink": "https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/11/iii/11-7/"
+  },
+  {
+    "DmnId": "vedleggTilRisikoklasse",
+    "DmnNavn": "Vedlegg Til Risikoklasse",
+    "TekKapitel": "11-2",
+    "TekLedd": null,
+    "TekTabell": "Tabell 1",
+    "TekBokstav": null,
+    "TekWebLink": "https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/11/i/11-2/"
+  }
 ]

@@ -2,6 +2,8 @@ package ark.bpmn.DigiTEK;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.StringWriter;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -10,6 +12,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.io.IOUtils;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
 import org.camunda.bpm.engine.variable.Variables;
@@ -20,6 +23,8 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+
+import com.google.common.base.Charsets;
 
 public class ModelOutputsDataDictionary implements JavaDelegate {
 
@@ -60,8 +65,12 @@ public class ModelOutputsDataDictionary implements JavaDelegate {
 						jsonDmnVariablesNamesArray);
 
 				// get all inputs to Dmn from json
+				char c[] = entryKey.toCharArray();
+			    c[0] = Character.toUpperCase(c[0]);
+			    String newkey = new String(c);
+				
 				JSONArray jsonDmnInputs1 = new ModelOutputsDataDictionary().GetJsonArrayObject(jsonTable2VariablesArray,
-						"DmnId", entryKey, "VariabelType", "input");
+						"DmnId", newkey, "Type", "input");
 				tableInfo.InputVariablesInfo = new ModelOutputsDataDictionary().GetinputsVariablesInfo(jsonDmnInputs1,
 						jsonDmnVariablesNamesArray);
 
@@ -86,14 +95,18 @@ public class ModelOutputsDataDictionary implements JavaDelegate {
 	public JSONArray GetJsonFromFile(String fileName) throws ParseException {
 		JSONArray jsonArray = null;
 		try {
-			Path currentRelativePath = Paths
-					.get("C:\\Code\\Arkitektum\\DigiTEK\\src\\main\\resources\\Data\\" + fileName);
-			byte[] encoded = Files.readAllBytes(currentRelativePath);
-			String jsonString = new String(encoded);
+			
+			ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+			InputStream inputStream = classLoader.getResourceAsStream("./Data/"+fileName);
+			
+			
+			StringWriter writer = new StringWriter();
+			IOUtils.copy(inputStream, writer,Charsets.UTF_8);
+			String theString = writer.toString();
 
 			// Read JSON file
 			JSONParser parser = new JSONParser();
-			Object jsonObject = parser.parse(jsonString);
+			Object jsonObject = parser.parse(theString);
 			jsonArray = (JSONArray) jsonObject;
 
 		} catch (FileNotFoundException e) {
