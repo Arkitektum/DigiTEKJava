@@ -13,7 +13,7 @@ public class OutputConsolidation implements JavaDelegate {
 		Map<String, Object> variables = execution.getVariables();
 		Map<String, Object> tableOutputsMap = new HashMap<String, Object>();
 		String bkl = (String) variables.get("bkl");
-		if (bkl == "BKL4") {
+		if (bkl.equalsIgnoreCase("BKL4")) {
 			tableOutputsMap.put("Advarsel", "BKL4 Analyse");
 		} else {
 
