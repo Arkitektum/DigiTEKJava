@@ -11,7 +11,7 @@ public class BrannDictionaryModel {
 		public String TekKapitel;
 		public String TekLedd;
 		public String TekTabell;
-		public String TekForskriften;
+		public String TekBokstav;
 		public String TekWebLink;
 		public VariablesInfo[] InputVariablesInfo;
 		public VariablesInfo[] OutputVariablesInfo;

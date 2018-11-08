@@ -81,6 +81,9 @@ public class KravTilBranntiltakBpmnOutputsTests {
 		// Get the result of the model
 		Map<String, Object> modelOutputsvariables = (Map<String, Object>) rule.getRuntimeService()
 				.getVariable(processInstance.getId(), "modelOutputs");
+		Map<String, Object> modelDataDictionary = (Map<String, Object>) rule.getRuntimeService()
+				.getVariable(processInstance.getId(), "modelDataDictionary");
+		
 		Integer number = modelOutputsvariables.size();
 		// print result in console
 		System.out.println("Model inputs :" + inputsVariables);
