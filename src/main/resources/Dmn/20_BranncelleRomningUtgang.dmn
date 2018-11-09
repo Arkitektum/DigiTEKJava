@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="Excel2Dmn_06-21-18" name="20_BranncelleRomningUtgang" namespace="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd">
+  <decision id="BranncelleRomningUtgang" name="Branncelle romning utgang">
+    <decisionTable id="decisionTable" hitPolicy="FIRST">
+      <input id="rkl" label="Risikoklasse">
+        <inputExpression id="exp_rkl" label="label_rkl" typeRef="string">
+          <text>rkl</text>
+        </inputExpression>
+      </input>
+      <output id="kravFriBreddeRomnVei_Id" label="Fri bredde i rømningsvei, minimum (samlet)" name="kravFriBreddeRomnVei" typeRef="string" />
+      <output id="kravMinFriDorBredde_Id" label="Minimum fri dørbredde i meter" name="kravMinFriDorBredde" typeRef="double" />
+      <output id="kravMinFriHoyde_Id" label="Minimum fri høyde i meter" name="kravMinFriHoyde" typeRef="double" />
+      <output id="kravMaxLengdeFluktvei_Id" label="Lengste vei i brancelle i meter" name="kravMaxLengdeFluktvei" typeRef="string" />
+      <output id="avstandDorIBranncelle1Utgang_Id" label="Avstand til dør til trapp/utgang i branncelle, 1 utgang" name="avstandDorIBranncelle1Utgang" typeRef="integer" />
+      <output id="kravAvstandDorIBranncelleflereUtganger_Id" label="Avstand til dør til trapp/utgang i branncelle, flere utganger" name="kravAvstandDorIBranncelleflereUtganger" typeRef="integer" />
+      <rule id="rowRule_7">
+        <inputEntry id="B7">
+          <text>"RKL1","RKL2"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C7">
+          <text>"1cm pr.pers / min. 0,86m"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_D7">
+          <text>0.86</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_E7">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_F7">
+          <text>"50"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_G7">
+          <text>15</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_H7">
+          <text>30</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_8">
+        <inputEntry id="B8">
+          <text>"RKL3"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C8">
+          <text>"1cm pr.pers / min. 1,16m"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_D8">
+          <text>0.86</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_E8">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_F8">
+          <text>"30"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_G8">
+          <text>15</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_H8">
+          <text>30</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_9">
+        <inputEntry id="B9">
+          <text>"RKL4"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C9">
+          <text>"1cm pr.pers / min. 0,86m"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_D9">
+          <text>0.86</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_E9">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_F9">
+          <text>"Ikke angitt"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_G9">
+          <text>15</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_H9">
+          <text>30</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_10">
+        <inputEntry id="B10">
+          <text>"RKL5"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C10">
+          <text>"1cm pr.pers / min. 1,16m"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_D10">
+          <text>1.86</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_E10">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_F10">
+          <text>"30"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_G10">
+          <text>15</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_H10">
+          <text>30</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_11">
+        <inputEntry id="B11">
+          <text>"RKL6"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C11">
+          <text>"1cm pr.pers / min. 1,16m"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_D11">
+          <text>0.86</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_E11">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_F11">
+          <text>"25"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_G11">
+          <text>15</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_H11">
+          <text>30</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

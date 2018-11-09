@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="Excel2Dmn_12-36-18" name="01_VedleggTilRisikoklasse" namespace="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd">
+  <decision id="VedleggTilRisikoklasse" name="Vedlegg Til Risikoklasse">
+    <decisionTable id="decisionTable" hitPolicy="FIRST">
+      <input id="rkl" label="Risikoklasse">
+        <inputExpression id="exp_rkl" label="label_rkl" typeRef="string">
+          <text>rkl</text>
+        </inputExpression>
+      </input>
+      <output id="bareSporadiskPersonopphold_Id" label="Bare sporadisk personopphold" name="bareSporadiskPersonopphold" typeRef="boolean" />
+      <output id="alleKjennerRomningsVeiene_Id" label="Alle kjenner rømningsveiene" name="alleKjennerRomningsVeiene" typeRef="boolean" />
+      <output id="beregnetForOvernatting_Id" label="beregnet for overnatting" name="beregnetForOvernatting" typeRef="boolean" />
+      <output id="liteBrannfarligAktivitet_Id" label="Lite brannfarlig aktivitet" name="liteBrannfarligAktivitet" typeRef="boolean" />
+      <rule id="rowRule_7">
+        <inputEntry id="B7">
+          <text>"RKL1"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C7">
+          <text>true</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_D7">
+          <text>true</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_E7">
+          <text>false</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_F7">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_8">
+        <inputEntry id="B8">
+          <text>"RKL2"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C8" />
+        <outputEntry id="LiteralExpression_D8">
+          <text>true</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_E8">
+          <text>false</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_F8">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_9">
+        <inputEntry id="B9">
+          <text>"RKL3"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C9">
+          <text>false</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_D9">
+          <text>true</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_E9">
+          <text>false</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_F9">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_10">
+        <inputEntry id="B10">
+          <text>"RKL4"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C10">
+          <text>false</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_D10">
+          <text>true</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_E10">
+          <text>true</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_F10">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_11">
+        <inputEntry id="B11">
+          <text>"RKL5"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C11">
+          <text>false</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_D11">
+          <text>false</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_E11">
+          <text>false</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_F11">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_12">
+        <inputEntry id="B12">
+          <text>"RKL6"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C12">
+          <text>false</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_D12">
+          <text>false</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_E12">
+          <text>true</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_F12">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_13">
+        <inputEntry id="B13">
+          <text>"Ukjent"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C13">
+          <text />
+        </outputEntry>
+        <outputEntry id="LiteralExpression_D13">
+          <text />
+        </outputEntry>
+        <outputEntry id="LiteralExpression_E13">
+          <text />
+        </outputEntry>
+        <outputEntry id="LiteralExpression_F13">
+          <text />
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

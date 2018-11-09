@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="Excel2Dmn_25-42-18" name="02a_Brannklasse" namespace="http://www.omg.org/spec/DMN/20151101/dmn.xsd">
+  <decision id="Brannklasse" name="Brannklasse">
+    <decisionTable id="decisionTable" hitPolicy="FIRST">
+      <input id="typeVirksomhet" label="Type virksomhet">
+        <inputExpression id="exp_typeVirksomhet" label="label_typeVirksomhet" typeRef="string">        <text>typeVirksomhet</text>
+</inputExpression>
+      </input>
+      <input id="antallEtasjer" label="Antall etasjer">
+        <inputExpression id="exp_antallEtasjer" label="label_antallEtasjer" typeRef="integer">        <text>antallEtasjer</text>
+</inputExpression>
+      </input>
+      <input id="rkl" label="Risikoklasse">
+        <inputExpression id="exp_rkl" label="label_rkl" typeRef="string">        <text>rkl</text>
+</inputExpression>
+      </input>
+      <input id="brtArealPrEtasje" label="Bruttoareal per etasje">
+        <inputExpression id="exp_brtArealPrEtasje" label="label_brtArealPrEtasje" typeRef="integer">        <text>brtArealPrEtasje</text>
+</inputExpression>
+      </input>
+      <input id="utgangTerrengAlleBoenheter" label="Har hver boenhet egen utgang til terreng">
+        <inputExpression id="exp_utgangTerrengAlleBoenheter" label="label_utgangTerrengAlleBoenheter" typeRef="boolean">        <text>utgangTerrengAlleBoenheter</text>
+</inputExpression>
+      </input>
+      <output id="bkl_Id" label="Brannklasse" name="bkl" typeRef="string" />
+      <output id="merknadBkl_Id" label="Merknad brannklasse" name="merknadBkl" typeRef="string" />
+      <rule id="rowRule_7">
+        <inputEntry id="B7">        <text><![CDATA["Bolig"]]></text>
+</inputEntry>
+        <inputEntry id="C7">        <text><![CDATA[<3]]></text>
+</inputEntry>
+        <inputEntry id="D7">        <text><![CDATA["RKL6"]]></text>
+</inputEntry>
+        <inputEntry id="E7">        <text></text>
+</inputEntry>
+        <inputEntry id="F7">        <text></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_G7">        <text><![CDATA["BKL1"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_H7">        <text></text>
+</outputEntry>
+      </rule>
+      <rule id="rowRule_8">
+        <inputEntry id="B8">        <text><![CDATA["Forsamlingslokale", "Salgslokale"]]></text>
+</inputEntry>
+        <inputEntry id="C8">        <text><![CDATA[<3]]></text>
+</inputEntry>
+        <inputEntry id="D8">        <text></text>
+</inputEntry>
+        <inputEntry id="E8">        <text><![CDATA[<800]]></text>
+</inputEntry>
+        <inputEntry id="F8">        <text></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_G8">        <text><![CDATA["BKL1"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_H8">        <text></text>
+</outputEntry>
+      </rule>
+      <rule id="rowRule_9">
+        <inputEntry id="B9">        <text><![CDATA["Bolig"]]></text>
+</inputEntry>
+        <inputEntry id="C9">        <text><![CDATA[<4]]></text>
+</inputEntry>
+        <inputEntry id="D9">        <text><![CDATA["RKL4"]]></text>
+</inputEntry>
+        <inputEntry id="E9">        <text></text>
+</inputEntry>
+        <inputEntry id="F9">        <text>true</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_G9">        <text><![CDATA["BKL1"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_H9">        <text></text>
+</outputEntry>
+      </rule>
+      <rule id="rowRule_19">
+        <inputEntry id="B19">        <text><![CDATA["Hotell"]]></text>
+</inputEntry>
+        <inputEntry id="C19">        <text><![CDATA[<3]]></text>
+</inputEntry>
+        <inputEntry id="D19">        <text><![CDATA["RKL6"]]></text>
+</inputEntry>
+        <inputEntry id="E19">        <text><![CDATA[<300]]></text>
+</inputEntry>
+        <inputEntry id="F19">        <text></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_G19">        <text><![CDATA["BKL1"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_H19">        <text><![CDATA["Bruttoareal per etasje kan ikke økes ved seksjonering."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="rowRule_20">
+        <inputEntry id="B20">        <text><![CDATA["Overnattingssted"]]></text>
+</inputEntry>
+        <inputEntry id="C20">        <text><![CDATA[<3]]></text>
+</inputEntry>
+        <inputEntry id="D20">        <text><![CDATA["RKL6"]]></text>
+</inputEntry>
+        <inputEntry id="E20">        <text><![CDATA[<300]]></text>
+</inputEntry>
+        <inputEntry id="F20">        <text></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_G20">        <text><![CDATA["BKL1"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_H20">        <text><![CDATA["Bruttoareal per etasje kan ikke økes ved seksjonering."]]></text>
+</outputEntry>
+      </rule>
+      <rule id="rowRule_22">
+        <inputEntry id="B22">        <text><![CDATA["Infrastruktur"]]></text>
+</inputEntry>
+        <inputEntry id="C22">        <text></text>
+</inputEntry>
+        <inputEntry id="D22">        <text></text>
+</inputEntry>
+        <inputEntry id="E22">        <text></text>
+</inputEntry>
+        <inputEntry id="F22">        <text></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_G22">        <text><![CDATA["BKL4"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_H22">        <text><![CDATA["Analyse"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="rowRule_23">
+        <inputEntry id="B23">        <text><![CDATA["Telekommunikasjon"]]></text>
+</inputEntry>
+        <inputEntry id="C23">        <text></text>
+</inputEntry>
+        <inputEntry id="D23">        <text></text>
+</inputEntry>
+        <inputEntry id="E23">        <text></text>
+</inputEntry>
+        <inputEntry id="F23">        <text></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_G23">        <text><![CDATA["BKL4"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_H23">        <text><![CDATA["Analyse"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="rowRule_24">
+        <inputEntry id="B24">        <text><![CDATA["Fjellhall"]]></text>
+</inputEntry>
+        <inputEntry id="C24">        <text></text>
+</inputEntry>
+        <inputEntry id="D24">        <text></text>
+</inputEntry>
+        <inputEntry id="E24">        <text></text>
+</inputEntry>
+        <inputEntry id="F24">        <text></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_G24">        <text><![CDATA["BKL4"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_H24">        <text><![CDATA["Analyse"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="rowRule_25">
+        <inputEntry id="B25">        <text><![CDATA["Kjemisk industri"]]></text>
+</inputEntry>
+        <inputEntry id="C25">        <text></text>
+</inputEntry>
+        <inputEntry id="D25">        <text></text>
+</inputEntry>
+        <inputEntry id="E25">        <text></text>
+</inputEntry>
+        <inputEntry id="F25">        <text></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_G25">        <text><![CDATA["BKL4"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_H25">        <text><![CDATA["Analyse"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="rowRule_10">
+        <inputEntry id="B10">        <text></text>
+</inputEntry>
+        <inputEntry id="C10">        <text>1</text>
+</inputEntry>
+        <inputEntry id="D10">        <text><![CDATA["RKL1"]]></text>
+</inputEntry>
+        <inputEntry id="E10">        <text></text>
+</inputEntry>
+        <inputEntry id="F10">        <text></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_G10">        <text><![CDATA["Ikke angitt"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_H10">        <text></text>
+</outputEntry>
+      </rule>
+      <rule id="rowRule_11">
+        <inputEntry id="B11">        <text></text>
+</inputEntry>
+        <inputEntry id="C11">        <text>1</text>
+</inputEntry>
+        <inputEntry id="D11">        <text><![CDATA["RKL2","RKL3","RKL4","RKL5"]]></text>
+</inputEntry>
+        <inputEntry id="E11">        <text></text>
+</inputEntry>
+        <inputEntry id="F11">        <text></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_G11">        <text><![CDATA["BKL1"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_H11">        <text></text>
+</outputEntry>
+      </rule>
+      <rule id="rowRule_12">
+        <inputEntry id="B12">        <text></text>
+</inputEntry>
+        <inputEntry id="C12">        <text>1</text>
+</inputEntry>
+        <inputEntry id="D12">        <text><![CDATA["RKL6"]]></text>
+</inputEntry>
+        <inputEntry id="E12">        <text></text>
+</inputEntry>
+        <inputEntry id="F12">        <text></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_G12">        <text><![CDATA["BKL1"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_H12">        <text></text>
+</outputEntry>
+      </rule>
+      <rule id="rowRule_13">
+        <inputEntry id="B13">        <text></text>
+</inputEntry>
+        <inputEntry id="C13">        <text>2</text>
+</inputEntry>
+        <inputEntry id="D13">        <text><![CDATA["RKL1","RKL2","RKL3","RKL4"]]></text>
+</inputEntry>
+        <inputEntry id="E13">        <text></text>
+</inputEntry>
+        <inputEntry id="F13">        <text></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_G13">        <text><![CDATA["BKL1"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_H13">        <text></text>
+</outputEntry>
+      </rule>
+      <rule id="rowRule_14">
+        <inputEntry id="B14">        <text></text>
+</inputEntry>
+        <inputEntry id="C14">        <text>2</text>
+</inputEntry>
+        <inputEntry id="D14">        <text><![CDATA["RKL5","RKL6"]]></text>
+</inputEntry>
+        <inputEntry id="E14">        <text></text>
+</inputEntry>
+        <inputEntry id="F14">        <text></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_G14">        <text><![CDATA["BKL2"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_H14">        <text></text>
+</outputEntry>
+      </rule>
+      <rule id="rowRule_15">
+        <inputEntry id="B15">        <text></text>
+</inputEntry>
+        <inputEntry id="C15">        <text>[3..4]</text>
+</inputEntry>
+        <inputEntry id="D15">        <text><![CDATA["RKL1"]]></text>
+</inputEntry>
+        <inputEntry id="E15">        <text></text>
+</inputEntry>
+        <inputEntry id="F15">        <text></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_G15">        <text><![CDATA["BKL2"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_H15">        <text></text>
+</outputEntry>
+      </rule>
+      <rule id="rowRule_16">
+        <inputEntry id="B16">        <text></text>
+</inputEntry>
+        <inputEntry id="C16">        <text>[3..4]</text>
+</inputEntry>
+        <inputEntry id="D16">        <text><![CDATA["RKL2", "RKL3", "RKL4", "RKL6"]]></text>
+</inputEntry>
+        <inputEntry id="E16">        <text></text>
+</inputEntry>
+        <inputEntry id="F16">        <text></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_G16">        <text><![CDATA["BKL2"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_H16">        <text></text>
+</outputEntry>
+      </rule>
+      <rule id="rowRule_17">
+        <inputEntry id="B17">        <text></text>
+</inputEntry>
+        <inputEntry id="C17">        <text><![CDATA[> 2]]></text>
+</inputEntry>
+        <inputEntry id="D17">        <text><![CDATA["RKL5"]]></text>
+</inputEntry>
+        <inputEntry id="E17">        <text></text>
+</inputEntry>
+        <inputEntry id="F17">        <text></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_G17">        <text><![CDATA["BKL3"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_H17">        <text></text>
+</outputEntry>
+      </rule>
+      <rule id="rowRule_18">
+        <inputEntry id="B18">        <text></text>
+</inputEntry>
+        <inputEntry id="C18">        <text><![CDATA[>=5]]></text>
+</inputEntry>
+        <inputEntry id="D18">        <text><![CDATA["RKL2", "RKL3", "RKL4", "RKL6"]]></text>
+</inputEntry>
+        <inputEntry id="E18">        <text></text>
+</inputEntry>
+        <inputEntry id="F18">        <text></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_G18">        <text><![CDATA["BKL3"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_H18">        <text></text>
+</outputEntry>
+      </rule>
+      <rule id="rowRule_21">
+        <inputEntry id="B21">        <text></text>
+</inputEntry>
+        <inputEntry id="C21">        <text><![CDATA[>16]]></text>
+</inputEntry>
+        <inputEntry id="D21">        <text></text>
+</inputEntry>
+        <inputEntry id="E21">        <text></text>
+</inputEntry>
+        <inputEntry id="F21">        <text></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_G21">        <text><![CDATA["BKL4"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_H21">        <text><![CDATA["Analyse"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="rowRule_26">
+        <inputEntry id="B26">        <text></text>
+</inputEntry>
+        <inputEntry id="C26">        <text></text>
+</inputEntry>
+        <inputEntry id="D26">        <text></text>
+</inputEntry>
+        <inputEntry id="E26">        <text></text>
+</inputEntry>
+        <inputEntry id="F26">        <text></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_G26">        <text><![CDATA["Udefinert"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_H26">        <text></text>
+</outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

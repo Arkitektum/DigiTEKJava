@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="Excel2Dmn_29-29-18" name="21_TiltakPavirkeRomningstidSlokkeanlegg" namespace="http://www.omg.org/spec/DMN/20151101/dmn.xsd">
+  <decision id="TiltakRomningstidSlokkeanlegg" name="Tiltak øke rømningstid med slokkeanlegg">
+    <decisionTable id="decisionTable" hitPolicy="FIRST">
+      <input id="rkl" label="Risikoklasse">
+        <inputExpression id="exp_rkl" label="label_rkl" typeRef="string">        <text>rkl</text>
+</inputExpression>
+      </input>
+      <input id="kravOmHeis" label="Krav om heis" camunda:inputVariable="">
+        <inputExpression id="exp_kravOmHeis" label="label_kravOmHeis" typeRef="boolean">        <text>kravOmHeis</text>
+</inputExpression>
+      </input>
+      <output id="tiltakPavirkeRomningstid_Id" label="Tiltak for å påvirke rømningstider" name="tiltakPavirkeRomningstid" typeRef="string" />
+      <rule id="rowRule_7">
+        <inputEntry id="B7">        <text><![CDATA["RKL4"]]></text>
+</inputEntry>
+        <inputEntry id="C7">        <text>true</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_D7">        <text><![CDATA["Brannslokkeanlegg"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="rowRule_8">
+        <inputEntry id="B8">        <text><![CDATA["RKL6"]]></text>
+</inputEntry>
+        <inputEntry id="C8">        <text></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_D8">        <text><![CDATA["Brannslokkeanlegg"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-944416230-9">
+        <inputEntry id="UnaryTests_0g6b7um">        <text></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_1jimsjd">        <text></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0api74r">        <text><![CDATA["Ikke angitt"]]></text>
+</outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="Excel2Dmn_25-21-18" name="04_ BrannmotstandSeksjoneringsvegg" namespace="http://www.omg.org/spec/DMN/20151101/dmn.xsd">
+  <decision id="BrannmotstandSeksjoneringsvegg" name="Brannmotstand seksjoneringsvegg">
+    <decisionTable id="decisionTable" hitPolicy="FIRST">
+      <input id="bkl" label="Brannklasse">
+        <inputExpression id="exp_bkl" label="label_bkl" typeRef="string">        <text>bkl</text>
+</inputExpression>
+      </input>
+      <input id="brannenergi" label="Brannenergi, MJ/m2">
+        <inputExpression id="exp_brannenergi" label="label_brannenergi" typeRef="integer">        <text>brannenergi</text>
+</inputExpression>
+      </input>
+      <output id="kravBrannmotstSeksjVegg_Id" label="Brannmotstand Seksjoneringsvegg" name="kravBrannmotstSeksjVegg" typeRef="string" />
+      <rule id="rowRule_8">
+        <inputEntry id="B8">        <text><![CDATA["BKL1"]]></text>
+</inputEntry>
+        <inputEntry id="C8">        <text><![CDATA[<400]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_D8">        <text><![CDATA["REI 90-M A2-s1,d0 [A 90]"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="rowRule_9">
+        <inputEntry id="B9">        <text><![CDATA["BKL1"]]></text>
+</inputEntry>
+        <inputEntry id="C9">        <text>[400..600]</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_D9">        <text><![CDATA["REI 120-M A2-s1,d0 [A 120]"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="rowRule_10">
+        <inputEntry id="B10">        <text><![CDATA["BKL1"]]></text>
+</inputEntry>
+        <inputEntry id="C10">        <text>[600..800]</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_D10">        <text><![CDATA["REI 180-M A2-s1,d0 [A 180]"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="rowRule_11">
+        <inputEntry id="B11">        <text><![CDATA["BKL1"]]></text>
+</inputEntry>
+        <inputEntry id="C11">        <text><![CDATA[>800]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_D11">        <text><![CDATA["Analyse"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="rowRule_12">
+        <inputEntry id="B12">        <text><![CDATA["BKL2"]]></text>
+</inputEntry>
+        <inputEntry id="C12">        <text><![CDATA[<400]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_D12">        <text><![CDATA["REI 120-M A2-s1,d0 [A 120]"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="rowRule_13">
+        <inputEntry id="B13">        <text><![CDATA["BKL2"]]></text>
+</inputEntry>
+        <inputEntry id="C13">        <text>[400..600]</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_D13">        <text><![CDATA["REI 180-M A2-s1,d0 [A 180]"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="rowRule_14">
+        <inputEntry id="B14">        <text><![CDATA["BKL2"]]></text>
+</inputEntry>
+        <inputEntry id="C14">        <text>[600..800]</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_D14">        <text><![CDATA["REI 240-M A2-s1,d0 [A 240]"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="rowRule_15">
+        <inputEntry id="B15">        <text><![CDATA["BKL2"]]></text>
+</inputEntry>
+        <inputEntry id="C15">        <text><![CDATA[>800]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_D15">        <text><![CDATA["Analyse"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="rowRule_16">
+        <inputEntry id="B16">        <text><![CDATA["BKL3"]]></text>
+</inputEntry>
+        <inputEntry id="C16">        <text><![CDATA[<400]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_D16">        <text><![CDATA["REI 120-M A2-s1,d0 [A 120]"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="rowRule_17">
+        <inputEntry id="B17">        <text><![CDATA["BKL3"]]></text>
+</inputEntry>
+        <inputEntry id="C17">        <text>[400..600]</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_D17">        <text><![CDATA["REI 180-M A2-s1,d0 [A 180]"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="rowRule_18">
+        <inputEntry id="B18">        <text><![CDATA["BKL3"]]></text>
+</inputEntry>
+        <inputEntry id="C18">        <text>[600..800]</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_D18">        <text><![CDATA["REI 240-M A2-s1,d0 [A 240]"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="rowRule_19">
+        <inputEntry id="B19">        <text><![CDATA["BKL3"]]></text>
+</inputEntry>
+        <inputEntry id="C19">        <text><![CDATA[>800]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_D19">        <text><![CDATA["Analyse"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="rowRule_20">
+        <description>Default utfall om det mangler inputverdier eller de faller utenom spesifiserte utfall.</description>
+        <inputEntry id="B20">        <text></text>
+</inputEntry>
+        <inputEntry id="C20">        <text></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_D20">        <text><![CDATA["Ikke angitt"]]></text>
+</outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

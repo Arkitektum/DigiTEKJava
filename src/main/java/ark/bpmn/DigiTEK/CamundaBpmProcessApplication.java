@@ -1,8 +1,5 @@
 package ark.bpmn.DigiTEK;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.camunda.bpm.application.PostDeploy;
 import org.camunda.bpm.application.ProcessApplication;
 import org.camunda.bpm.application.impl.ServletProcessApplication;

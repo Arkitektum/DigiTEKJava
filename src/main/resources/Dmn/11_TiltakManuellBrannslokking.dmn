@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="Excel2Dmn_06-18-18" name="11_TiltakManuellBrannslokking" namespace="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd">
+  <decision id="TiltakManuellBrannslokking" name="Tiltak manuell brannslokking">
+    <decisionTable id="decisionTable" hitPolicy="FIRST">
+      <input id="rkl" label="Risikoklasse">
+        <inputExpression id="exp_rkl" label="label_rkl" typeRef="string">
+          <text>rkl</text>
+        </inputExpression>
+      </input>
+      <output id="kravManuellSlokking_Id" label="Manuell brannslokking" name="kravManuellSlokking" typeRef="string" />
+      <output id="maxBrannslangeLengde_Id" label="Slangelengde" name="maxBrannslangeLengde" typeRef="string" />
+      <rule id="rowRule_7">
+        <inputEntry id="B7">
+          <text>"RKL1","RKL2","RKL4"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C7">
+          <text>"Håndslokkeapparat, evt. brannslange"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_D7">
+          <text>"maks 30m lengde"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_8">
+        <inputEntry id="B8">
+          <text>"RKL3","RKL5","RKL6"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C8">
+          <text>"Brannslange krav i bygning med trykkvann, ellers håndslokkeapparat"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_D8">
+          <text>"maks 30m lengde"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

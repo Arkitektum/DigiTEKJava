@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="Excel2Dmn_30-57-18" name="03_TiltakStorrelseBrannseksjonBelastning" namespace="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd">
+  <decision id="TiltakStorrelseBrannseksjonBelastning" name="Tiltak størrelse brannseksjon belastning">
+    <decisionTable id="decisionTable" hitPolicy="FIRST">
+      <input id="typeVirksomhet" label="Type virksomhet">
+        <inputExpression id="exp_typeVirksomhet" label="label_typeVirksomhet" typeRef="string">
+          <text>typeVirksomhet</text>
+        </inputExpression>
+      </input>
+      <input id="brannenergi" label="Brannenergi, MJ/m2">
+        <inputExpression id="exp_brannenergi" label="label_brannenergi" typeRef="integer">
+          <text>brannenergi</text>
+        </inputExpression>
+      </input>
+      <input id="arealBrannseksjonPrEtasje" label="Størrelse brannseksjon pr. etasje, m2">
+        <inputExpression id="exp_arealBrannseksjonPrEtasje" label="label_arealBrannseksjonPrEtasje" typeRef="integer">
+          <text>arealBrannseksjonPrEtasje</text>
+        </inputExpression>
+      </input>
+      <output id="brannTiltakStrSeksjonBelastning_Id" label="Tiltak etter størrelse brannseksjon/brannbelastning" name="brannTiltakStrSeksjonBelastning" typeRef="string" />
+      <rule id="rowRule_7">
+        <inputEntry id="B7">
+          <text>"Barnehage"</text>
+        </inputEntry>
+        <inputEntry id="C7">
+          <text />
+        </inputEntry>
+        <inputEntry id="D7">
+          <text />
+        </inputEntry>
+        <outputEntry id="LiteralExpression_E7">
+          <text>"Maks 600m2 per etasje/seksjon"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_8">
+        <inputEntry id="B8">
+          <text>"Sykehjem"</text>
+        </inputEntry>
+        <inputEntry id="C8">
+          <text />
+        </inputEntry>
+        <inputEntry id="D8">
+          <text />
+        </inputEntry>
+        <outputEntry id="LiteralExpression_E8">
+          <text>"Minst to brannseksjoner"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_9">
+        <inputEntry id="B9">
+          <text>"Pleieinstitusjoner"</text>
+        </inputEntry>
+        <inputEntry id="C9">
+          <text />
+        </inputEntry>
+        <inputEntry id="D9">
+          <text />
+        </inputEntry>
+        <outputEntry id="LiteralExpression_E9">
+          <text>"Minst to brannseksjoner"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_10">
+        <inputEntry id="B10">
+          <text>"Sykehus"</text>
+        </inputEntry>
+        <inputEntry id="C10">
+          <text />
+        </inputEntry>
+        <inputEntry id="D10">
+          <text />
+        </inputEntry>
+        <outputEntry id="LiteralExpression_E10">
+          <text>"Minst to brannseksjoner"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_11">
+        <inputEntry id="B11">
+          <text />
+        </inputEntry>
+        <inputEntry id="C11">
+          <text>&lt;50</text>
+        </inputEntry>
+        <inputEntry id="D11">
+          <text>&lt;=1800</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_E11">
+          <text>"Ingen"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_12">
+        <inputEntry id="B12">
+          <text />
+        </inputEntry>
+        <inputEntry id="C12">
+          <text>&lt;50</text>
+        </inputEntry>
+        <inputEntry id="D12">
+          <text>]1800..2700]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_E12">
+          <text>"Brannalarmanlegg/nødalarmsentral"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_13">
+        <inputEntry id="B13">
+          <text />
+        </inputEntry>
+        <inputEntry id="C13">
+          <text>&lt;50</text>
+        </inputEntry>
+        <inputEntry id="D13">
+          <text>]2700..10000]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_E13">
+          <text>"Røykventilasjon"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_14">
+        <inputEntry id="B14">
+          <text />
+        </inputEntry>
+        <inputEntry id="C14">
+          <text>&lt;50</text>
+        </inputEntry>
+        <inputEntry id="D14">
+          <text>&gt;10000</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_E14">
+          <text>"Sprinkleranlegg"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_15">
+        <inputEntry id="B15">
+          <text />
+        </inputEntry>
+        <inputEntry id="C15">
+          <text>[50..400]</text>
+        </inputEntry>
+        <inputEntry id="D15">
+          <text>&lt;=1200</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_E15">
+          <text>"Ingen"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_16">
+        <inputEntry id="B16">
+          <text />
+        </inputEntry>
+        <inputEntry id="C16">
+          <text>[50..400]</text>
+        </inputEntry>
+        <inputEntry id="D16">
+          <text>]1200..1800]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_E16">
+          <text>"Brannalarmanlegg/nødalarmsentral"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_17">
+        <inputEntry id="B17">
+          <text />
+        </inputEntry>
+        <inputEntry id="C17">
+          <text>[50..400]</text>
+        </inputEntry>
+        <inputEntry id="D17">
+          <text>]1800..4000]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_E17">
+          <text>"Røykventilasjon"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_18">
+        <inputEntry id="B18">
+          <text />
+        </inputEntry>
+        <inputEntry id="C18">
+          <text>[50..400]</text>
+        </inputEntry>
+        <inputEntry id="D18">
+          <text>]4000..10000]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_E18">
+          <text>"Sprinkleranlegg"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_19">
+        <description>Sjekk om OK med Vidar</description>
+        <inputEntry id="B19">
+          <text />
+        </inputEntry>
+        <inputEntry id="C19">
+          <text>[50..400]</text>
+        </inputEntry>
+        <inputEntry id="D19">
+          <text>&gt;10000</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_E19">
+          <text>"Seksjonering"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_20">
+        <inputEntry id="B20">
+          <text />
+        </inputEntry>
+        <inputEntry id="C20">
+          <text>&gt;400</text>
+        </inputEntry>
+        <inputEntry id="D20">
+          <text>&lt;=800</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_E20">
+          <text>"Ingen"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_21">
+        <inputEntry id="B21">
+          <text />
+        </inputEntry>
+        <inputEntry id="C21">
+          <text>&gt;400</text>
+        </inputEntry>
+        <inputEntry id="D21">
+          <text>]800..1200]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_E21">
+          <text>"Brannalarmanlegg/nødalarmsentral"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_22">
+        <inputEntry id="B22">
+          <text />
+        </inputEntry>
+        <inputEntry id="C22">
+          <text>&gt;400</text>
+        </inputEntry>
+        <inputEntry id="D22">
+          <text>]1200..5000]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_E22">
+          <text>"Sprinkleranlegg"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_23">
+        <description>Sjekk om OK med Vidar</description>
+        <inputEntry id="B23">
+          <text />
+        </inputEntry>
+        <inputEntry id="C23">
+          <text>&gt;400</text>
+        </inputEntry>
+        <inputEntry id="D23">
+          <text>&gt;5000</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_E23">
+          <text>"Seksjonering"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_24">
+        <inputEntry id="B24">
+          <text />
+        </inputEntry>
+        <inputEntry id="C24">
+          <text />
+        </inputEntry>
+        <inputEntry id="D24">
+          <text />
+        </inputEntry>
+        <outputEntry id="LiteralExpression_E24">
+          <text>"Ikke angitt"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

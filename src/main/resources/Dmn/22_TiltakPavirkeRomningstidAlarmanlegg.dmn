@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="Excel2Dmn_29-52-18" name="22_TiltakPavirkeRomningstidAlarmanlegg" namespace="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd">
+  <decision id="TiltakRomningstidAlarmanlegg" name="Tiltak øke rømningstid med alarmanlegg">
+    <decisionTable id="decisionTable" hitPolicy="FIRST">
+      <input id="rkl" label="Risikoklasse">
+        <inputExpression id="exp_rkl" label="label_rkl" typeRef="string">
+          <text>rkl</text>
+        </inputExpression>
+      </input>
+      <input id="typeVirksomhet" label="TypeVirksomhet">
+        <inputExpression id="exp_typeVirksomhet" label="label_typeVirksomhet" typeRef="string">
+          <text>typeVirksomhet</text>
+        </inputExpression>
+      </input>
+      <input id="kravOmHeis" label="Krav om heis">
+        <inputExpression id="exp_kravOmHeis" label="label_kravOmHeis" typeRef="boolean">
+          <text>kravOmHeis</text>
+        </inputExpression>
+      </input>
+      <input id="brtArealBygg" label="Brt.areal hele bygget">
+        <inputExpression id="exp_brtArealBygg" label="label_brtArealBygg" typeRef="integer">
+          <text>brtArealBygg</text>
+        </inputExpression>
+      </input>
+      <output id="tiltakPavirkeRomningstid_Id" label="Tiltak for å påvirke rømningstider" name="tiltakPavirkeRomningstid" typeRef="string" />
+      <output id="kommentar_Id" label="Kommentar" name="kommentar" typeRef="string" />
+      <rule id="rowRule_7">
+        <inputEntry id="B7">
+          <text>"RKL2"</text>
+        </inputEntry>
+        <inputEntry id="C7">
+          <text>"Industri","Lager","Kontor"</text>
+        </inputEntry>
+        <inputEntry id="D7">
+          <text />
+        </inputEntry>
+        <inputEntry id="E7">
+          <text>&gt;1200</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_F7">
+          <text>"Brannalarmanlegg"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_G7">
+          <text>"Forutsatt enkle og oversiktelige rømningsforhold"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_8">
+        <inputEntry id="B8">
+          <text>"RKL2"</text>
+        </inputEntry>
+        <inputEntry id="C8">
+          <text>"Industri","Lager","Kontor"</text>
+        </inputEntry>
+        <inputEntry id="D8">
+          <text />
+        </inputEntry>
+        <inputEntry id="E8">
+          <text>&lt;=1200</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_F8">
+          <text>"Optiske røykvarslere"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_G8">
+          <text>"Forutsatt enkle og oversiktelige rømningsforhold"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_9">
+        <inputEntry id="B9">
+          <text>"RKL3"</text>
+        </inputEntry>
+        <inputEntry id="C9">
+          <text />
+        </inputEntry>
+        <inputEntry id="D9">
+          <text />
+        </inputEntry>
+        <inputEntry id="E9">
+          <text />
+        </inputEntry>
+        <outputEntry id="LiteralExpression_F9">
+          <text>"Brannalarmanlegg"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_G9" />
+      </rule>
+      <rule id="rowRule_10">
+        <inputEntry id="B10">
+          <text>"RKL4"</text>
+        </inputEntry>
+        <inputEntry id="C10">
+          <text />
+        </inputEntry>
+        <inputEntry id="D10">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="E10">
+          <text />
+        </inputEntry>
+        <outputEntry id="LiteralExpression_F10">
+          <text>"Brannalarmanlegg"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_G10" />
+      </rule>
+      <rule id="rowRule_11">
+        <inputEntry id="B11">
+          <text>"RKL4"</text>
+        </inputEntry>
+        <inputEntry id="C11">
+          <text />
+        </inputEntry>
+        <inputEntry id="D11">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="E11">
+          <text />
+        </inputEntry>
+        <outputEntry id="LiteralExpression_F11">
+          <text>"Optiske røykvarslere"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_G11">
+          <text>"Gjelder småhus med en boenhet eller der atkomst fra inngangsparti til boenhet maksimalt går over en etasje"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_12">
+        <inputEntry id="B12">
+          <text>"RKL5"</text>
+        </inputEntry>
+        <inputEntry id="C12">
+          <text />
+        </inputEntry>
+        <inputEntry id="D12">
+          <text />
+        </inputEntry>
+        <inputEntry id="E12">
+          <text>&lt;=600</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_F12">
+          <text>"Optiske røykvarslere"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_G12">
+          <text>"Forutsatt enkle og oversiktelige rømningsforhold og rømningsveier direkte til terreng"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_13">
+        <inputEntry id="B13">
+          <text>"RKL5"</text>
+        </inputEntry>
+        <inputEntry id="C13">
+          <text />
+        </inputEntry>
+        <inputEntry id="D13">
+          <text />
+        </inputEntry>
+        <inputEntry id="E13">
+          <text>&gt;600</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_F13">
+          <text>"Brannalarmanlegg"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_G13" />
+      </rule>
+      <rule id="rowRule_14">
+        <inputEntry id="B14">
+          <text>"RKL6"</text>
+        </inputEntry>
+        <inputEntry id="C14">
+          <text />
+        </inputEntry>
+        <inputEntry id="D14">
+          <text />
+        </inputEntry>
+        <inputEntry id="E14">
+          <text />
+        </inputEntry>
+        <outputEntry id="LiteralExpression_F14">
+          <text>"Brannalarmanlegg"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_G14" />
+      </rule>
+      <rule id="rowRule_15">
+        <inputEntry id="B15">
+          <text />
+        </inputEntry>
+        <inputEntry id="C15">
+          <text />
+        </inputEntry>
+        <inputEntry id="D15">
+          <text />
+        </inputEntry>
+        <inputEntry id="E15">
+          <text />
+        </inputEntry>
+        <outputEntry id="LiteralExpression_F15">
+          <text>"Ikke angitt"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_G15" />
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

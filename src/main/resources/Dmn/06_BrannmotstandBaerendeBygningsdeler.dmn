@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="Excel2Dmn_25-33-18" name="06_BrannmotstandBaerendeBygningsdeler" namespace="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd">
+  <decision id="BrannmotstandBaerendeBygningsdeler" name="Brannmotstand bærende bygningsdeler">
+    <decisionTable id="decisionTable" hitPolicy="FIRST">
+      <input id="bkl" label="Brannklasse">
+        <inputExpression id="exp_bkl" label="label_bkl" typeRef="string">
+          <text>bkl</text>
+        </inputExpression>
+      </input>
+      <input id="rkl" label="Risikoklasse">
+        <inputExpression id="exp_rkl" label="label_rkl" typeRef="string">
+          <text>rkl</text>
+        </inputExpression>
+      </input>
+      <input id="antallEtasjer" label="Antall etasjer">
+        <inputExpression id="exp_antallEtasjer" label="label_antallEtasjer" typeRef="integer">
+          <text>antallEtasjer</text>
+        </inputExpression>
+      </input>
+      <output id="baerendeHovedSystem_Id" label="Bærende hovedsystem" name="baerendeHovedSystem" typeRef="string" />
+      <output id="sekundareBaerendeDeler_Id" label="Sekundære bærende deler, etasjeskiller ikke stabiliserende" name="sekundareBaerendeDeler" typeRef="string" />
+      <output id="trappeLop_Id" label="Trappeløp" name="trappeLop" typeRef="string" />
+      <output id="baerendeDelerUnderOversteKjeller_Id" label="Bærende deler under øverste Kjeller" name="baerendeDelerUnderOversteKjeller" typeRef="string" />
+      <output id="beskytttetUtvTrappeLop_Id" label="Utvendig trappeløp beskyttet mot flamme og strålevarme" name="beskytttetUtvTrappeLop" typeRef="string" />
+      <rule id="rowRule_7">
+        <inputEntry id="B7">
+          <text>"BKL1"</text>
+        </inputEntry>
+        <inputEntry id="C7">
+          <text>"RKL2","RKL3","RKL5"</text>
+        </inputEntry>
+        <inputEntry id="D7">
+          <text>1</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_E7">
+          <text>"R 15 [B 15]"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_F7">
+          <text>"R 15 [B 15]"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_G7">
+          <text>"Ikke angitt"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_H7">
+          <text>"R 60 A2-s1,d0 [A 60]"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_I7">
+          <text>"Ikke angitt"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_8">
+        <inputEntry id="B8">
+          <text>"BKL1"</text>
+        </inputEntry>
+        <inputEntry id="C8">
+          <text>"RKL4"</text>
+        </inputEntry>
+        <inputEntry id="D8">
+          <text />
+        </inputEntry>
+        <outputEntry id="LiteralExpression_E8">
+          <text>"R 15 [B 15]"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_F8">
+          <text>"R 15 [B 15]"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_G8">
+          <text>"Ikke angitt"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_H8">
+          <text>"R 60 A2-s1,d0 [A 60]"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_I8">
+          <text>"Ikke angitt"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_9">
+        <inputEntry id="B9">
+          <text>"BKL1"</text>
+        </inputEntry>
+        <inputEntry id="C9">
+          <text />
+        </inputEntry>
+        <inputEntry id="D9">
+          <text />
+        </inputEntry>
+        <outputEntry id="LiteralExpression_E9">
+          <text>"R 30 [B 30]"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_F9">
+          <text>"R 30 [B 30]"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_G9">
+          <text>"Ikke angitt"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_H9">
+          <text>"R 60 A2-s1,d0 [A 60]"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_I9">
+          <text>"Ikke angitt"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_10">
+        <inputEntry id="B10">
+          <text>"BKL2"</text>
+        </inputEntry>
+        <inputEntry id="C10">
+          <text />
+        </inputEntry>
+        <inputEntry id="D10">
+          <text />
+        </inputEntry>
+        <outputEntry id="LiteralExpression_E10">
+          <text>"R 60 [B 60]"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_F10">
+          <text>"R 60 [B 60]"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_G10">
+          <text>"R 30 [B 30]"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_H10">
+          <text>"R 90 A2-s1,d0 [A 90]"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_I10">
+          <text>"R 30 [B 30] eller A2-s1,d0 [ubrennbart]"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_11">
+        <inputEntry id="B11">
+          <text>"BKL3"</text>
+        </inputEntry>
+        <inputEntry id="C11">
+          <text />
+        </inputEntry>
+        <inputEntry id="D11">
+          <text />
+        </inputEntry>
+        <outputEntry id="LiteralExpression_E11">
+          <text>"R 90 A2-s1,d0 [A 90]"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_F11">
+          <text>"R 60 A2-s1,d0 [A 60]"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_G11">
+          <text>"R 30 A2-s1,d0 [A 30]"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_H11">
+          <text>"R 120 A2-s1,d0 [A 120]"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_I11">
+          <text>"A2-s1,d0 [ubrennbart]"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_12">
+        <inputEntry id="B12">
+          <text>"Ikke angitt"</text>
+        </inputEntry>
+        <inputEntry id="C12">
+          <text />
+        </inputEntry>
+        <inputEntry id="D12">
+          <text />
+        </inputEntry>
+        <outputEntry id="LiteralExpression_E12">
+          <text>"Ikke angitt"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_F12">
+          <text>"Ikke angitt"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_G12">
+          <text>"Ikke angitt"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_H12">
+          <text>"Ikke angitt"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_I12">
+          <text>"Ikke angitt"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>
