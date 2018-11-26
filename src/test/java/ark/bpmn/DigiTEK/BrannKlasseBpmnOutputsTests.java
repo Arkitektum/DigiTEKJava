@@ -55,11 +55,10 @@ public class BrannKlasseBpmnOutputsTests {
 
 		System.out.println("Model inputs :" + variables);
 		System.out.println("number of tables: " + number);
-		assertEquals(number.toString(), "2");
-		Map<String, Object> brannklasse = (Map<String, Object>) modelOutputs.get("brannklasse");
+		assertEquals(number.toString(), "1");
 
-		System.out.println("brannklasse result :" + brannklasse);
-		assertThat(brannklasse).containsOnly(entry("bkl", "BKL4"),entry("merknadBkl", "Analyse"));
+		System.out.println("modelOutputs result :" + modelOutputs);
+		assertThat(modelOutputs).containsOnly(entry("Advarsel", "BKL4 Analyse"));
 
 		rule.getTaskService().complete(task.getId());
 

@@ -142,10 +142,12 @@ public class BrannmotstandDmnTests {
 		// test
 		assertThat(result).containsOnly(entry("kravOverflVegHimlingTakIkkeRomningsvei", "B-s1,d0 [In 1]"),
 				entry("kravOverflSjakHulIkkeRomningsvei", "B-s1,d0 [In 1]"),
-				entry("kravKledningerIkkeRomningsvei", "K210 B-s1,d0 [K1]"),
-				entry("kravGolvIkkeRomningsvei", "Ikke krav"),
-				entry("kravVegHimlingTakErRomningsvei", "B-s1,d0 [In 1]"), entry("kravGolvErRomningsvei", "Dfl-s1 [G]"),
-				entry("kravKledningerErRomningsvei", "K210 A2-s1,d0 [K1-A]"),
-				entry("kravYtterkledning", "B-s3,d0 [Ut 1]"), entry("kravKledningSjaktHulrom", "K210 A2-s1,d0 [K1-A]"));
+				entry("kravKledningerIkkeRomningsvei", "K2 10 B-s1,d0 [K1]"),
+				entry("kravGolvIkkeRomningsvei", "Ikke angitt"),
+				entry("kravVegHimlingTakErRomningsvei", "B-s1,d0 [In 1]"),
+				entry("kravGolvErRomningsvei", "Dfl-s1 [G]"),
+				entry("kravKledningerErRomningsvei", "K2 10 A2-s1,d0 [K1-A]"),
+				entry("kravYtterkledning", "B-s3,d0 [Ut 1]"),
+				entry("kravKledningSjaktHulrom", "K2 10 A2-s1,d0 [K1-A]"));
 	}
 }

@@ -1,10 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="Excel2Dmn_25-37-18" name="16_BrannmotstandDorRomningsvei" namespace="http://www.omg.org/spec/DMN/20151101/dmn.xsd">
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="Excel2Dmn_26-37-18" name="16_BrannmotstandDorRomningsvei" namespace="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd">
   <decision id="BrannmotstandDorRomningsvei" name="Brannmotstand dør rømningsvei">
     <decisionTable id="decisionTable" hitPolicy="FIRST">
       <input id="bkl" label="Brannklasse">
-        <inputExpression id="exp_bkl" label="label_bkl" typeRef="string">        <text>bkl</text>
-</inputExpression>
+        <inputExpression id="exp_bkl" label="label_bkl" typeRef="string">
+          <text>bkl</text>
+        </inputExpression>
       </input>
       <output id="kravDorBranncelleTrapperomTr1_Id" label="Branncelle - trapperom Tr1" name="kravDorBranncelleTrapperomTr1" typeRef="string" />
       <output id="kravDorBoenhetTrapperom_Id" label="Dør til trapperom i boenhet" name="kravDorBoenhetTrapperom" typeRef="string" />
@@ -14,76 +15,108 @@
       <output id="kravDorBranncelleKorridor_Id" label="Branncelle - korridor" name="kravDorBranncelleKorridor" typeRef="string" />
       <output id="kravDorKorridorFriLuft_Id" label="Korridor - fri luft (i komb. m. trapperom Tr3)" name="kravDorKorridorFriLuft" typeRef="string" />
       <rule id="rowRule_7">
-        <inputEntry id="B7">        <text><![CDATA["BKL1"]]></text>
-</inputEntry>
-        <outputEntry id="LiteralExpression_C7">        <text><![CDATA["EI230-CSa[B30S]"]]></text>
-</outputEntry>
-        <outputEntry id="LiteralExpression_D7">        <text><![CDATA["EI230-Sa"]]></text>
-</outputEntry>
-        <outputEntry id="LiteralExpression_E7">        <text><![CDATA["EI230-CSa[F30S]"]]></text>
-</outputEntry>
-        <outputEntry id="LiteralExpression_F7">        <text><![CDATA["Ikke angitt"]]></text>
-</outputEntry>
-        <outputEntry id="LiteralExpression_G7">        <text><![CDATA["EI260-CSa[B60S]"]]></text>
-</outputEntry>
-        <outputEntry id="LiteralExpression_H7">        <text><![CDATA["EI230-CSa[B30]"]]></text>
-</outputEntry>
-        <outputEntry id="LiteralExpression_I7">        <text><![CDATA["Ikke angitt"]]></text>
-</outputEntry>
+        <inputEntry id="B7">
+          <text>"BKL1"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C7">
+          <text>"EI2 30-Sa[B30S]"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_D7">
+          <text>"EI2 30-Sa"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_E7">
+          <text>"EI2 30-Sa[F30S]"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_F7">
+          <text>"Ikke angitt"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_G7">
+          <text>"EI2 60-Sa[B60S]"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_H7">
+          <text>"EI2 30-Sa[B30]"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_I7">
+          <text>"Ikke angitt"</text>
+        </outputEntry>
       </rule>
       <rule id="rowRule_8">
-        <inputEntry id="B8">        <text><![CDATA["BKL2"]]></text>
-</inputEntry>
-        <outputEntry id="LiteralExpression_C8">        <text><![CDATA["EI230-CSa[B30S]"]]></text>
-</outputEntry>
-        <outputEntry id="LiteralExpression_D8">        <text><![CDATA["EI230-Sa"]]></text>
-</outputEntry>
-        <outputEntry id="LiteralExpression_E8">        <text><![CDATA["EI230-CSa[F30S]"]]></text>
-</outputEntry>
-        <outputEntry id="LiteralExpression_F8">        <text><![CDATA["EI260-CSa[B60S]"]]></text>
-</outputEntry>
-        <outputEntry id="LiteralExpression_G8">        <text><![CDATA["EI260-CSa[B60S]"]]></text>
-</outputEntry>
-        <outputEntry id="LiteralExpression_H8">        <text><![CDATA["EI230-CSa[B30]"]]></text>
-</outputEntry>
-        <outputEntry id="LiteralExpression_I8">        <text><![CDATA["EI230-CSa[B30]"]]></text>
-</outputEntry>
+        <inputEntry id="B8">
+          <text>"BKL2"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C8">
+          <text>"EI2 30-Sa[B30S]"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_D8">
+          <text>"EI2 30-Sa"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_E8">
+          <text>"EI2 30-Sa[F30S]"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_F8">
+          <text>"EI2 60-Sa[B60S]"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_G8">
+          <text>"EI2 60-Sa[B60S]"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_H8">
+          <text>"EI2 30-Sa[B30]"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_I8">
+          <text>"EI2 30-Sa[B30]"</text>
+        </outputEntry>
       </rule>
       <rule id="rowRule_9">
-        <inputEntry id="B9">        <text><![CDATA["BKL3"]]></text>
-</inputEntry>
-        <outputEntry id="LiteralExpression_C9">        <text><![CDATA["EI230-CSa[B30S]"]]></text>
-</outputEntry>
-        <outputEntry id="LiteralExpression_D9">        <text><![CDATA["EI230-Sa"]]></text>
-</outputEntry>
-        <outputEntry id="LiteralExpression_E9">        <text><![CDATA["EI230-CSa[F30S]"]]></text>
-</outputEntry>
-        <outputEntry id="LiteralExpression_F9">        <text><![CDATA["EI260-CSa[B60S]"]]></text>
-</outputEntry>
-        <outputEntry id="LiteralExpression_G9">        <text><![CDATA["EI260-CSa[B60S]"]]></text>
-</outputEntry>
-        <outputEntry id="LiteralExpression_H9">        <text><![CDATA["EI230-CSa[B30]"]]></text>
-</outputEntry>
-        <outputEntry id="LiteralExpression_I9">        <text><![CDATA["EI230-CSa[B30]"]]></text>
-</outputEntry>
+        <inputEntry id="B9">
+          <text>"BKL3"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C9">
+          <text>"EI2 30-Sa[B30S]"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_D9">
+          <text>"EI2 30-Sa"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_E9">
+          <text>"EI2 30-Sa[F30S]"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_F9">
+          <text>"EI2 60-Sa[B60S]"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_G9">
+          <text>"EI2 60-Sa[B60S]"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_H9">
+          <text>"EI2 30-Sa[B30]"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_I9">
+          <text>"EI2 30-Sa[B30]"</text>
+        </outputEntry>
       </rule>
       <rule id="rowRule_10">
-        <inputEntry id="B10">        <text></text>
-</inputEntry>
-        <outputEntry id="LiteralExpression_C10">        <text><![CDATA["Ikke angitt"]]></text>
-</outputEntry>
-        <outputEntry id="LiteralExpression_D10">        <text><![CDATA["Ikke angitt"]]></text>
-</outputEntry>
-        <outputEntry id="LiteralExpression_E10">        <text><![CDATA["Ikke angitt"]]></text>
-</outputEntry>
-        <outputEntry id="LiteralExpression_F10">        <text><![CDATA["Ikke angitt"]]></text>
-</outputEntry>
-        <outputEntry id="LiteralExpression_G10">        <text><![CDATA["Ikke angitt"]]></text>
-</outputEntry>
-        <outputEntry id="LiteralExpression_H10">        <text><![CDATA["Ikke angitt"]]></text>
-</outputEntry>
-        <outputEntry id="LiteralExpression_I10">        <text><![CDATA["Ikke angitt"]]></text>
-</outputEntry>
+        <inputEntry id="B10">
+          <text />
+        </inputEntry>
+        <outputEntry id="LiteralExpression_C10">
+          <text>"Ikke angitt"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_D10">
+          <text>"Ikke angitt"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_E10">
+          <text>"Ikke angitt"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_F10">
+          <text>"Ikke angitt"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_G10">
+          <text>"Ikke angitt"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_H10">
+          <text>"Ikke angitt"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_I10">
+          <text>"Ikke angitt"</text>
+        </outputEntry>
       </rule>
     </decisionTable>
   </decision>

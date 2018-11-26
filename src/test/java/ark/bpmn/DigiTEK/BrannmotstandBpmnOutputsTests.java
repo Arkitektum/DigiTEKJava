@@ -123,13 +123,13 @@ public class BrannmotstandBpmnOutputsTests {
 		assertThat(overflateKledning).containsOnly(
 				entry("kravOverflVegHimlingTakIkkeRomningsvei", "D-s2,d0 [In 2]"),
 				entry("kravOverflSjakHulIkkeRomningsvei", "B-s1,d0 [In 1]"),
-				entry("kravKledningerIkkeRomningsvei", "K210 D-s2,d0 [K2]"),
-				entry("kravGolvIkkeRomningsvei", "Ikke krav"),
+				entry("kravKledningerIkkeRomningsvei", "K2 10 D-s2,d0 [K2]"),
+				entry("kravGolvIkkeRomningsvei", "Ikke angitt"),
 				entry("kravVegHimlingTakErRomningsvei","B-s1,d0 [In 1]"), 
 				entry("kravGolvErRomningsvei", "Dfl-s1 [G]"),
-				entry("kravKledningerErRomningsvei", "K210 B-s1,d0 [K1]"),
-				entry("kravYtterkledning", "B-s3,d0 [Ut 1]"),
-				entry("kravKledningSjaktHulrom","K210 B-s1,d0 [K1]"));
+				entry("kravKledningerErRomningsvei", "K2 10 B-s1,d0 [K1]"),
+				entry("kravYtterkledning", "D-s3,d0 [Ut 2]"),
+				entry("kravKledningSjaktHulrom","K2 10 B-s1,d0 [K1]"));
 		// print in console the tree process of the model
 		System.out.println("Model tree");
 		System.out.println(rule.getRuntimeService().getActivityInstance(processInstance.getId()));
