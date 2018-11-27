@@ -5,9 +5,6 @@ import java.util.Map;
 
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
-import org.camunda.bpm.engine.variable.Variables;
-import org.camunda.bpm.engine.variable.value.ObjectValue;
-
 import ark.bpmn.BrannModels.BranntekniskProsjekteringModel;
 
 public class InputsValidation implements JavaDelegate {
@@ -16,8 +13,7 @@ public class InputsValidation implements JavaDelegate {
 	public void execute(DelegateExecution execution) throws Exception {
 
 		BranntekniskProsjekteringModel model = new BranntekniskProsjekteringModel();
-		Map<String, Object> map1 = execution.getVariables();
-
+		
 		model.typeVirksomhet = CheckString(execution.getVariable("typeVirksomhet"));
 		model.antallEtasjer = CheckInteger(execution.getVariable("antallEtasjer"));
 		model.brtArealPrEtasje = CheckInteger(execution.getVariable("brtArealPrEtasje"));

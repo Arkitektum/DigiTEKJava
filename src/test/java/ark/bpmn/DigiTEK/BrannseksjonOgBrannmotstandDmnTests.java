@@ -171,12 +171,14 @@ public class BrannseksjonOgBrannmotstandDmnTests {
 		System.out.println("DmnInput: " + variables);
 		System.out.println("DmnOutput: " + result);
 		// test
-		assertThat(result).containsOnly(entry("kravDorBranncelleTrapperomTr1", "EI230-CSa[B30S]"),
-				entry("kravDorBoenhetTrapperom", "EI230-Sa"), entry("kravDorKorridorTrapperomTr2", "EI230-CSa[F30S]"),
-				entry("kravDorRomTrapperomTr3", "EI260-CSa[B60S]"),
-				entry("kravDorGarasjeBrannsluse", "EI260-CSa[B60S]"),
-				entry("kravDorBranncelleKorridor", "EI230-CSa[B30]"),
-				entry("kravDorKorridorFriLuft", "EI230-CSa[B30]"));
+		assertThat(result).containsOnly(
+				entry("kravDorBranncelleTrapperomTr1", "EI2 30-Sa[B30S]"),
+				entry("kravDorBoenhetTrapperom", "EI2 30-Sa"), 
+				entry("kravDorKorridorTrapperomTr2", "EI2 30-Sa[F30S]"),
+				entry("kravDorRomTrapperomTr3", "EI2 60-Sa[B60S]"),
+				entry("kravDorGarasjeBrannsluse", "EI2 60-Sa[B60S]"),
+				entry("kravDorBranncelleKorridor", "EI2 30-Sa[B30]"),
+				entry("kravDorKorridorFriLuft", "EI2 30-Sa[B30]"));
 	}
 
 	@Test

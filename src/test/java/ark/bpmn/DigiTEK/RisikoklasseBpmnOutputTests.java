@@ -61,9 +61,11 @@ public class RisikoklasseBpmnOutputTests {
 		// print result from table in console
 		System.out.println("vedleggTilRisikoklasse result :" + vedleggTilRisikoklasse);
 		// assert result from table
-		assertThat(vedleggTilRisikoklasse).containsOnly(entry("bareSporadiskPersonopphold", false),
-				entry("alleKjennerRomningsVeiene", false), entry("beregnetForOvernatting", true),
-				entry("liteBrannfarligAktivitet", true));
+		assertThat(vedleggTilRisikoklasse).containsOnly(
+				entry("bareSporadiskPersonopphold", "Nei"),
+				entry("alleKjennerRomningsVeiene", "Nei"),
+				entry("beregnetForOvernatting", "Ja"),
+				entry("liteBrannfarligAktivitet", "Ja"));
 		// print in console the tree process of the model
 		System.out.println("Tree view: " + rule.getRuntimeService().getActivityInstance(processInstance.getId()));
 		rule.getTaskService().complete(task.getId());

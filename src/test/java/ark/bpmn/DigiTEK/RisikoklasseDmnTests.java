@@ -111,10 +111,10 @@ public class RisikoklasseDmnTests {
 		DmnDecisionRuleResult result = decisionResult.getSingleResult();
 	    assertThat(result)
 	      .containsOnly(
-	        entry("bareSporadiskPersonopphold", false),
-	        entry("alleKjennerRomningsVeiene", true),
-	        entry("beregnetForOvernatting", false),
-	        entry("liteBrannfarligAktivitet", true)
+	        entry("bareSporadiskPersonopphold", "Nei"),
+	        entry("alleKjennerRomningsVeiene", "Ja"),
+	        entry("beregnetForOvernatting", "Nei"),
+	        entry("liteBrannfarligAktivitet", "Ja")
 	      );
 	}
 }
