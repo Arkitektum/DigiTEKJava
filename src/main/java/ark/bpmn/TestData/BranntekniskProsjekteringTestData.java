@@ -66,6 +66,21 @@ public class BranntekniskProsjekteringTestData {
 				.putValue("bygningOffentligUnderTerreng", true).putValue("arealBrannseksjonPrEtasje", 2000);
 		return variableMap;
 	}
+	public static Map<String, Object> BranntekniskProsjekteringModelBolig() {
+		VariableMap variableMap = Variables.createVariables()
+				.putValue("typeVirksomhet", "Bolig")
+				.putValue("antallEtasjer", 3)
+				.putValue("brtArealPrEtasje", 300)
+				.putValue("arealBrannseksjonPrEtasje", 300)
+				.putValue("brannenergi", 300)
+				.putValue("bygningOffentligUnderTerreng", false)
+				.putValue("utgangTerrengAlleBoenheter", true)
+				.putValue("avstandMellomMotstVinduerIMeter", 4)
+				.putValue("brtArealBygg", 900)
+				.putValue("kravOmHeis", false)
+				;
+		return variableMap;
+	}
 
 	public static Map<String, Object> BranntekniskProsjekteringModelOpt02() {
 		VariableMap variableMap = Variables.createVariables().putValue("typeVirksomhet", "Bolig")

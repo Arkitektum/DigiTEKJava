@@ -85,9 +85,9 @@ public class BranntekniskProsjekteringBpmnTests {
 	}
 	
 	@Test
-	public void BranntekniskProsjekteringMode_IntegrationTestOp1() {
+	public void BranntekniskProsjekteringMode_IntegrationTestBolig() {
 		ProcessInstance processInstance = processEngine().getRuntimeService()
-				.startProcessInstanceByKey(IntegrationModelKey, BranntekniskProsjekteringModelOpt01());
+				.startProcessInstanceByKey(IntegrationModelKey, BranntekniskProsjekteringModelBolig());
 
 		assertThat(processInstance).task(UserTaskId);
 		Task task = rule.getTaskService().createTaskQuery().singleResult();
@@ -103,4 +103,5 @@ public class BranntekniskProsjekteringBpmnTests {
 		// assertThat(processInstance).isStarted().isEnded().hasPassed(IntegrationModelEndTaskId);
 		assertThat(processInstance).isStarted().isEnded().hasPassed(EndTaskId);
 	}
+
 }
