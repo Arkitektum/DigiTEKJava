@@ -26,7 +26,7 @@ import org.junit.Test;
 
 @Deployment(resources = { models.BpmnSub_Risikoklasse, models.Bpmn_RisikoklasseModel,
 		models.Dmn_01_Risikoklassifisering, models.Dmn_01a_RisikoklasseFraTypeVirksomhet,
-		models.Dmn_01b_VedleggTilRisikoklasse })
+		models.Dmn_01b_VedleggTilRisikoklasse,models.Dmn_01c__RKLForklaring, models.Dmn_01c_RKL2Forklaring })
 public class RisikoklasseBpmnOutputTests {
 	@ClassRule
 	@Rule
@@ -72,6 +72,43 @@ public class RisikoklasseBpmnOutputTests {
 		// assert that the model has end in the right endTask
 		assertThat(processInstance).isStarted().isEnded().hasPassed(EndTaskId);
 	}
+	@SuppressWarnings("unchecked")
+	@Test
+	public void RisikoklasseModel_typeVirksomhetRKL2_Test() {
+		Map<String, Object> inputsVariables = Risikoklasse_typeVirksomhetRKL2_BpmnTest();
+		ProcessInstance processInstance = processEngine().getRuntimeService()
+				.startProcessInstanceByKey(IntegrationModelKey, inputsVariables);
+		// assert that model is in waiting for the user to get the result
+		assertThat(processInstance).task(UserTaskId);
+		Task task = rule.getTaskService().createTaskQuery().singleResult();
+		// Get the result of the model
+		Map<String, Object> modelOutputsvariables = (Map<String, Object>) rule.getRuntimeService()
+				.getVariable(processInstance.getId(), "modelOutputs");
+		Integer number = modelOutputsvariables.size();
+		// print result in console
+		System.out.println("Model inputs :" + inputsVariables);
+		System.out.println("number of tables: " + number);
+		System.out.println("Model Outputs :" + modelOutputsvariables);
+		// Assert number of run tables
+		assertEquals(number.toString(), "3");
+		// get one specific table result
+		Map<String, Object> vedleggTilRisikoklasse = (Map<String, Object>) modelOutputsvariables
+				.get("vedleggTilRisikoklasse");
+		// print result from table in console
+		System.out.println("vedleggTilRisikoklasse result :" + vedleggTilRisikoklasse);
+		// assert result from table
+		assertThat(vedleggTilRisikoklasse).containsOnly(
+				entry("bareSporadiskPersonopphold", "Nei"),
+				entry("alleKjennerRomningsVeiene", "Nei"),
+				entry("beregnetForOvernatting", "Ja"),
+				entry("liteBrannfarligAktivitet", "Ja"));
+		// print in console the tree process of the model
+		System.out.println("Tree view: " + rule.getRuntimeService().getActivityInstance(processInstance.getId()));
+		rule.getTaskService().complete(task.getId());
+		// assert that the model has end in the right endTask
+		assertThat(processInstance).isStarted().isEnded().hasPassed(EndTaskId);
+	}
+
 
 	@SuppressWarnings("unchecked")
 	@Test

@@ -86,6 +86,7 @@ public class ModelOutputsDataDictionary implements JavaDelegate {
 		ObjectValue modelDataDictionary = Variables.objectValue(dictionaryModel.BranntekniskProsjekteringDictionary)
 				.serializationDataFormat("application/json").create();
 
+		Map<String, Object> modelOutputsMap1 = (Map<String, Object>) execution.getVariables();
 		execution.removeVariables();
 		execution.setVariable("modelDataDictionary", modelDataDictionary);
 		execution.setVariable("modelOutputs", modelOutputsMap);

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="Excel2Dmn_04-59-18" name="01c_RKL2Forklaring" namespace="http://www.omg.org/spec/DMN/20151101/dmn.xsd">
+  <decision id="RKL2Forklaring" name="Risikoklasse forklaring">
+    <decisionTable id="decisionTable" hitPolicy="COLLECT">
+      <input id="alleKjennerRomningsVeiene" label="Alle kjenner rømningsveiene">
+        <inputExpression id="exp_alleKjennerRomningsVeiene" label="label_alleKjennerRomningsVeiene" typeRef="boolean">
+          <text>alleKjennerRomningsVeiene</text>
+        </inputExpression>
+      </input>
+      <input id="beregnetForOvernatting" label="beregnet for overnatting">
+        <inputExpression id="exp_beregnetForOvernatting" label="label_beregnetForOvernatting" typeRef="boolean">
+          <text>beregnetForOvernatting</text>
+        </inputExpression>
+      </input>
+      <input id="liteBrannfarligAktivitet" label="Lite brannfarlig aktivitet">
+        <inputExpression id="exp_liteBrannfarligAktivitet" label="label_liteBrannfarligAktivitet" typeRef="boolean">
+          <text>liteBrannfarligAktivitet</text>
+        </inputExpression>
+      </input>
+      <output id="RKLforklaring_Id" label="Risikoklasse forklaring" name="RKL2forklaring" typeRef="string" />
+      <rule id="rowRule_7">
+        <inputEntry id="B7">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="C7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="D7">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_E7">
+          <text>"alleKjennerRomningsVeiene"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_8">
+        <inputEntry id="B8">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="C8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="D8">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_E8">
+          <text>"IkkealleKjennerRomningsVeiene"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_9">
+        <inputEntry id="B9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="C9">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="D9">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_E9">
+          <text>"beregnetForOvernatting"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_10">
+        <inputEntry id="B10">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="C10">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="D10">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_E10">
+          <text>"IkkeberegnetForOvernatting"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_11">
+        <inputEntry id="B11">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="C11">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="D11">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_E11">
+          <text>"liteBrannfarligAktivitet"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_12">
+        <inputEntry id="B12">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="C12">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="D12">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_E12">
+          <text>"IkkeliteBrannfarligAktivitet"</text>
+        </outputEntry>
+      </rule>
+      <rule id="rowRule_13">
+        <inputEntry id="B13">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="C13">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="D13">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_E13">
+          <text>"begge…"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>
