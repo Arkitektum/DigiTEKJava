@@ -56,27 +56,28 @@ public class ModelOutputsDataDictionary implements JavaDelegate {
 
 				JSONObject dmnInfo = new ModelOutputsDataDictionary().GetJsonObject(dmnToTEKInfoJsonArray, "DmnId",
 						dmnKeyTemp);
+				if (dmnInfo != null) {
+					// Add dmn info to Model
+					TableInfo tableInfo = new ModelOutputsDataDictionary().SetTableInfo(dmnInfo);
 
-				// Add dmn info to Model
-				TableInfo tableInfo = new ModelOutputsDataDictionary().SetTableInfo(dmnInfo);
+					// Get dmn outputs variables
+					Map<String, Object> entryValues = (Map<String, Object>) entry.getValue();
+					tableInfo.OutputVariablesInfo = new ModelOutputsDataDictionary()
+							.GetOutputsVariablesInfo(entryValues, dmnVariablesInfoJsonArray);
 
-				// Get dmn outputs variables
-				Map<String, Object> entryValues = (Map<String, Object>) entry.getValue();
-				tableInfo.OutputVariablesInfo = new ModelOutputsDataDictionary().GetOutputsVariablesInfo(entryValues,
-						dmnVariablesInfoJsonArray);
+					// get all inputs to Dmn from json
+					char c[] = entryKey.toCharArray();
+					c[0] = Character.toUpperCase(c[0]);
+					String newkey = new String(c);
 
-				// get all inputs to Dmn from json
-				char c[] = entryKey.toCharArray();
-				c[0] = Character.toUpperCase(c[0]);
-				String newkey = new String(c);
+					JSONArray jsonDmnInputs1 = new ModelOutputsDataDictionary()
+							.GetJsonArrayObject(dmnTableAndVariablesJsonArray, "DmnId", newkey, "Type", "input");
+					tableInfo.InputVariablesInfo = new ModelOutputsDataDictionary()
+							.GetinputsVariablesInfo(jsonDmnInputs1, dmnVariablesInfoJsonArray);
 
-				JSONArray jsonDmnInputs1 = new ModelOutputsDataDictionary()
-						.GetJsonArrayObject(dmnTableAndVariablesJsonArray, "DmnId", newkey, "Type", "input");
-				tableInfo.InputVariablesInfo = new ModelOutputsDataDictionary().GetinputsVariablesInfo(jsonDmnInputs1,
-						dmnVariablesInfoJsonArray);
-
-				// add table info to map and BranntekniskProsjekteringDictionary model
-				dictionaryModel.BranntekniskProsjekteringDictionary.put(entryKey, tableInfo);
+					// add table info to map and BranntekniskProsjekteringDictionary model
+					dictionaryModel.BranntekniskProsjekteringDictionary.put(entryKey, tableInfo);
+				}
 			}
 
 		} catch (Exception e) {
@@ -117,6 +118,7 @@ public class ModelOutputsDataDictionary implements JavaDelegate {
 		return jsonArray;
 	}
 
+	@SuppressWarnings("unchecked")
 	public JSONObject GetJsonObject(JSONArray jsonArray, String key, String value) {
 
 		JSONObject SelectjsonObj = null;
@@ -140,6 +142,7 @@ public class ModelOutputsDataDictionary implements JavaDelegate {
 		return SelectjsonObj;
 	}
 
+	@SuppressWarnings("unchecked")
 	public JSONArray GetJsonArrayObject(JSONArray jsonInputArray, String key, String value, String key2,
 			String value2) {
 
@@ -162,15 +165,15 @@ public class ModelOutputsDataDictionary implements JavaDelegate {
 	public TableInfo SetTableInfo(JSONObject dmnInfo) {
 
 		TableInfo tableInfo = new BrannDictionaryModel().new TableInfo();
-		
-			tableInfo.DmnId = GetValue(dmnInfo.get("DmnId"));
-			tableInfo.DmnNavn = GetValue(dmnInfo.get("DmnNavn"));
-			tableInfo.TekKapitel = GetValue(dmnInfo.get("TekKapitel"));
-			tableInfo.TekLedd = GetValue(dmnInfo.get("TekLedd"));
-			tableInfo.TekTabell = GetValue(dmnInfo.get("TekTabell"));
-			tableInfo.TekBokstav = GetValue(dmnInfo.get("TekBokstav"));
-			tableInfo.TekWebLink = GetValue(dmnInfo.get("TekWebLink"));
-			return tableInfo;
+
+		tableInfo.DmnId = GetValue(dmnInfo.get("DmnId"));
+		tableInfo.DmnNavn = GetValue(dmnInfo.get("DmnNavn"));
+		tableInfo.TekKapitel = GetValue(dmnInfo.get("TekKapitel"));
+		tableInfo.TekLedd = GetValue(dmnInfo.get("TekLedd"));
+		tableInfo.TekTabell = GetValue(dmnInfo.get("TekTabell"));
+		tableInfo.TekBokstav = GetValue(dmnInfo.get("TekBokstav"));
+		tableInfo.TekWebLink = GetValue(dmnInfo.get("TekWebLink"));
+		return tableInfo;
 	}
 
 	private String GetValue(Object value) {
