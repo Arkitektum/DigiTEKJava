@@ -3,7 +3,6 @@ package ark.bpmn.DigiTEK;
 import static ark.bpmn.TestData.RisikoklassenTestData.*;
 
 import static org.camunda.bpm.engine.test.assertions.ProcessEngineAssertions.init;
-import static org.camunda.bpm.engine.test.assertions.ProcessEngineAssertions.processEngine;
 import static org.camunda.bpm.engine.test.assertions.ProcessEngineAssertions.assertThat;
 import static org.assertj.core.api.Assertions.entry;
 import static org.junit.Assert.assertEquals;
@@ -11,7 +10,6 @@ import static org.junit.Assert.assertEquals;
 import org.camunda.bpm.dmn.engine.DmnDecisionRuleResult;
 import org.camunda.bpm.dmn.engine.DmnDecisionTableResult;
 import org.camunda.bpm.engine.DecisionService;
-import org.camunda.bpm.engine.runtime.ProcessInstance;
 import org.camunda.bpm.engine.test.Deployment;
 import org.camunda.bpm.engine.test.ProcessEngineRule;
 import org.camunda.bpm.extension.process_test_coverage.junit.rules.TestCoverageProcessEngineRuleBuilder;
@@ -111,10 +109,10 @@ public class RisikoklasseDmnTests {
 		DmnDecisionRuleResult result = decisionResult.getSingleResult();
 	    assertThat(result)
 	      .containsOnly(
-	        entry("bareSporadiskPersonopphold", "Nei"),
-	        entry("alleKjennerRomningsVeiene", "Ja"),
-	        entry("beregnetForOvernatting", "Nei"),
-	        entry("liteBrannfarligAktivitet", "Ja")
+	        entry("bareSporadiskPersonopphold", false),
+	        entry("alleKjennerRomningsVeiene", true),
+	        entry("beregnetForOvernatting", false),
+	        entry("liteBrannfarligAktivitet", true)
 	      );
 	}
 }

@@ -56,6 +56,8 @@ public class BranntekniskProsjekteringTestData {
 		public static final String Dmn_01_Risikoklassifisering ="./Dmn/01_Risikoklassifisering.dmn";
 		public static final String Dmn_01a_RisikoklasseFraTypeVirksomhet = "./Dmn/01a_RisikoklasseFraTypeVirksomhet.dmn";
 		public static final String Dmn_01b_VedleggTilRisikoklasse = "./Dmn/01b_VedleggTilRisikoklasse.dmn";
+		public static final String Dmn_01c_RisikoklasseForklaring = "./Dmn/01c_RisikoklasseForklaring.dmn";
+		public static final String Dmn_01c_Risikoklasse2Forklaring = "./Dmn/01c_Risikoklasse2Forklaring.dmn";
 
 	}
 

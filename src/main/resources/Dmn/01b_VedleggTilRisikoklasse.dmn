@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="Excel2Dmn_26-28-18" name="01b_VedleggTilRisikoklasse" namespace="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="Excel2Dmn_04-01-18" name="01b_VedleggTilRisikoklasse" namespace="http://www.omg.org/spec/DMN/20151101/dmn.xsd">
   <decision id="VedleggTilRisikoklasse" name="Vedlegg Til Risikoklasse">
     <decisionTable id="decisionTable" hitPolicy="FIRST">
       <input id="rkl" label="Risikoklasse">
@@ -7,42 +7,40 @@
           <text>rkl</text>
         </inputExpression>
       </input>
-      <output id="bareSporadiskPersonopphold_Id" label="Bare sporadisk personopphold" name="bareSporadiskPersonopphold" typeRef="string" />
-      <output id="alleKjennerRomningsVeiene_Id" label="Alle kjenner rømningsveiene" name="alleKjennerRomningsVeiene" typeRef="string" />
-      <output id="beregnetForOvernatting_Id" label="beregnet for overnatting" name="beregnetForOvernatting" typeRef="string" />
-      <output id="liteBrannfarligAktivitet_Id" label="Lite brannfarlig aktivitet" name="liteBrannfarligAktivitet" typeRef="string" />
+      <output id="bareSporadiskPersonopphold_Id" label="Bare sporadisk personopphold" name="bareSporadiskPersonopphold" typeRef="boolean" />
+      <output id="alleKjennerRomningsVeiene_Id" label="Alle kjenner rømningsveiene" name="alleKjennerRomningsVeiene" typeRef="boolean" />
+      <output id="beregnetForOvernatting_Id" label="beregnet for overnatting" name="beregnetForOvernatting" typeRef="boolean" />
+      <output id="liteBrannfarligAktivitet_Id" label="Lite brannfarlig aktivitet" name="liteBrannfarligAktivitet" typeRef="boolean" />
       <rule id="rowRule_7">
         <inputEntry id="B7">
           <text>"RKL1"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_C7">
-          <text>"Ja"</text>
+          <text>true</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_D7">
-          <text>"Ja"</text>
+          <text>true</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_E7">
-          <text>"Nei"</text>
+          <text>false</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_F7">
-          <text>"Ja"</text>
+          <text>true</text>
         </outputEntry>
       </rule>
       <rule id="rowRule_8">
         <inputEntry id="B8">
           <text>"RKL2"</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_C8">
-          <text>"Begge"</text>
-        </outputEntry>
+        <outputEntry id="LiteralExpression_C8" />
         <outputEntry id="LiteralExpression_D8">
-          <text>"Ja"</text>
+          <text>true</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_E8">
-          <text>"Nei"</text>
+          <text>false</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_F8">
-          <text>"Nei"</text>
+          <text>false</text>
         </outputEntry>
       </rule>
       <rule id="rowRule_9">
@@ -50,16 +48,16 @@
           <text>"RKL3"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_C9">
-          <text>"Nei"</text>
+          <text>false</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_D9">
-          <text>"Ja"</text>
+          <text>true</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_E9">
-          <text>"Nei"</text>
+          <text>false</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_F9">
-          <text>"Ja"</text>
+          <text>true</text>
         </outputEntry>
       </rule>
       <rule id="rowRule_10">
@@ -67,16 +65,16 @@
           <text>"RKL4"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_C10">
-          <text>"Nei"</text>
+          <text>false</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_D10">
-          <text>"Ja"</text>
+          <text>true</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_E10">
-          <text>"Ja"</text>
+          <text>true</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_F10">
-          <text>"Ja"</text>
+          <text>true</text>
         </outputEntry>
       </rule>
       <rule id="rowRule_11">
@@ -84,16 +82,16 @@
           <text>"RKL5"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_C11">
-          <text>"Nei"</text>
+          <text>false</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_D11">
-          <text>"Nei"</text>
+          <text>false</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_E11">
-          <text>"Nei"</text>
+          <text>false</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_F11">
-          <text>"Ja"</text>
+          <text>true</text>
         </outputEntry>
       </rule>
       <rule id="rowRule_12">
@@ -101,34 +99,26 @@
           <text>"RKL6"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_C12">
-          <text>"Nei"</text>
+          <text>false</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_D12">
-          <text>"Nei"</text>
+          <text>false</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_E12">
-          <text>"Ja"</text>
+          <text>true</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_F12">
-          <text>"Ja"</text>
+          <text>true</text>
         </outputEntry>
       </rule>
       <rule id="rowRule_13">
         <inputEntry id="B13">
           <text>"Ukjent"</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_C13">
-          <text>"Ukjent"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_D13">
-          <text>"Ukjent"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_E13">
-          <text>"Ukjent"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_F13">
-          <text>"Ukjent"</text>
-        </outputEntry>
+        <outputEntry id="LiteralExpression_C13" />
+        <outputEntry id="LiteralExpression_D13" />
+        <outputEntry id="LiteralExpression_E13" />
+        <outputEntry id="LiteralExpression_F13" />
       </rule>
     </decisionTable>
   </decision>
