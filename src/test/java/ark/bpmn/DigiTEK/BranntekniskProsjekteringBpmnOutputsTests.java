@@ -13,7 +13,6 @@ import org.camunda.bpm.engine.runtime.ProcessInstance;
 import org.camunda.bpm.engine.task.Task;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.entry;
 import static org.camunda.bpm.engine.test.assertions.ProcessEngineAssertions.assertThat;
 
 import org.camunda.bpm.engine.test.Deployment;
@@ -47,7 +46,7 @@ import org.junit.Test;
 		, models.Bpmn_LedesystemModel, models.Dmn_12a_LedesystemEvakuering, models.Dmn_12b_LedesystemEvakueringVarighet
 		// Risikoklasse
 		, models.Bpmn_RisikoklasseModel, models.Dmn_01_Risikoklassifisering,
-		models.Dmn_01a_RisikoklasseFraTypeVirksomhet, models.Dmn_01b_VedleggTilRisikoklasse
+		models.Dmn_01a_RisikoklasseFraTypeVirksomhet, models.Dmn_01b_VedleggTilRisikoklasse, models.Dmn_01c_RisikoklasseForklaring, models.Dmn_01c_Risikoklasse2Forklaring
 
 })
 public class BranntekniskProsjekteringBpmnOutputsTests {
@@ -79,7 +78,7 @@ public class BranntekniskProsjekteringBpmnOutputsTests {
 
 		System.out.println("Model inputs :" + inputsVariables);
 		System.out.println("number of tables: " + number);
-		assertEquals(number.toString(), "24");
+		assertEquals(number.toString(), "25");
 //		Map<String, Object> tiltakStorrelseBrannseksjonBelastning = (Map<String, Object>) modelOutputsvariables
 //				.get("tiltakStorrelseBrannseksjonBelastning");
 //

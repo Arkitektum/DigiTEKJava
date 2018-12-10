@@ -18,7 +18,7 @@ import org.junit.Rule;
 import org.junit.Test;
 
 @Deployment(resources = { models.Bpmn_RisikoklasseModel,models.Dmn_01_Risikoklassifisering,
-		models.Dmn_01a_RisikoklasseFraTypeVirksomhet, models.Dmn_01b_VedleggTilRisikoklasse })
+		models.Dmn_01a_RisikoklasseFraTypeVirksomhet, models.Dmn_01b_VedleggTilRisikoklasse,models.Dmn_01c_RisikoklasseForklaring,models.Dmn_01c_Risikoklasse2Forklaring })
 public class RisikoklasseBpmnTests {
 	@ClassRule
 	@Rule

@@ -46,7 +46,7 @@ import org.junit.Test;
 		, models.Bpmn_LedesystemModel, models.Dmn_12a_LedesystemEvakuering, models.Dmn_12b_LedesystemEvakueringVarighet
 		// Risikoklasse
 		, models.Bpmn_RisikoklasseModel, models.Dmn_01_Risikoklassifisering,
-		models.Dmn_01a_RisikoklasseFraTypeVirksomhet, models.Dmn_01b_VedleggTilRisikoklasse
+		models.Dmn_01a_RisikoklasseFraTypeVirksomhet, models.Dmn_01b_VedleggTilRisikoklasse, models.Dmn_01c_RisikoklasseForklaring, models.Dmn_01c_Risikoklasse2Forklaring
 
 })
 public class BranntekniskProsjekteringBpmnTests {
@@ -84,6 +84,7 @@ public class BranntekniskProsjekteringBpmnTests {
 		assertThat(processInstance).isStarted().isEnded().hasPassed(EndTaskId);
 	}
 	
+	@SuppressWarnings("unchecked")
 	@Test
 	public void BranntekniskProsjekteringMode_IntegrationTestBolig() {
 		ProcessInstance processInstance = processEngine().getRuntimeService()
@@ -97,7 +98,7 @@ public class BranntekniskProsjekteringBpmnTests {
 		System.out.println(modelOutputs);
 		Integer number = modelOutputs.size();
 		System.out.println(number);
-		assertEquals(number.toString(),"24");
+		assertEquals(number.toString(),"25");
 		rule.getTaskService().complete(task.getId());
 
 		// assertThat(processInstance).isStarted().isEnded().hasPassed(IntegrationModelEndTaskId);
