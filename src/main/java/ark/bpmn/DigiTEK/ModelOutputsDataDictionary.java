@@ -86,11 +86,14 @@ public class ModelOutputsDataDictionary implements JavaDelegate {
 
 		ObjectValue modelDataDictionary = Variables.objectValue(dictionaryModel.BranntekniskProsjekteringDictionary)
 				.serializationDataFormat("application/json").create();
-
+		Map<String, Object> tableOutputsMap = new HashMap<String, Object>();
+		tableOutputsMap.put("info", "kun til test; løsningen er under utvikling!: API’et leverer et begrenset uttrekk av krav og preaksepterte ytelser for sikkerhet ved brann i TEK17 med veiledning. Unntak fra reglene er ikke tatt med, og uttrekket kan derfor ikke brukes ved prosjektering");
 		execution.removeVariables();
+		execution.setVariables(tableOutputsMap);
 		execution.setVariable("modelDataDictionary", modelDataDictionary);
 		execution.setVariable("modelOutputs", modelOutputsMap);
 		execution.setVariable("modelInputs", modelInputsMap);
+		
 
 	}
 
