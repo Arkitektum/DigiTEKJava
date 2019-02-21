@@ -347,7 +347,7 @@
   {
     "VariabelId": "typeVirksomhet",
     "VariabelNavn": "Type virksomhet",
-    "VariabelBeskrivelse": "Virksomhetstype, anvendelse av bygg, som har definert risikoklasse"
+    "VariabelBeskrivelse": "Virksomhetstype, anvendelse av bygg, som har definert risikoklasse. Referanseliste for risikoklassifisering av noen typer virksomhet, med gyldig navn for type virksomhet https://register.geonorge.no/tek17/risikoklasseettertypevirksomhet"
   },
   {
     "VariabelId": "utgangTerrengAlleBoenheter",

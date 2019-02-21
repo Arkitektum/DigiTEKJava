@@ -50,12 +50,15 @@ public class BrannKlasseBpmnOutputsTests {
 
 		Map<String, Object> variable = (Map<String, Object>) rule.getRuntimeService()
 				.getVariable(processInstance.getId(), "modelOutputs");
+		String info = (String) rule.getRuntimeService()
+				.getVariable(processInstance.getId(), "info");
 		Map<String, Object> modelOutputs = variable;
 		Integer number = modelOutputs.size();
 
 		System.out.println("Model inputs :" + variables);
 		System.out.println("number of tables: " + number);
 		assertEquals(number.toString(), "1");
+		System.out.println("info :" + info);
 
 		System.out.println("modelOutputs result :" + modelOutputs);
 		assertThat(modelOutputs).containsOnly(entry("Advarsel", "BKL4 Analyse"));

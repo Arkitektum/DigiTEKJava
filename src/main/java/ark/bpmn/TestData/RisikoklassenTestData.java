@@ -52,7 +52,11 @@ public class RisikoklassenTestData {
 				.putValue("typeVirksomhet", "Kontor");
 		return variableMap;
 	}
-	
+	public static Map<String, Object> Risikoklasse_WrongTypeVirksomhet_BpmnTest() {
+		VariableMap variableMap = Variables.createVariables()
+				.putValue("typeVirksomhet", "bolig");
+		return variableMap;
+	}
 	public static Map<String, Object> Dmn_Risikoklassifisering() {
 		VariableMap variableMap = Variables.createVariables()
 				.putValue("bareSporadiskPersonopphold", false)

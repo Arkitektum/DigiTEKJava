@@ -144,5 +144,38 @@ public class RisikoklasseBpmnOutputTests {
 		// assert that the model has end in the right endTask
 		assertThat(processInstance).isStarted().isEnded().hasPassed(EndTaskId);
 	}
+	
+	@SuppressWarnings("unchecked")
+	@Test
+	public void RisikoklasseModel_WorngTypeVirksomhet_Test() {
+		Map<String, Object> inputsVariables = Risikoklasse_WrongTypeVirksomhet_BpmnTest();
+		ProcessInstance processInstance = processEngine().getRuntimeService()
+				.startProcessInstanceByKey(IntegrationModelKey, inputsVariables);
+		// assert that model is in waiting for the user to get the result
+		assertThat(processInstance).task(UserTaskId);
+		Task task = rule.getTaskService().createTaskQuery().singleResult();
+		// Get the result of the model
+		Map<String, Object> modelOutputsvariables = (Map<String, Object>) rule.getRuntimeService()
+				.getVariable(processInstance.getId(), "modelOutputs");
+		Integer number = modelOutputsvariables.size();
+		// print result in console
+		System.out.println("Model inputs :" + inputsVariables);
+		System.out.println("number of tables: " + number);
+		// Assert number of run tables
+		assertEquals(number.toString(), "1");
+		// get one specific table result
+		Map<String, Object> risikoklasseFraTypeVirksomhet = (Map<String, Object>) modelOutputsvariables
+				.get("risikoklasseFraTypeVirksomhet");
+		// print result from table in console
+		System.out.println("risikoklasseFraTypeVirksomhet result :" + risikoklasseFraTypeVirksomhet);
+		// assert result from table
+		assertThat(risikoklasseFraTypeVirksomhet).containsOnly(
+				entry("rkl", "Ukjent"));
+		// print in console the tree process of the model
+		System.out.println("Tree view: " + rule.getRuntimeService().getActivityInstance(processInstance.getId()));
+		rule.getTaskService().complete(task.getId());
+		// assert that the model has end in the right endTask
+		assertThat(processInstance).isStarted().isEnded().hasPassed(EndTaskId);
+	}
 
 }
