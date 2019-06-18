@@ -20,6 +20,8 @@ public class BrannDictionaryModel {
 		public String VariabelId;
 		public String VariabelNavn;
 		public String VariabelBeskrivelse;
+		public String Ifc;
+		public String IfcUrl;
 	}
 }
 

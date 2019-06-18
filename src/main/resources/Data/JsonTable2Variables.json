@@ -60,6 +60,51 @@
     "Type": "output"
   },
   {
+    "DmnId": "Risikoklasse2Forklaring",
+    "VariabelId": "alleKjennerRomningsVeiene",
+    "Type": "input"
+  },
+  {
+    "DmnId": "Risikoklasse2Forklaring",
+    "VariabelId": "beregnetForOvernatting",
+    "Type": "input"
+  },
+  {
+    "DmnId": "Risikoklasse2Forklaring",
+    "VariabelId": "liteBrannfarligAktivitet",
+    "Type": "input"
+  },
+  {
+    "DmnId": "Risikoklasse2Forklaring",
+    "VariabelId": "rklForklaring",
+    "Type": "output"
+  },
+  {
+    "DmnId": "RisikoklasseForklaring",
+    "VariabelId": "bareSporadiskPersonopphold",
+    "Type": "input"
+  },
+  {
+    "DmnId": "RisikoklasseForklaring",
+    "VariabelId": "alleKjennerRomningsVeiene",
+    "Type": "input"
+  },
+  {
+    "DmnId": "RisikoklasseForklaring",
+    "VariabelId": "beregnetForOvernatting",
+    "Type": "input"
+  },
+  {
+    "DmnId": "RisikoklasseForklaring",
+    "VariabelId": "liteBrannfarligAktivitet",
+    "Type": "input"
+  },
+  {
+    "DmnId": "RisikoklasseForklaring",
+    "VariabelId": "rklForklaring",
+    "Type": "output"
+  },
+  {
     "DmnId": "KonsekvensBrannklassifisering",
     "VariabelId": "konsekvensAvBrann",
     "Type": "input"

@@ -86,6 +86,11 @@ public class BrannKlasseBpmnOutputsTests {
 		Map<String, Object> modelOutputs = variable;
 		Integer number = modelOutputs.size();
 
+		Map<String, Object> modelDataDictionary = (Map<String, Object>) rule.getRuntimeService()
+				.getVariable(processInstance.getId(), "modelDataDictionary");
+		
+		System.out.println("Model Data dictionary :" + modelDataDictionary);
+		
 		System.out.println("Model inputs :" + variables);
 		System.out.println("number of tables: " + number);
 		assertEquals(number.toString(), "2");
